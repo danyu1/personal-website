@@ -1,6 +1,5 @@
 'use client';
 
-import dynamic from "next/dynamic";
 import React, { useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import {
@@ -12,7 +11,6 @@ import {
   Brain,
   Layers3,
   Waves,
-  CircleUserRound,
   Trophy,
   PersonStanding,
   Zap,
@@ -580,14 +578,14 @@ export default function DanielHernandezSite() {
           {/* Hero text */}
           <div id="main">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight flex items-center gap-3">
-              Welcome, I'm Danny!
+              Welcome, I&apos; Danny!
               <Zap className="w-7 h-7 text-fuchsia-300" aria-hidden />
-              I'm a...
+              I&apos;m a...
 
             </h1>
             <p className="mt-4 text-slate-300/90 leading-relaxed">
               UChicago artificial intelligence researcher & developer exploring Conditional VAEs for regime
-              transitions in dynamical systems. I'm also a varsity collegiate athlete (long jump, triple jump) at the University of Chicago!
+              transitions in dynamical systems. I&apos;m also a varsity collegiate athlete (long jump, triple jump) at the University of Chicago!
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               <Tag>AI Research Assistant — Geophysical Sciences</Tag>
