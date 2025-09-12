@@ -578,7 +578,7 @@ export default function DanielHernandezSite() {
           {/* Hero text */}
           <div id="main">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight flex items-center gap-3">
-              Welcome, I&apos; Danny!
+              Welcome, I&apos;m Danny!
               <Zap className="w-7 h-7 text-fuchsia-300" aria-hidden />
               I&apos;m a...
 
