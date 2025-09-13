@@ -26,6 +26,7 @@ import CourseWorkMarquee from "@/components/CourseWorkMarquee";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
 import ArcCometBackground from "@/components/ArcCometBackground";
 import NeuralFieldBG from "@/components/NeuralFieldBG";
+import Hero from "@/components/Hero";
 
 const FALLBACK_IMG = `data:image/svg+xml;utf8,${encodeURIComponent(
 '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"><rect width="100%" height="100%" fill="#111"/><text x="50%" y="50%" fill="#aaa" font-family="sans-serif" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not found</text></svg>'
@@ -227,50 +228,7 @@ export default function DanielHernandezSite() {
       </header>
 
       {/* Hero */}
-      <section id="hero" className="relative pt-16 pb-6" aria-label="Hero">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-[220px,1fr] gap-8 items-center">
-          
-          {/* Profile photo */}
-          <div className="flex flex-col items-center">
-            <div className="relative w-48 h-48 rounded-2xl ring-2 ring-slate-700 overflow-hidden shadow-xl">
-              <Image
-                src="/images/polskyfellow.jpg"
-                alt="Danny Hernandez profile photo"
-                width={192}
-                height={192}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="mt-3 text-xs text-slate-400 text-center">
-              Polsky Fellow · University of Chicago
-            </div>
-          </div>
-
-          {/* Hero text */}
-          <div id="main">
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight flex items-center gap-3">
-              Welcome, I&apos;m Danny!
-              <Zap className="w-7 h-7 text-fuchsia-300" aria-hidden />
-              I&apos;m a...
-
-            </h1>
-            <p className="mt-4 text-slate-300/90 leading-relaxed">
-              UChicago artificial intelligence researcher & developer exploring Conditional VAEs for regime
-              transitions in dynamical systems. I&apos;m also a varsity collegiate athlete (long jump, triple jump) at the University of Chicago!
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              <Tag>AI Research Assistant — Geophysical Sciences</Tag>
-              <Tag>Full-Stack Developer — Keysar Lab</Tag>
-              <Tag>Varsity Horizontal Jumper</Tag>
-            </div>
-          </div>
-        </div>
-
-        {/* Animation */}
-        <div className="max-w-5xl mx-auto px-4 mt-6">
-          <ArcCometBackground />
-        </div>
-      </section>
+      <Hero />
 
       <Separator className="bg-slate-800/60" />
 
