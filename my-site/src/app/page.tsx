@@ -183,7 +183,7 @@ const onLeave = () => {
         alt={project.title}
         className="absolute inset-0 w-full h-full object-cover will-change-transform"
         style={{
-          transform: 'translate3d(var(--ox, 0), var(--oy, 0), 0) scale(1.06)',
+          transform: 'scale(1.06)',
           transition: moving ? 'none' : 'transform 120ms ease-out',
         }}
       />
@@ -1135,12 +1135,12 @@ export default function DanielHernandezSite() {
 
       {/* Coursework */}
       <Section
-  id="coursework"
-  title="Coursework"
-  icon={<Brain className="w-5 h-5 text-amber-300" aria-hidden />}
->
-  <CourseworkMarquee items={coursework} />
-</Section>
+      id="coursework"
+      title="Coursework"
+      icon={<Brain className="w-5 h-5 text-amber-300" aria-hidden />}
+      >
+        <CourseworkMarquee items={coursework} />
+      </Section>
 
       {/* Projects */}
       <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
