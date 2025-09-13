@@ -8,25 +8,32 @@ export default function Hero() {
   return (
     <section className="relative max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center lg:items-start gap-12">
       {/* Profile Image with Tilt */}
-      <TiltImage img="C:\Users\danie\OneDrive\Desktop\personal-website\my-site\public\images\polskyfellow.jpg" alt="Danny" />
+      <TiltImage img="/images/polskyfellow.jpg" alt="Danny" />
 
       {/* Text Section */}
       <div className="flex-1 text-center lg:text-left">
-        <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in-up">
-          Welcome, I&apos;m Danny! <span className="text-fuchsia-400"></span>
+        <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          {Array.from("Welcome, I'm Danny!").map((char, i) => (
+            <span
+              key={i}
+              className="inline-block animate-glow"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
         </h1>
 
         <h2 className="text-2xl lg:text-3xl font-semibold text-slate-300 mb-4 animate-slide-in">
           I&apos;m a ...
         </h2>
 
-        <p className="text-gray-400 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in">
+        <p className="text-gray-400 leading-relaxed max-w-3xl mx-auto lg:mx-0 animate-fade-in">
           UChicago artificial intelligence researcher & developer exploring Conditional
           VAEs for regime transitions in dynamical systems. I&apos;m also a varsity collegiate
           athlete (long jump, triple jump) at the University of Chicago!
         </p>
 
-        {/* Role badges with staggered animation */}
         <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
           {[
             "AI Research Assistant — Geophysical Sciences",
@@ -35,7 +42,7 @@ export default function Hero() {
           ].map((role, i) => (
             <span
               key={role}
-              className={`px-3 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-sm opacity-0 animate-fade-in-stagger`}
+              className="px-3 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-sm opacity-0 animate-fade-in-stagger"
               style={{ animationDelay: `${0.3 + i * 0.3}s` }}
             >
               {role}
@@ -58,7 +65,12 @@ export default function Hero() {
           0% { opacity: 0; }
           100% { opacity: 1; }
         }
+        @keyframes glow {
+        0%, 100% { color: #fff; text-shadow: 0 0 8px #f0abfc; }
+        50% { color: #f0abfc; text-shadow: 0 0 16px #f472b6; }
+        }
 
+        .animate-glow { animation: glow 2s ease-in-out infinite; }
         .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
         .animate-slide-in { animation: slide-in 0.9s ease-out forwards; }
         .animate-fade-in { animation: fade-in 1s ease-out forwards; }
