@@ -11,7 +11,7 @@ export default function Hero() {
       <TiltImage img="/images/polskyfellow.jpg" alt="Danny" />
 
       {/* Text Section */}
-      <div className="flex-1 text-center lg:text-left">
+      <div className="flex-[2] text-center lg:text-left max-w-6xl">
         <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
           {Array.from("Welcome, I'm Danny!").map((char, i) => (
             <span
