@@ -216,7 +216,9 @@ const onLeave = () => {
         target="_blank"
         rel="noreferrer"
         aria-label={`${project.title} GitHub repo`}
-        className="text-slate-300 hover:text-white transition-colors"
+        className="text-slate-300 hover:text-white transition-colors pointer-events-auto"
+        onMouseEnter={(e) => e.stopPropagation()}
+        onMouseLeave={(e) => e.stopPropagation()}
           >
         <Github className="w-5 h-5" />
           </a>
@@ -387,7 +389,6 @@ function ProjectsCarousel({
         >
           <div className="text-sm text-gray-400 mb-1">Selected Project</div>
           <h3 className="text-3xl font-bold text-white mb-1">{p.title}</h3>
-          <div className="text-sm text-gray-400 mb-4">Tech</div>
           <p className="text-gray-300 leading-relaxed">{p.desc}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {p.stack.map((s) => (
