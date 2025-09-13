@@ -40,19 +40,6 @@ function Tag({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* === Reduced-motion hook === */
-function usePrefersReducedMotion() {
-  const prefers = useMemo(
-    () =>
-      typeof window !== "undefined" && window.matchMedia
-        ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        : false,
-    []
-  );
-  return prefers;
-}
-
-
 const Section = ({
   id,
   title,
