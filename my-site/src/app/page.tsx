@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import {
   Github,
@@ -14,6 +14,8 @@ import {
   Trophy,
   PersonStanding,
   Zap,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -21,7 +23,11 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Latent3DPlot from "@/components/Latent3DPlot";
 
-// Simple Tag component for pill-like labels
+const FALLBACK_IMG = `data:image/svg+xml;utf8,${encodeURIComponent(
+'<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"><rect width="100%" height="100%" fill="#111"/><text x="50%" y="50%" fill="#aaa" font-family="sans-serif" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not found</text></svg>'
+)}`;
+
+//Simple Tag component for pill-like labels
 function Tag({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-block px-3 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-sm">
@@ -64,6 +70,352 @@ function CourseworkMarquee({ items }: { items: string[] }) {
     </div>
   );
 }
+
+function TiltSpotlightCard({
+  project,
+  className = "",
+  active = true,
+}: {
+  project: { title: string; img: string; desc: string; stack: string[] };
+  className?: string;
+  active?: boolean;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [style, setStyle] = useState<React.CSSProperties>({ transform: "translateZ(0)" });
+  const [imgSrc, setImgSrc] = useState<string>(project?.img || FALLBACK_IMG);
+  const [moving, setMoving] = useState(false);
+  const idleRef = useRef<number | null>(null);
+
+
+  // keep img src in sync with project changes
+  useEffect(() => {
+  setImgSrc(project?.img || FALLBACK_IMG);
+  }, [project]);
+
+
+  // tiny dev test to ensure math doesn't produce NaN
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') return;
+    const testRect = { width: 800, height: 400 } as const;
+    const px = 200, py = 100;
+    const nx = px / testRect.width - 0.5;
+    const ny = py / testRect.height - 0.5;
+    const rx = ny * -16; const ry = nx * 18;
+    console.assert(Number.isFinite(rx) && Number.isFinite(ry), '[TiltSpotlightCard test] rx/ry should be finite');
+}, []);
+
+
+const onMove = (e: React.MouseEvent) => {
+  const el = ref.current; if (!el) return;
+  const r = el.getBoundingClientRect();
+  const px = e.clientX - r.left;
+  const py = e.clientY - r.top;
+  const nx = px / r.width - 0.5; // -0.5 .. 0.5
+  const ny = py / r.height - 0.5; // -0.5 .. 0.5
+
+
+  //tilt angles
+  const rx = (ny) * -16;
+  const ry = (nx) * 18;
+
+
+  // parallax offset for background image (move opposite to cursor)
+  const tx = -nx * 24; // px (image parallax)
+  const ty = -ny * 16; // px
+
+
+  //whole card subtle translation (move with cursor)
+  const ctx = nx * 10; // px
+  const cty = ny * 8; // px
+
+  setMoving(true);
+  if (idleRef.current) window.clearTimeout(idleRef.current);
+  setStyle({
+    transform: `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`,
+    ["--px"]: `${px}px`,
+    ["--py"]: `${py}px`,
+    ["--ox"]: `${tx}px`,
+    ["--oy"]: `${ty}px`,
+    ["--tx"]: `${ctx}px`,
+    ["--ty"]: `${cty}px`,
+    transition: 'none',
+  } as React.CSSProperties);
+  idleRef.current = window.setTimeout(() => setMoving(false), 100);
+};
+const onEnter = (e: React.MouseEvent) => {
+  onMove(e);
+};
+const onLeave = () => {
+  if (idleRef.current) window.clearTimeout(idleRef.current);
+  setMoving(false);
+  setStyle({
+    transform: "perspective(1000px) rotateX(0deg) rotateY(0deg)",
+    ["--px"]: "50%",
+    ["--py"]: "50%",
+    ["--ox"]: "0px",
+    ["--oy"]: "0px",
+    transition: "transform 160ms ease-out",
+  } as React.CSSProperties);
+};
+
+
+  return (
+    <div
+      ref={ref}
+      onMouseEnter={onEnter}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      className={cn(
+      "relative w-full h-96 max-w-2xl will-change-transform transform-gpu",
+      "[transform-style:preserve-3d] group",
+      className
+    )}
+    style={style}
+    role="group"
+    aria-label={`${project.title} preview`}
+  >
+    <div className="relative w-full h-full transform-gpu" style={{ transform: 'translate3d(var(--tx, 0), var(--ty, 0), 0)', transition: moving ? 'none' : 'transform 120ms ease-out' }}>
+      <div className="relative w-full h-full bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700 overflow-hidden">
+      {/* Image (native <img>) with a safe fallback to avoid null/undefined src */}
+      <img
+        src={imgSrc}
+        onError={() => setImgSrc(FALLBACK_IMG)}
+        alt={project.title}
+        className="absolute inset-0 w-full h-full object-cover will-change-transform"
+        style={{
+          transform: 'translate3d(var(--ox, 0), var(--oy, 0), 0) scale(1.06)',
+          transition: moving ? 'none' : 'transform 120ms ease-out',
+        }}
+      />
+      {/* soft edges */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none" />
+      {/* spotlight following cursor */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background:
+          "radial-gradient(600px circle at var(--px, 50%) var(--py, 50%), rgba(255,255,255,0.08), transparent 40%)",
+        }}
+      />
+      {/* material glow */}
+      <div
+        className="absolute inset-0 -z-10 blur-xl rounded-xl opacity-0 group-hover:opacity-90 transition-opacity"
+        style={{
+          background:
+          "radial-gradient(800px circle at var(--px, 50%) var(--py, 50%), rgba(147, 51, 234, 0.15), transparent 40%)",
+        }}
+      />
+      {/* caption */}
+      <div className="absolute bottom-3 left-4 text-white font-semibold drop-shadow">{project.title}</div>
+      </div>
+    </div>
+</div>
+);
+}
+
+function FollowMouseStage({
+  className = "",
+  children,
+  strengthX = 12,
+  strengthY = 10,
+}: {
+  className?: string;
+  children: React.ReactNode;
+  strengthX?: number;
+  strengthY?: number;
+}) {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+  const [style, setStyle] = React.useState<React.CSSProperties>({});
+  const idleRef = React.useRef<number | null>(null);
+
+  const onMove = (e: React.MouseEvent) => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const nx = (e.clientX - (r.left + r.width / 2)) / r.width;   // -0.5..0.5
+    const ny = (e.clientY - (r.top + r.height / 2)) / r.height;  // -0.5..0.5
+    const tx = nx * strengthX;
+    const ty = ny * strengthY;
+    if (idleRef.current) window.clearTimeout(idleRef.current);
+    setStyle({ transform: `translate3d(${tx}px, ${ty}px, 0)`, transition: "none" });
+    idleRef.current = window.setTimeout(() => {
+      setStyle({ transform: "translate3d(0,0,0)", transition: "transform 160ms ease-out" });
+    }, 100);
+  };
+
+  const onLeave = () => {
+    if (idleRef.current) window.clearTimeout(idleRef.current);
+    setStyle({ transform: "translate3d(0,0,0)", transition: "transform 160ms ease-out" });
+  };
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      className={cn(className, "transform-gpu will-change-transform")}
+      style={style}
+    >
+      {children}
+    </div>
+  );
+}
+
+function ProjectsCarousel({
+  projects,
+}: {
+  projects: { title: string; img: string; desc: string; stack: string[] }[];
+}) {
+  const [idx, setIdx] = useState(0);
+  const [dir, setDir] = useState<1 | -1>(1);
+  const n = projects.length;
+  const prev = () => {
+    setDir(-1);
+    setIdx((i) => (i - 1 + n) % n);
+  };
+  const next = () => {
+    setDir(1);
+    setIdx((i) => (i + 1) % n);
+  };
+
+  // Basic runtime validation (acts like lightweight tests in dev)
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") return;
+    console.assert(
+      Array.isArray(projects) && projects.length > 0,
+      "[ProjectsCarousel test] projects should be a non-empty array"
+    );
+    projects.forEach((p, i) => {
+      if (!p || typeof p.img !== "string" || p.img.length === 0) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[ProjectsCarousel] Project[${i}] has invalid img; using fallback.`
+        );
+      }
+      console.assert(
+        typeof p.title === "string" && p.title.length > 0,
+        `[ProjectsCarousel test] Project[${i}] missing title`
+      );
+    });
+  }, [projects]);
+
+  // swipe
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    let startX = 0;
+    let dragging = false;
+    const down = (e: PointerEvent) => {
+      dragging = true;
+      startX = e.clientX;
+    };
+    const up = (e: PointerEvent) => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      if (dx > 50) prev();
+      else if (dx < -50) next();
+      dragging = false;
+    };
+    el.addEventListener("pointerdown", down);
+    window.addEventListener("pointerup", up);
+    return () => {
+      el.removeEventListener("pointerdown", down);
+      window.removeEventListener("pointerup", up);
+    };
+  }, [n]);
+
+  const p = projects[idx];
+  return (
+    <div className="relative max-w-6xl mx-auto" ref={wrapRef}>
+      <style>{`
+        @keyframes cardInRight { 0% { opacity: 0; transform: translateX(24px); filter: blur(6px);} 100% { opacity: 1; transform: translateX(0); filter: blur(0);} }
+        @keyframes cardInLeft { 0% { opacity: 0; transform: translateX(-24px); filter: blur(6px);} 100% { opacity: 1; transform: translateX(0); filter: blur(0);} }
+      `}</style>
+      <div className="flex items-center gap-8 lg:gap-16">
+        <button
+          onClick={prev}
+          aria-label="Previous project"
+          className="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-11 hidden lg:flex p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors shrink-0"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+
+        {/* stage */}
+        <FollowMouseStage className="flex-1 flex justify-center">
+          <div className="relative w-full max-w-4xl h-96">
+            <div
+              key={idx}
+              className={cn(
+                "relative w-full h-full will-change-transform",
+                dir === 1
+                  ? "animate-[cardInRight_420ms_ease-out]"
+                  : "animate-[cardInLeft_420ms_ease-out]"
+              )}
+            >
+              <div className="relative w-full h-full bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700 overflow-hidden">
+                <TiltSpotlightCard project={p} />
+              </div>
+            </div>
+          </div>
+        </FollowMouseStage>
+
+        {/* details */}
+        <div
+          key={`details-${idx}`}
+          className={cn(
+            "flex-1 max-w-xl",
+            dir === 1
+              ? "animate-[cardInRight_420ms_ease-out]"
+              : "animate-[cardInLeft_420ms_ease-out]"
+          )}
+        >
+          <div className="text-sm text-gray-400 mb-1">Selected Project</div>
+          <h3 className="text-3xl font-bold text-white mb-1">{p.title}</h3>
+          <div className="text-sm text-gray-400 mb-4">Tech</div>
+          <p className="text-gray-300 leading-relaxed">{p.desc}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {p.stack.map((s) => (
+              <span
+                key={s}
+                className="px-2 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-xs"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <button
+          onClick={next}
+          aria-label="Next project"
+          className="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-11 hidden lg:flex p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors shrink-0"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+      </div>
+
+      {/* dots + counter */}
+      <div className="flex justify-center gap-4 mt-6">
+        <div className="flex gap-2 items-center">
+          {projects.map((_, i) => (
+            <span
+              key={i}
+              className={cn(
+                "h-2 w-2 rounded-full",
+                i === idx ? "bg-white" : "bg-white/30"
+              )}
+            ></span>
+          ))}
+        </div>
+        <div className="text-center mt-1 text-gray-400 text-sm">
+          {idx + 1} of {n}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 /* === ML-inspired aurora background (perf + reduced motion) === */
 function NeuralFieldBG() {
@@ -785,42 +1137,7 @@ export default function DanielHernandezSite() {
 
       {/* Projects */}
       <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projects.map((p) => (
-            <Card key={p.title} className="group bg-slate-900/60 border-slate-800 overflow-hidden">
-              {/* Cover image */}
-              <div className="relative h-36 overflow-hidden">
-                <Image
-                  src={p.img}                 // e.g. "/images/flightphase.png"
-                  alt={p.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                  // optional blur placeholder (uncomment if you add p.blurDataURL)
-                  // placeholder={p.blurDataURL ? "blur" : "empty"}
-                  // blurDataURL={p.blurDataURL}
-                  priority={false}
-                />
-                {/* top/bottom fade for contrast */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
-              </div>
-
-              <CardHeader className="pb-2">
-                <CardTitle className="text-slate-100 text-base">{p.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-slate-300">
-                <p>{p.desc}</p>
-                <div className="mt-3 flex flex-wrap gap-1">
-                  {p.stack.map((s) => (
-                    <Badge key={s} className="bg-slate-900/70 border-slate-700">
-                      {s}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <ProjectsCarousel projects={projects} />
       </Section>
 
       {/* Presentations */}
