@@ -57,12 +57,12 @@ export default function ProjectsCarousel({
         @keyframes cardInLeft { 0% { opacity: 0; transform: translateX(-24px); filter: blur(6px);} 100% { opacity: 1; transform: translateX(0); filter: blur(0);} }
       `}</style>
 
-      <div className="flex items-center gap-8 lg:gap-16">
+      <div className="flex items-start gap-8 lg:gap-16">
         {/* prev */}
         <button
           onClick={prev}
           aria-label="Previous project"
-          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors"
+          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors self-start mt-10"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
@@ -98,7 +98,7 @@ export default function ProjectsCarousel({
         <button
           onClick={next}
           aria-label="Next project"
-          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors"
+          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors self-start mt-10"
         >
           <ChevronRight className="h-6 w-6" />
         </button>
@@ -153,10 +153,13 @@ function TiltFollowCard({
       const py = e.clientY - r.top;
       const nx = Math.max(-0.5, Math.min(0.5, px / r.width - 0.5));
       const ny = Math.max(-0.5, Math.min(0.5, py / r.height - 0.5));
-      const tiltX = Math.round(ny * -10 * 100) / 100;
-      const tiltY = Math.round(nx * 10 * 100) / 100;
-      const tx = Math.round(-nx * 20 * 100) / 100;
-      const ty = Math.round(-ny * 12 * 100) / 100;
+
+      // stronger tilt + parallax
+      const tiltX = Math.round(ny * -18 * 100) / 100; // -18..18deg
+      const tiltY = Math.round(nx * 18 * 100) / 100;
+      const tx = Math.round(-nx * 32 * 100) / 100;
+      const ty = Math.round(-ny * 20 * 100) / 100;
+
       setMoving(true);
       if (idleRef.current) window.clearTimeout(idleRef.current);
       setStyle({
