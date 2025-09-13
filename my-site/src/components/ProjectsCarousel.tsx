@@ -62,9 +62,9 @@ export default function ProjectsCarousel({
         <button
           onClick={prev}
           aria-label="Previous project"
-          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors self-start mt-10"
+          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-6 w-6 relative -top-0.5" />
         </button>
 
         {/* stage + tilt */}
@@ -98,9 +98,9 @@ export default function ProjectsCarousel({
         <button
           onClick={next}
           aria-label="Next project"
-          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors self-start mt-10"
+          className="hidden lg:flex h-11 p-4 rounded-full border border-gray-700 hover:bg-white hover:text-black transition-colors"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-6 w-6 relative -top-0.5" />
         </button>
       </div>
 
