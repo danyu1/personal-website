@@ -28,7 +28,7 @@ export default function Hero() {
           I&apos;m a ...
         </h2>
 
-        <p className="text-gray-400 leading-relaxed max-w-3xl mx-auto lg:mx-0 animate-fade-in">
+        <p className="text-gray-400 leading-relaxed max-w-5xl mx-auto lg:mx-0 animate-fade-in">
           UChicago artificial intelligence researcher & developer exploring Conditional
           VAEs for regime transitions in dynamical systems. I&apos;m also a varsity collegiate
           athlete (long jump, triple jump) at the University of Chicago!
