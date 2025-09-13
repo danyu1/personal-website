@@ -66,8 +66,8 @@ export default function Hero() {
           100% { opacity: 1; }
         }
         @keyframes glow {
-        0%, 100% { color: #740d66ff; text-shadow: 0 0 8px #e06fb5ff; }
-        50% { color: #ca652aff; text-shadow: 0 0 16px #ee7e34ff; }
+        0%, 100% { color: #ffffffff; text-shadow: 0 0 8px #d962eeff; }
+        50% { color: #ffc595ff; text-shadow: 0 0 16px #f1b04eff; }
         }
 
         .animate-glow { animation: glow 2s ease-in-out infinite; }
