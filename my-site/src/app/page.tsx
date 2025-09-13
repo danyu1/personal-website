@@ -1133,7 +1133,14 @@ export default function DanielHernandezSite() {
         </Card>
       </Section>
 
-      <CourseworkMarquee items={coursework} />
+      {/* Coursework */}
+      <Section
+  id="coursework"
+  title="Coursework"
+  icon={<Brain className="w-5 h-5 text-amber-300" aria-hidden />}
+>
+  <CourseworkMarquee items={coursework} />
+</Section>
 
       {/* Projects */}
       <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
