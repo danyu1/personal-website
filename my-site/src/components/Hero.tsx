@@ -8,16 +8,16 @@ export default function Hero() {
   return (
     <section className="relative max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center lg:items-start gap-12">
       {/* Profile Image with Tilt */}
-      <TiltImage img="/polskyfellow.jpg" alt="Danny" />
+      <TiltImage img="C:\Users\danie\OneDrive\Desktop\personal-website\my-site\public\images\polskyfellow.jpg" alt="Danny" />
 
       {/* Text Section */}
       <div className="flex-1 text-center lg:text-left">
         <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in-up">
-          Welcome, I&apos;m Danny! <span className="text-fuchsia-400">⚡</span>
+          Welcome, I&apos;m Danny! <span className="text-fuchsia-400"></span>
         </h1>
 
         <h2 className="text-2xl lg:text-3xl font-semibold text-slate-300 mb-4 animate-slide-in">
-          AI Researcher · Developer · Athlete
+          I&apos;m a ...
         </h2>
 
         <p className="text-gray-400 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in">
