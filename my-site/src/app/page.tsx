@@ -110,8 +110,8 @@ const onMove = (e: React.MouseEvent) => {
   const r = el.getBoundingClientRect();
   const px = e.clientX - r.left;
   const py = e.clientY - r.top;
-const nx = Math.round((px / r.width - 0.5) * 100) / 100;
-const ny = Math.round((py / r.height - 0.5) * 100) / 100;
+  const nx = Math.max(-0.5, Math.min(0.5, px / r.width - 0.5));
+  const ny = Math.max(-0.5, Math.min(0.5, py / r.height - 0.5));
 
 
   //tilt angles
