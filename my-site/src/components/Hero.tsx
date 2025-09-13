@@ -66,7 +66,7 @@ export default function Hero() {
           100% { opacity: 1; }
         }
         @keyframes glow {
-        0%, 100% { color: #ffffffff; text-shadow: 0 0 8px #9e38e2ff; }
+        0%, 100% { color: rgba(191, 138, 235, 1); text-shadow: 0 0 8px #8719d1ff; }
         50% { color: #ffc595ff; text-shadow: 0 0 16px #f1b04eff; }
         }
 
