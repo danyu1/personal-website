@@ -22,7 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Latent3DPlot from "@/components/Latent3DPlot";
-import CourseworkMarquee from "@/components/CourseWorkMarquee";
+import CourseWorkMarquee from "@/components/CourseWorkMarquee";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
 import ArcCometBackground from "@/components/ArcCometBackground";
 import NeuralFieldBG from "@/components/NeuralFieldBG";
@@ -445,7 +445,7 @@ export default function DanielHernandezSite() {
       title="Coursework"
       icon={<Brain className="w-5 h-5 text-amber-300" aria-hidden />}
       >
-        <CourseworkMarquee items={coursework} />
+        <CourseWorkMarquee items={coursework} />
       </Section>
 
       {/* Projects */}
