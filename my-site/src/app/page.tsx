@@ -207,7 +207,7 @@ const onLeave = () => {
       />
       {/* caption */}
       <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-        <div className="text-white font-semibold drop-shadow translate-y-[-2px]">
+        <div className="text-white font-semibold drop-shadow">
           {project.title}
         </div>
         {project.repo && (
