@@ -125,7 +125,13 @@ export default function ProjectsCarousel({
 }
 
 /* --- internal tilt + spotlight card --- */
-function TiltFollowCard({ project, dir }: { project: any; dir: 1 | -1 }) {
+function TiltFollowCard({
+  project,
+  dir,
+}: {
+  project: { title: string; img: string; desc: string; stack: string[]; repo: string };
+  dir: 1 | -1;
+}) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [style, setStyle] = useState<React.CSSProperties>({ transform: "translateZ(0)" });
   const [imgSrc, setImgSrc] = useState(project?.img || FALLBACK_IMG);
