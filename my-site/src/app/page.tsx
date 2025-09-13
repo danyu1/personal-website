@@ -42,6 +42,29 @@ function usePrefersReducedMotion() {
   return prefers;
 }
 
+function CourseworkMarquee({ items }: { items: string[] }) {
+  return (
+  <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-4">
+      {/* soft blend to sections above/below */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-transparent to-black/20" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-transparent to-black/20" />
+      <div className="overflow-hidden">
+        <div className="flex gap-3 animate-[scrollX_22s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none px-4">
+          {items.concat(items, items).map((c, idx) => (
+            <span
+              key={`${c}-${idx}`}
+              className="shrink-0 px-3 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-sm whitespace-nowrap"
+            >
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+      <style>{`@keyframes scrollX { 0% { transform: translateX(0); } 100% { transform: translateX(-33.333%); } }`}</style>
+    </div>
+  );
+}
+
 /* === ML-inspired aurora background (perf + reduced motion) === */
 function NeuralFieldBG() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -405,13 +428,16 @@ const Section = ({
 export default function DanielHernandezSite() {
   /* ---------- Data ---------- */
   const coursework = [
-    "Systems Programming I & II",
+    "Systems Programming I",
+    "Systems Programming II",
     "Mathematical Foundations of Machine Learning",
     "Introduction to Data Engineering",
     "Linear Models and Experimental Design",
     "Multivariate Calculus",
     "Linear Algebra",
     "Discrete Mathematics",
+    "Introduction to Computer Security",
+    "Introduction to Data Science I",
   ];
 
   const skillsPro = [
@@ -755,22 +781,7 @@ export default function DanielHernandezSite() {
         </Card>
       </Section>
 
-      {/* Coursework (pause on hover; respects reduced motion) */}
-      <Section id="coursework" title="Coursework" icon={<Brain className="w-5 h-5 text-fuchsia-300" aria-hidden />}>
-        <div className="relative overflow-hidden group">
-          <div className="flex gap-2 animate-[scrollX_22s_linear_infinite] group-hover:[animation-play-state:paused] motion-reduce:animate-none will-change-transform">
-            {coursework.concat(coursework).map((c, idx) => (
-              <span
-                key={idx}
-                className="shrink-0 px-3 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-sm"
-              >
-                {c}
-              </span>
-            ))}
-          </div>
-          <style>{`@keyframes scrollX { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }`}</style>
-        </div>
-      </Section>
+      <CourseworkMarquee items={coursework} />
 
       {/* Projects */}
       <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
