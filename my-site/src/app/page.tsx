@@ -110,8 +110,8 @@ const onMove = (e: React.MouseEvent) => {
   const r = el.getBoundingClientRect();
   const px = e.clientX - r.left;
   const py = e.clientY - r.top;
-  const nx = px / r.width - 0.5; // -0.5 .. 0.5
-  const ny = py / r.height - 0.5; // -0.5 .. 0.5
+const nx = Math.round((px / r.width - 0.5) * 100) / 100;
+const ny = Math.round((py / r.height - 0.5) * 100) / 100;
 
 
   //tilt angles
@@ -210,19 +210,19 @@ const onLeave = () => {
         <div className="text-white font-semibold drop-shadow">
           {project.title}
         </div>
-        {project.repo && (
+       {project.repo && (
+        <div className="pointer-events-none">
           <a
-        href={project.repo}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`${project.title} GitHub repo`}
-        className="text-slate-300 hover:text-white transition-colors pointer-events-auto"
-        onMouseEnter={(e) => e.stopPropagation()}
-        onMouseLeave={(e) => e.stopPropagation()}
+            href={project.repo}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${project.title} GitHub repo`}
+            className="pointer-events-auto text-slate-300 hover:text-white transition-colors"
           >
-        <Github className="w-5 h-5" />
+            <Github className="w-5 h-5" />
           </a>
-        )}
+        </div>
+      )} 
       </div>
       </div>
     </div>
@@ -249,8 +249,8 @@ function FollowMouseStage({
     const el = ref.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
-    const nx = (e.clientX - (r.left + r.width / 2)) / r.width;   // -0.5..0.5
-    const ny = (e.clientY - (r.top + r.height / 2)) / r.height;  // -0.5..0.5
+    const nx = (e.clientX - (r.left + r.width / 2)) / r.width;   
+    const ny = (e.clientY - (r.top + r.height / 2)) / r.height;  
     const tx = nx * strengthX;
     const ty = ny * strengthY;
     if (idleRef.current) window.clearTimeout(idleRef.current);
