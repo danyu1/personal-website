@@ -105,43 +105,53 @@ function TiltSpotlightCard({
 }, []);
 
 
+const frame = useRef<number | null>(null);
+
 const onMove = (e: React.MouseEvent) => {
-  const el = ref.current; if (!el) return;
-  const r = el.getBoundingClientRect();
-  const px = e.clientX - r.left;
-  const py = e.clientY - r.top;
-  const nx = Math.max(-0.5, Math.min(0.5, px / r.width - 0.5));
-  const ny = Math.max(-0.5, Math.min(0.5, py / r.height - 0.5));
+  const el = ref.current;
+  if (!el) return;
 
+  if (frame.current) cancelAnimationFrame(frame.current);
 
-  //tilt angles
-  const rx = (ny) * -16;
-  const ry = (nx) * 18;
+  frame.current = requestAnimationFrame(() => {
+    const r = el.getBoundingClientRect();
+    const px = e.clientX - r.left;
+    const py = e.clientY - r.top;
 
+    // normalize cursor position [-0.5, 0.5]
+    const nx = Math.max(-0.5, Math.min(0.5, px / r.width - 0.5));
+    const ny = Math.max(-0.5, Math.min(0.5, py / r.height - 0.5));
 
-  // parallax offset for background image (move opposite to cursor)
-  const tx = -nx * 24; // px (image parallax)
-  const ty = -ny * 16; // px
+    // reduce sensitivity (smaller tilt)
+    const tiltX = Math.round(ny * -10 * 100) / 100; // -10..10deg
+    const tiltY = Math.round(nx * 10 * 100) / 100;  // -10..10deg
 
+    // subtle parallax translation
+    const tx = Math.round(-nx * 20 * 100) / 100;
+    const ty = Math.round(-ny * 12 * 100) / 100;
 
-  //whole card subtle translation (move with cursor)
-  const ctx = nx * 10; // px
-  const cty = ny * 8; // px
+    setMoving(true);
+    if (idleRef.current) window.clearTimeout(idleRef.current);
 
-  setMoving(true);
-  if (idleRef.current) window.clearTimeout(idleRef.current);
-  setStyle({
-    transform: `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`,
-    ["--px"]: `${px}px`,
-    ["--py"]: `${py}px`,
-    ["--ox"]: `${tx}px`,
-    ["--oy"]: `${ty}px`,
-    ["--tx"]: `${ctx}px`,
-    ["--ty"]: `${cty}px`,
-    transition: 'none',
-  } as React.CSSProperties);
-  idleRef.current = window.setTimeout(() => setMoving(false), 100);
+    setStyle({
+      transform: `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`,
+      ["--px"]: `${px}px`,
+      ["--py"]: `${py}px`,
+      ["--ox"]: `${tx}px`,
+      ["--oy"]: `${ty}px`,
+      transition: "none",
+    } as React.CSSProperties);
+
+    idleRef.current = window.setTimeout(() => setMoving(false), 100);
+  });
 };
+
+useEffect(() => {
+  return () => {
+    if (frame.current) cancelAnimationFrame(frame.current);
+  };
+}, []);
+
 const onEnter = (e: React.MouseEvent) => {
   onMove(e);
 };
@@ -154,9 +164,10 @@ const onLeave = () => {
     ["--py"]: "50%",
     ["--ox"]: "0px",
     ["--oy"]: "0px",
-    transition: "transform 160ms ease-out",
+    transition: "transform 200ms ease-out",
   } as React.CSSProperties);
 };
+
 
 
   return (
