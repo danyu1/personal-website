@@ -76,7 +76,7 @@ function TiltSpotlightCard({
   className = "",
   active = true,
 }: {
-  project: { title: string; img: string; desc: string; stack: string[] };
+  project: { title: string; img: string; desc: string; stack: string[]; repo: string};
   className?: string;
   active?: boolean;
 }) {
@@ -206,7 +206,22 @@ const onLeave = () => {
         }}
       />
       {/* caption */}
-      <div className="absolute bottom-3 left-4 text-white font-semibold drop-shadow">{project.title}</div>
+      <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+        <div className="text-white font-semibold drop-shadow translate-y-[-2px]">
+          {project.title}
+        </div>
+        {project.repo && (
+          <a
+        href={project.repo}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${project.title} GitHub repo`}
+        className="text-slate-300 hover:text-white transition-colors"
+          >
+        <Github className="w-5 h-5" />
+          </a>
+        )}
+      </div>
       </div>
     </div>
 </div>
@@ -264,7 +279,7 @@ function FollowMouseStage({
 function ProjectsCarousel({
   projects,
 }: {
-  projects: { title: string; img: string; desc: string; stack: string[] }[];
+  projects: { title: string; img: string; desc: string; stack: string[]; repo: string }[];
 }) {
   const [idx, setIdx] = useState(0);
   const [dir, setDir] = useState<1 | -1>(1);
@@ -815,6 +830,7 @@ export default function DanielHernandezSite() {
       img: "/images/flightphase.png",
       desc:
         "End-to-end pipeline for NCAA T&F results → hierarchical LSTM for next-season peak prediction; leak-free eval and detailed diagnostics.",
+      repo: "https://github.com/danyu1/FlightPhase"
     },
     {
       title: "GIT (from scratch)",
@@ -822,6 +838,7 @@ export default function DanielHernandezSite() {
       img: "/images/git.png",
       desc:
         "Simplified Git with staging/committing/branching/merging, object-store persistence, and conflict resolution implemented from first principles.",
+      repo:"https://github.com/danyu1/GitFinalAssignment"
     },
     {
       title: "Custom Memory Allocator (C)",
@@ -829,6 +846,7 @@ export default function DanielHernandezSite() {
       img: "/images/cma.png",
       desc:
         "Dynamic allocator using first-fit strategy with splitting/coalescing, alignment guarantees, and metadata tracking; built atop mmap for granular control.",
+      repo:"https://github.com/danyu1/Simple-Malloc"
     },
     {
       title: "Minimal Unix Shell (C)",
@@ -836,6 +854,7 @@ export default function DanielHernandezSite() {
       img: "/images/minimal-shell.jpg",
       desc:
         "Unix-like shell supporting interactive/batch modes, built-ins (cd, pwd, exit), external commands via execvp, stdout redirection (>, >+), semicolon parser, and robust error handling.",
+      repo:"https://github.com/danyu1/My-Shell"
     },
   ];
 
