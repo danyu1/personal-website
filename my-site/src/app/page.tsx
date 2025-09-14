@@ -189,9 +189,6 @@ export default function DanielHernandezSite() {
       <header className="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 bg-slate-900/40 border-b border-slate-800">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-fuchsia-500 to-amber-400 ring-2 ring-slate-700 grid place-items-center">
-              <PersonStanding className="w-7 h-7" aria-hidden />
-            </div>
             <div>
               <div className="font-semibold leading-tight">Daniel A. Hernandez</div>
               <div className="text-xs text-slate-400">
