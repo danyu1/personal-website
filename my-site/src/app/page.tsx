@@ -403,7 +403,7 @@ export default function DanielHernandezSite() {
         <Card className="bg-slate-900/60 border-slate-800">
           <CardContent className="p-4 text-sm text-slate-300">
             Hernandez D, Boscu C, Alvarez‑Ventura F, Abbot D.S, Finkel J, Chattopadhay A, Hassanzadeh P.
-            <em> Interpretable Conditional Variational Autoencoder for Stochastic System Modeling</em>.
+            <em> Interpretable Conditional Variational Autoencoder for Stochastic System Modeling. AGU James</em>.
           </CardContent>
         </Card>
       </Section>
