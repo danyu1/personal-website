@@ -365,6 +365,33 @@ export default function DanielHernandezSite() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="bg-slate-900/60 border-slate-800 mt-6">
+          <CardHeader>
+            <CardTitle className="text-white flex items-center justify-between">
+              <span>
+                AI Computer Vision Researcher — XLab Nuclear Risk and Security Working Group (Madeline Berzak, Rhea Kanuparthi)
+              </span>
+              <span className="text-xs text-slate-400">Present – December 2025</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm text-slate-300 space-y-1">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>
+                Will develop autmoated workflow using Pythonand geospatial analysis tools (Google Earth Engine, GeoPandas, GDAL) to identify and geolocated AI data centers globally through satellite imagery analysis.
+              </li>
+              <li>
+                Will leverage machine learning frameworks (TensorFlow, PyTorch) to build classification models that identify data center characteristics from remote sensing imagery.
+              </li>
+              <li>
+                Will produce comprehensive technical report documenting  proof-of-concept methodology, validation results, and recommendations for worflow automation.
+              </li>
+              <li>
+                OSINT techniques and comuter vision alogrithms to analyze satellite data from multipel sources (Sentinel, Landsay, Plante Labs) for daya center detection and capacity estimation.
+              </li>
+            </ul>
+          </CardContent>
+        </Card> 
       </Section>
 
       {/* Publications */}
