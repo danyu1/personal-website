@@ -312,16 +312,25 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Experience */}
-      <Section id="experience" title="Experience" icon={<Waves className="w-5 h-5 text-fuchsia-300" aria-hidden />}>
-        <div className="grid gap-4">
+<Section id="experience" title="Experience" icon={<Waves className="w-5 h-5 text-fuchsia-300" aria-hidden />}>
+        <div className="grid gap-4 max-w-none">
           <Card className="bg-slate-900/60 border-slate-800">
             <CardHeader>
-              <CardTitle className="text-white flex items-center justify-between">
-                <span>
-                  AI Research Assistant — University of Chicago, Geophysical Sciences (Prof. Dorian Abbot)
-                </span>
-                <span className="text-xs text-slate-400">Sep 2024 – Present</span>
-              </CardTitle>
+              <div className="flex items-start gap-4">
+                <img 
+                  src="/geosci.jpg" 
+                  alt="UChicago Geophysical Sciences" 
+                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                />
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                    <span className="flex-1 min-w-[300px]">
+                      AI Research Assistant — University of Chicago, Geophysical Sciences (Prof. Dorian Abbot)
+                    </span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Sep 2024 – Present</span>
+                  </CardTitle>
+                </div>
+              </div>
             </CardHeader>
             <CardContent className="text-sm text-slate-300 space-y-2">
               <ul className="list-disc pl-5 space-y-1">
@@ -347,12 +356,16 @@ export default function DanielHernandezSite() {
 
           <Card className="bg-slate-900/60 border-slate-800">
             <CardHeader>
-              <CardTitle className="text-white flex items-center justify-between">
-                <span>
-                  Full‑Stack Developer — UChicago Psychology (Multilingualism & Decision Making Lab)
-                </span>
-                <span className="text-xs text-slate-400">Aug 2025 – Present</span>
-              </CardTitle>
+              <div className="flex items-start gap-4">
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                    <span className="flex-1 min-w-[300px]">
+                      Full‑Stack Developer — UChicago Psychology (Multilingualism & Decision Making Lab)
+                    </span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Aug 2025 – Present</span>
+                  </CardTitle>
+                </div>
+              </div>
             </CardHeader>
             <CardContent className="text-sm text-slate-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
@@ -364,34 +377,43 @@ export default function DanielHernandezSite() {
               </ul>
             </CardContent>
           </Card>
-        </div>
 
-        <Card className="bg-slate-900/60 border-slate-800 mt-6">
-          <CardHeader>
-            <CardTitle className="text-white flex items-center justify-between">
-              <span>
-                AI Computer Vision Researcher — XLab Nuclear Risk and Security Working Group (Madeline Berzak, Rhea Kanuparthi)
-              </span>
-              <span className="text-xs text-slate-400">Present – December 2025</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-sm text-slate-300 space-y-1">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                Will develop autmoated workflow using Pythonand geospatial analysis tools (Google Earth Engine, GeoPandas, GDAL) to identify and geolocated AI data centers globally through satellite imagery analysis.
-              </li>
-              <li>
-                Will leverage machine learning frameworks (TensorFlow, PyTorch) to build classification models that identify data center characteristics from remote sensing imagery.
-              </li>
-              <li>
-                Will produce comprehensive technical report documenting  proof-of-concept methodology, validation results, and recommendations for worflow automation.
-              </li>
-              <li>
-                OSINT techniques and comuter vision alogrithms to analyze satellite data from multipel sources (Sentinel, Landsay, Plante Labs) for daya center detection and capacity estimation.
-              </li>
-            </ul>
-          </CardContent>
-        </Card> 
+          <Card className="bg-slate-900/60 border-slate-800">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <img 
+                  src="/xlab.jpg" 
+                  alt="XLab" 
+                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                />
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                    <span className="flex-1 min-w-[300px]">
+                      AI Computer Vision Researcher — XLab Nuclear Risk and Security Working Group (Madeline Berzak, Rhea Kanuparthi)
+                    </span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Present – December 2025</span>
+                  </CardTitle>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-300 space-y-1">
+              <ul className="list-disc pl-5 space-y-1">
+                <li>
+                  Will develop automated workflow using Python and geospatial analysis tools (Google Earth Engine, GeoPandas, GDAL) to identify and geolocate AI data centers globally through satellite imagery analysis.
+                </li>
+                <li>
+                  Will leverage machine learning frameworks (TensorFlow, PyTorch) to build classification models that identify data center characteristics from remote sensing imagery.
+                </li>
+                <li>
+                  Will produce comprehensive technical report documenting proof-of-concept methodology, validation results, and recommendations for workflow automation.
+                </li>
+                <li>
+                  OSINT techniques and computer vision algorithms to analyze satellite data from multiple sources (Sentinel, Landsat, Planet Labs) for data center detection and capacity estimation.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
       </Section>
 
       {/* Publications */}
@@ -403,7 +425,7 @@ export default function DanielHernandezSite() {
         <Card className="bg-slate-900/60 border-slate-800">
           <CardContent className="p-4 text-sm text-slate-300">
             Hernandez D, Boscu C, Alvarez‑Ventura F, Abbot D.S, Finkel J, Chattopadhay A, Hassanzadeh P.
-            <em> Interpretable Conditional Variational Autoencoder for Stochastic System Modeling. AGU James</em>.
+            <em> Interpretable Conditional Variational Autoencoder for Stochastic System Modeling. AGU James.</em>.
           </CardContent>
         </Card>
       </Section>
