@@ -382,7 +382,7 @@ export default function DanielHernandezSite() {
             <CardHeader>
               <div className="flex items-start gap-4">
                 <img 
-                  src="/images/xlab.jpg" 
+                  src="/images/xlab.png" 
                   alt="XLab" 
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
                 />
