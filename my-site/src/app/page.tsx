@@ -318,7 +318,7 @@ export default function DanielHernandezSite() {
             <CardHeader>
               <div className="flex items-start gap-4">
                 <img 
-                  src="/geosci.jpg" 
+                  src="/images/geosci.jpg" 
                   alt="UChicago Geophysical Sciences" 
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
                 />
@@ -382,7 +382,7 @@ export default function DanielHernandezSite() {
             <CardHeader>
               <div className="flex items-start gap-4">
                 <img 
-                  src="/xlab.jpg" 
+                  src="/images/xlab.jpg" 
                   alt="XLab" 
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
                 />
