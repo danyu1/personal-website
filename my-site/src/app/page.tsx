@@ -354,29 +354,7 @@ export default function DanielHernandezSite() {
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/60 border-slate-800">
-            <CardHeader>
-              <div className="flex items-start gap-4">
-                <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
-                    <span className="flex-1 min-w-[300px]">
-                      Full‑Stack Developer — UChicago Psychology (Multilingualism & Decision Making Lab)
-                    </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Aug 2025 – Present</span>
-                  </CardTitle>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="text-sm text-slate-300 space-y-1">
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Modernized & deployed the lab website to improve accessibility and participation.</li>
-                <li>
-                  Built automated communication tools for outreach & study coordination; reduced manual workload.
-                </li>
-                <li>Translated research needs into robust, scalable technical solutions.</li>
-              </ul>
-            </CardContent>
-          </Card>
+          
 
           <Card className="bg-slate-900/60 border-slate-800">
             <CardHeader>
