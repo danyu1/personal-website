@@ -413,7 +413,7 @@ export default function DanielHernandezSite() {
             <CardContent className="text-sm text-slate-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  Incoming Software Engineering Intern at Liberty Mutual Insurance a Fortune 100 company for Summer 2026 as part of their Application Development and Rate Optimization team.
+                  Incoming Software Engineering Intern at Liberty Mutual Insurance (Fortune 100) for Summer 2026, joining the Application Development and Rate Optimization team.
                 </li>
               </ul>
             </CardContent>
