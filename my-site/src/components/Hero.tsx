@@ -7,21 +7,13 @@ const FALLBACK_IMG = "/fallback.png";
 export default function Hero() {
   return (
     <section className="relative max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center lg:items-start gap-12">
-      {/* Profile Image with Tilt */}
+      /* Profile Image with Tilt */
       <TiltImage img="/images/polskyfellow.jpg" alt="Danny" />
 
       {/* Text Section */}
       <div className="flex-[2] text-center lg:text-left max-w-6xl">
         <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-          {Array.from("Welcome, I'm Danny!").map((char, i) => (
-            <span
-              key={i}
-              className="inline-block animate-glow"
-              style={{ animationDelay: `${i * 0.5}s` }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </span>
-          ))}
+          Welcome, I&apos;m Danny!
         </h1>
 
         <h2 className="text-2xl lg:text-3xl font-semibold text-slate-300 mb-4 animate-slide-in">
