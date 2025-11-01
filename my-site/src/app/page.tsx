@@ -403,7 +403,7 @@ export default function DanielHernandezSite() {
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
                     <span className="flex-1 min-w-[300px]">
-                      Software Engineering Intern -- Liberty Mutual Insurance
+                      Software Engineering Intern — Liberty Mutual Insurance
                     </span>
                     <span className="text-xs text-slate-400 whitespace-nowrap">June – August 2026</span>
                   </CardTitle>
