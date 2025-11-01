@@ -275,7 +275,7 @@ export default function DanielHernandezSite() {
               </div>
             </CardHeader>
             <CardContent className="text-sm text-slate-300">
-              Coursework focus: Coursework focus: AP Calculus BC (5), AP Statistics (5), AP Computer Science A (5), AP Spanish Language and Culture (5), Honors Design and Data Structures, Honors Topics in Computer Science
+              Coursework focus: AP Calculus BC (5), AP Statistics (5), AP Computer Science A (5), AP Spanish Language and Culture (5), Honors Design and Data Structures, Honors Topics in Computer Science
             </CardContent>
           </Card> 
         </div>
