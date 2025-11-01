@@ -391,6 +391,34 @@ export default function DanielHernandezSite() {
               </ul>
             </CardContent>
           </Card>
+
+          <Card className="bg-slate-900/60 border-slate-800">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <img 
+                  src="/images/LMI.png" 
+                  alt="LMI Limu Emu" 
+                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                />
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                    <span className="flex-1 min-w-[300px]">
+                      Software Engineering Intern -- Liberty Mutual Insurance
+                    </span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">June – August 2026</span>
+                  </CardTitle>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-300 space-y-1">
+              <ul className="list-disc pl-5 space-y-1">
+                <li>
+                  Incoming Software Engineering Intern at Liberty Mutual Insurance a Fortune 100 company for Summer 2026 as part of their Application Development and Rate Optimization team.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
         </div>
       </Section>
 

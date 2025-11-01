@@ -21,7 +21,7 @@ export default function Hero() {
         </h2>
 
         <p className="text-gray-400 leading-relaxed max-w-5xl mx-auto lg:mx-0 animate-fade-in">
-          UChicago artificial intelligence and computer vision researcher. Incoming Software Engineering Intern at [Liberty Mutual, State Farm (offers)] 
+          UChicago artificial intelligence and computer vision researcher. Incoming Software Engineering Intern at [Liberty Mutual Insurance, State Farm (offers)] 
           as a part of
           their application development and rate optimization team.
           I&apos;m also a varsity collegiate athlete (long jump, triple jump) at the University of Chicago.
@@ -32,7 +32,7 @@ export default function Hero() {
             "AI Research Assistant — Geophysical Sciences",
             "Software Engineering Intern — Liberty Mutual",
             "Computer Vision Researcher — xLab Nuclear and AI Risk Working Group",
-            "Varsity Horizontal Jumper",
+            "Varsity Horizontal Jumper", 
           ].map((role, i) => (
             <span
               key={role}
