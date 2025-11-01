@@ -17,7 +17,7 @@ export default function Hero() {
             <span
               key={i}
               className="inline-block animate-glow"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              style={{ animationDelay: `${i * 0.5}s` }}
             >
               {char === " " ? "\u00A0" : char}
             </span>
@@ -29,9 +29,9 @@ export default function Hero() {
         </h2>
 
         <p className="text-gray-400 leading-relaxed max-w-5xl mx-auto lg:mx-0 animate-fade-in">
-          UChicago artificial intelligence researcher & developer exploring Conditional
-          VAEs for regime transitions in dynamical systems. I&apos;m also a varsity collegiate
-          athlete (long jump, triple jump) at the University of Chicago!
+          UChicago artificial intelligence and computer vision researcher. Incoming Software Engineering Intern at Liberty Mutual as a part of
+          their application development and rate optimization team.
+          I&apos;m also a varsity collegiate athlete (long jump, triple jump) at the University of Chicago.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
