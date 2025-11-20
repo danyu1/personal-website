@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center lg:items-start gap-12">
       {/* Profile Image with Tilt */}
-      <TiltImage img="/images/polskyfellow.jpg" alt="Danny" />
+      <TiltImage img="/images/image.png" alt="Danny" />
 
       {/* Text Section */}
       <div className="flex-[2] text-center lg:text-left max-w-6xl">
