@@ -83,30 +83,40 @@ const awards: AwardGroup[] = [
     group: "Fellowships & Scholars",
     items: [
       {
-        title: "Polsky Research Fellow, University of Chicago (Summer 2025)",
+        title: "Polsky Undergraduate Research Fellow, University of Chicago (Summer 2025)",
         description:
-          "$5,000 Research stipend, Full-time, paid summer fellowship supporting faculty-mentored research on energy and climate; contributed quantitative modeling and analysis for energy-transition–focused work.",
+          "Full-time, paid summer fellowship supporting faculty-mentored research on innovation, venture creation, and applied problem-solving; contributed quantitative modeling for energy/climate-focused work.",
         imageSrc: "/images/polsky-logo.png", 
       },
       {
         title: "Quad Undergraduate Research Scholar, University of Chicago (2025–26)",
         description:
           "Competitive year-long research scholarship (~10–13 hrs/week) providing $5,000 in support for faculty-guided research and culminating in a presentation at the Undergraduate Research Symposium.",
-        imageSrc: "/images/quad-scholar.png", 
+        imageSrc: "/images/quad-scholar.png",
       },
     ],
   },
   {
-    group: "Awards & Honors",
+    group: "High School — Harvard-Westlake",
     items: [
       {
-        title: "Dean’s List, University of Chicago",
-        description: "Recognized for outstanding academic performance.",
+        title: "SAT National Hispanic Recognition (2023)",
       },
-      // ...other awards
+      {
+        title: "A Honor Roll (2021–2024)",
+      },
+      {
+        title: "National Spanish Honor Society (2024)",
+      },
+      {
+        title: "Senior Spotlight (2024)",
+        description:
+          "One of 5 seniors recognized for excellence in character, leadership, and service at Harvard-Westlake.",
+      },
     ],
   },
 ];
+
 
 export default function DanielHernandezSite() {
   /* ---------- Data ---------- */
