@@ -85,7 +85,7 @@ const awards: AwardGroup[] = [
       {
         title: "Polsky Research Fellow, University of Chicago (Summer 2025)",
         description:
-          "Full-time, paid summer fellowship supporting faculty-mentored research on energy and climate; contributed quantitative modeling and analysis for energy-transition–focused work.",
+          "$5,000 Research stipend, Full-time, paid summer fellowship supporting faculty-mentored research on energy and climate; contributed quantitative modeling and analysis for energy-transition–focused work.",
         imageSrc: "/images/polsky-logo.png", 
       },
       {
