@@ -551,7 +551,7 @@ export default function DanielHernandezSite() {
                 <img
                   src={it.imageSrc}
                   alt={it.title}
-                  className="w-10 h-10 rounded-md object-contain mt-0.5"
+                  className="w-15 h-15 rounded-md object-contain mt-0.5"
                 />
               )}
               <div className="text-sm text-white">
