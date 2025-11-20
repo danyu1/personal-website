@@ -67,6 +67,47 @@ const Section = ({
   </section>
 );
 
+type AwardItem = {
+  title: string;
+  description?: string;
+  imageSrc?: string; // path to logo/image
+};
+
+type AwardGroup = {
+  group: string;
+  items: AwardItem[];
+};
+
+const awards: AwardGroup[] = [
+  {
+    group: "Fellowships & Scholars",
+    items: [
+      {
+        title: "Polsky Research Fellow, University of Chicago (Summer 2025)",
+        description:
+          "Full-time, paid summer fellowship supporting faculty-mentored research on energy and climate; contributed quantitative modeling and analysis for energy-transition–focused work.",
+        imageSrc: "/images/polsky-logo.png", 
+      },
+      {
+        title: "Quad Undergraduate Research Scholar, University of Chicago (2025–26)",
+        description:
+          "Competitive year-long research scholarship (~10–13 hrs/week) providing $5,000 in support for faculty-guided research and culminating in a presentation at the Undergraduate Research Symposium.",
+        imageSrc: "/images/quad-scholar.png", 
+      },
+    ],
+  },
+  {
+    group: "Awards & Honors",
+    items: [
+      {
+        title: "Dean’s List, University of Chicago",
+        description: "Recognized for outstanding academic performance.",
+      },
+      // ...other awards
+    ],
+  },
+];
+
 export default function DanielHernandezSite() {
   /* ---------- Data ---------- */
   const coursework = [
@@ -153,24 +194,6 @@ export default function DanielHernandezSite() {
         "Phoenix STEM Scholars Annual Research Conference 2026 – Oral Presentation (Scheduled)",
       authors:
         "D. Hernandez, C. Boscu, F. Alvarez-Ventura, D.S. Abbot, J. Finkel, A. Chattopadhay, P. Hassanzadeh",
-    },
-  ];
-
-  const awards = [
-    {
-      group: "High School — Harvard-Westlake",
-      items: [
-        "SAT National Hispanic Recognition (2023)",
-        "A Honor Roll (2021–2024)",
-        "National Spanish Honor Society (2024)",
-        "Senior Spotlight (2024) — Awarded to 5 students for excellence in character, leadership, and service at Harvard-Westlake",
-      ],
-    },
-    {
-      group: "University of Chicago",
-      items: [
-        "Polsky Fellow (2025) — Polsky Center for Entrepreneurship and Innovation",
-      ],
     },
   ];
 
@@ -491,25 +514,53 @@ export default function DanielHernandezSite() {
         </div>
       </Section>
 
-      {/* Awards & Honors */}
-      <Section id="awards" title="Awards & Honors" icon={<Award className="w-5 h-5 text-fuchsia-300" aria-hidden />}>
-        <div className="grid gap-4">
-          {awards.map((grp) => (
-            <Card key={grp.group} className="bg-slate-900/60 border-slate-800">
-              <CardHeader>
-                <CardTitle className="text-base text-white">{grp.group}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-white">
-                <ul className="list-disc pl-5 space-y-1">
-                  {grp.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+     {/* Awards & Honors */}
+<Section
+  id="awards"
+  title="Awards & Honors"
+  icon={<Award className="w-5 h-5 text-fuchsia-300" aria-hidden />}
+>
+  <div className="grid gap-4">
+    {awards.map((grp) => (
+      <Card
+        key={grp.group}
+        className="bg-slate-900/60 border-slate-800"
+      >
+        <CardHeader>
+          <CardTitle className="text-base text-white">
+            {grp.group}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          {grp.items.map((it) => (
+            <div
+              key={it.title}
+              className="flex items-start gap-3"
+            >
+              {it.imageSrc && (
+                <img
+                  src={it.imageSrc}
+                  alt={it.title}
+                  className="w-10 h-10 rounded-md object-contain mt-0.5"
+                />
+              )}
+              <div className="text-sm text-white">
+                <div className="font-medium">
+                  {it.title}
+                </div>
+                {it.description && (
+                  <p className="text-xs text-slate-300 mt-1 leading-snug">
+                    {it.description}
+                  </p>
+                )}
+              </div>
+            </div>
           ))}
-        </div>
-      </Section>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</Section>
 
       {/* Languages */}
       <Section id="languages" title="Languages" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
