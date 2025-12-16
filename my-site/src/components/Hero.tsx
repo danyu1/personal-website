@@ -136,7 +136,7 @@ function TiltImage({ img, alt }: { img: string; alt: string }) {
           style={{
             transform: "scale(1.08)",
             transition: moving ? "none" : "transform 120ms ease-out",
-            objectPosition: "center 30%",
+            objectPosition: "center 20%",
           }}
         />
       </div>
