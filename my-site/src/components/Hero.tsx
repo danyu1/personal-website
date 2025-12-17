@@ -1,74 +1,74 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 
 const FALLBACK_IMG = "/fallback.png";
 
 export default function Hero() {
   return (
-    <section className="relative max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center lg:items-start gap-12">
-      {/* Profile Image with Tilt */}
-      <TiltImage img="/images/image.png" alt="Danny" />
+    <section className="relative max-w-7xl mx-auto px-6 py-6 lg:py-12 min-h-screen flex flex-col justify-center">
+      <div className="grid lg:grid-cols-[540px_1fr] gap-30 items-center">
+        {/* Profile Image */}
+        <div className="flex justify-center lg:justify-start">
+          <div className="relative">
+            <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full"></div>
+            <TiltImage img="/images/image.png" alt="Danny" />
+          </div>
+        </div>
 
-      {/* Text Section */}
-      <div className="flex-[2] text-center lg:text-left max-w-6xl">
-        <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-          Welcome, I&apos;m Danny!
-        </h1>
+        {/* Text Section */}
+        <div className="text-center lg:text-left space-y-6">
+          <div className="inline-block">
+            <div className="text-xs font-mono text-amber-500 mb-2 tracking-wider uppercase">
+              [ Hi there, I'm  ]
+            </div>
+            <h1 className="text-5xl lg:text-6xl font-medium text-white mb-2 tracking-tight">
+              Danny Hernandez
+            </h1>
+            <div className="h-px bg-linear-to-r from-amber-500 via-amber-500/50 to-transparent"></div>
+          </div>
 
-        <h2 className="text-2xl lg:text-3xl font-semibold text-slate-300 mb-4 animate-slide-in">
-          I&apos;m a ...
-        </h2>
+          <div className="space-y-3">
+            <div className="font-mono text-sm text-slate-400">
+            </div>
+            <div className="space-y-2 text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base">
+                Deep Learning Engineer for stochastic climate systems and computer vision researcher at UChicago.
+                Software Engineering Intern at Liberty Mutual Insurance.
+                Varsity collegiate athlete competing in horizontal jumps.
+              </p>
+            </div>
+          </div>
 
-        <p className="text-gray-400 leading-relaxed max-w-5xl mx-auto lg:mx-0 animate-fade-in">
-          UChicago artificial intelligence and computer vision researcher. Incoming Software Engineering Intern at Liberty Mutual Insurance
-          as a part of
-          their application development and rate optimization team.
-          I&apos;m also a varsity collegiate athlete (long jump, triple jump) at the University of Chicago.
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
-          {[
-            "AI Research Assistant — Geophysical Sciences",
-            "Software Engineering Intern — Liberty Mutual",
-            "Computer Vision Researcher — xLab Nuclear and AI Risk Working Group",
-            "Varsity Horizontal Jumper", 
-          ].map((role, i) => (
-            <span
-              key={role}
-              className="px-3 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-sm opacity-0 animate-fade-in-stagger"
-              style={{ animationDelay: `${0.3 + i * 0.3}s` }}
-            >
-              {role}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-2 justify-center lg:justify-start pt-2">
+            {[
+              { label: "Deep Learning Research", icon: "◆" },
+              { label: "Computer Vision", icon: "◆" },
+              { label: "Software Engineering", icon: "◆" },
+              { label: "Collegiate Athlete", icon: "◆" },
+            ].map((item, i) => (
+              <span
+                key={item.label}
+                className="px-3 py-1.5 bg-slate-900/50 border border-slate-800 text-xs font-mono text-slate-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors duration-300 opacity-0 animate-fade-in-stagger"
+                style={{ animationDelay: `${0.4 + i * 0.1}s` }}
+              >
+                <span className="text-amber-500/70 mr-1.5">{item.icon}</span>
+                {item.label}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Animations */}
       <style>{`
-        @keyframes fade-in-up {
-          0% { opacity: 0; transform: translateY(20px); }
+        @keyframes fade-in-stagger {
+          0% { opacity: 0; transform: translateY(10px); }
           100% { opacity: 1; transform: translateY(0); }
         }
-        @keyframes slide-in {
-          0% { opacity: 0; transform: translateX(-20px); }
-          100% { opacity: 1; transform: translateX(0); }
+        .animate-fade-in-stagger {
+          animation: fade-in-stagger 0.6s ease-out forwards;
         }
-        @keyframes fade-in {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        @keyframes glow {
-        0%, 100% { color: rgba(191, 138, 235, 1); text-shadow: 0 0 8px #8719d1ff; }
-        50% { color: #ffc595ff; text-shadow: 0 0 16px #f1b04eff; }
-        }
-
-        .animate-glow { animation: glow 2s ease-in-out infinite; }
-        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
-        .animate-slide-in { animation: slide-in 0.9s ease-out forwards; }
-        .animate-fade-in { animation: fade-in 1s ease-out forwards; }
-        .animate-fade-in-stagger { animation: fade-in 0.8s ease-out forwards; }
       `}</style>
     </section>
   );
@@ -125,7 +125,7 @@ function TiltImage({ img, alt }: { img: string; alt: string }) {
         ref={ref}
         onMouseMove={onMove}
         onMouseLeave={onLeave}
-        className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-2xl overflow-hidden will-change-transform shadow-lg"
+        className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-2xl overflow-hidden will-change-transform shadow-lg"
         style={style}
       >
         <img
@@ -137,8 +137,10 @@ function TiltImage({ img, alt }: { img: string; alt: string }) {
             transform: "scale(1.08)",
             transition: moving ? "none" : "transform 120ms ease-out",
             objectPosition: "center 20%",
+            filter: "brightness(0.75) contrast(1.1)",
           }}
         />
+        <div className="absolute inset-0 bg-black/15 pointer-events-none"></div>
       </div>
     </div>
   );

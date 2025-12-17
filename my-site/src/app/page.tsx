@@ -22,10 +22,9 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Latent3DPlot from "@/components/Latent3DPlot";
-import CourseWorkMarquee from "@/components/CourseWorkMarquee";
+import CourseWorkGrid from "@/components/CourseWorkGrid";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
-import ArcCometBackground from "@/components/ArcCometBackground";
-import NeuralFieldBG from "@/components/NeuralFieldBG";
+import TechGridBackground from "@/components/TechGridBackground";
 import Hero from "@/components/Hero";
 
 const FALLBACK_IMG = `data:image/svg+xml;utf8,${encodeURIComponent(
@@ -53,19 +52,54 @@ const Section = ({
   icon?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
-}) => (
-  <section id={id} className={cn("relative py-10", className)} aria-labelledby={`${id}-title`}>
-    <div className="max-w-5xl mx-auto px-4">
-      <div className="flex items-center gap-2 mb-6">
-        {icon}
-        <h2 id={`${id}-title`} className="text-2xl font-semibold tracking-tight text-slate-100">
-          {title}
-        </h2>
+}) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id={id}
+      className={cn("relative py-16 z-10", className, isVisible && "animate-on-scroll")}
+      aria-labelledby={`${id}-title`}
+    >
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="h-px w-8 bg-amber-500"></div>
+          {icon}
+          <h2
+            id={`${id}-title`}
+            className="text-2xl font-medium tracking-tight text-white font-mono"
+          >
+            {title}
+          </h2>
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 type AwardItem = {
   title: string;
@@ -120,17 +154,70 @@ const awards: AwardGroup[] = [
 
 export default function DanielHernandezSite() {
   /* ---------- Data ---------- */
-  const coursework = [
-    "Systems Programming I",
-    "Systems Programming II",
-    "Mathematical Foundations of Machine Learning",
-    "Introduction to Data Engineering",
-    "Linear Models and Experimental Design",
-    "Multivariate Calculus",
-    "Linear Algebra",
-    "Discrete Mathematics",
-    "Introduction to Computer Security",
-    "Introduction to Data Science I",
+  const courseworkCategories = [
+    {
+      category: "Computer Systems",
+      items: [
+        {
+          name: "Systems Programming I",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+14300",
+        },
+        {
+          name: "Systems Programming II",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+14400",
+        },
+        {
+          name: "Introduction to Computer Security",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+23200",
+        },
+      ],
+    },
+    {
+      category: "Machine Learning & Data",
+      items: [
+        {
+          name: "Mathematical Foundations of Machine Learning",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+25300",
+        },
+        {
+          name: "Introduction to Data Engineering",
+          url: "http://collegecatalog.uchicago.edu/search/?P=DATA+25900",
+        },
+        {
+          name: "Introduction to Data Science I",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+11111",
+        },
+        {
+          name: "Introduction to Data Science II",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+11211",
+        },
+        {
+          name: "Linear Models and Experimental Design",
+          url: "http://collegecatalog.uchicago.edu/search/?P=STAT+22400",
+        },
+      ],
+    },
+    {
+      category: "Mathematics",
+      items: [
+        {
+          name: "Multivariate Calculus",
+          url: "http://collegecatalog.uchicago.edu/search/?P=MATH+20300",
+        },
+        {
+          name: "Linear Algebra",
+          url: "http://collegecatalog.uchicago.edu/search/?P=MATH+20250",
+        },
+        {
+          name: "Discrete Mathematics",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+27100",
+        },
+        {
+          name: "Theory of Algorithms",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+27200",
+        },
+      ],
+    },
   ];
 
   const skillsPro = [
@@ -193,7 +280,7 @@ export default function DanielHernandezSite() {
         "Constantino-Daniel Boscu; Daniel Hernandez; Fabio Alvarez Ventura; Advisor: Dorian Abbot",
     },
     {
-      title: "Interpretable CVAE for Stochastic System Modeling",
+      title: "AI Emulation of Stochastic Sudden Stratospheric Warming with Interpretable Latent Structure",
       venue: "AGU Fall Meeting 2025 – Accepted Paper, New Orleans, LA",
       authors:
         "D. Hernandez, C. Boscu, F. Alvarez-Ventura, D.S. Abbot, J. Finkel, A. Chattopadhay, P. Hassanzadeh",
@@ -209,67 +296,71 @@ export default function DanielHernandezSite() {
 
   /* ---------- Page ---------- */
   return (
-    <div className="min-h-screen text-slate-200">
+    <div className="min-h-screen text-slate-200 relative">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-slate-900 focus:text-white focus:px-3 focus:py-2 focus:rounded"
       >
         Skip to content
       </a>
-      <NeuralFieldBG />
+      <TechGridBackground />
 
       {/* Header */}
-      <header className="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 bg-slate-900/40 border-b border-slate-800">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-800/50 backdrop-blur-sm bg-[rgb(3,7,18)]/80">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
             <div>
-              <div className="font-semibold leading-tight">Daniel A. Hernandez</div>
-              <div className="text-xs text-slate-400">
-                B.S. Computer Science + Minor in Data Science @ UChicago (’28)
+              <div className="font-mono text-sm font-medium text-white">Daniel A. Hernandez</div>
+              <div className="text-xs text-slate-500 font-mono">
+                CS + Data Science @ UChicago '28
               </div>
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-3 text-sm" aria-label="Primary">
-            <a className="hover:underline" href="#projects">
+          <nav className="hidden md:flex items-center gap-1 text-sm font-mono" aria-label="Primary">
+            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#projects">
               Projects
             </a>
-            <a className="hover:underline" href="#experience">
+            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#experience">
               Experience
             </a>
-            <a className="hover:underline" href="#education">
+            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#education">
               Education
             </a>
-            <a className="hover:underline" href="#awards">
+            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#awards">
               Awards
             </a>
           </nav>
           <div className="flex items-center gap-2 text-sm">
             <a
-              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-slate-800/70 border border-slate-700 hover:bg-slate-800 transition"
+              className="inline-flex items-center gap-2 px-4 py-1.5 border border-slate-800 text-slate-400 hover:border-amber-500/50 hover:text-amber-500 transition-all duration-300 font-mono text-xs group"
               href="https://github.com/danyu1"
               target="_blank"
               rel="noreferrer"
               aria-label="Daniel on GitHub"
             >
-              <Github className="w-4 h-4" aria-hidden /> github.com/danyu1
+              <Github className="w-3.5 h-3.5" aria-hidden />
+              <span>GitHub</span>
             </a>
           </div>
         </div>
       </header>
 
-      {/* Hero */}
-      <Hero />
+      {/* Main Content - add top padding for fixed header */}
+      <main id="main" className="pt-20 relative z-10">
+        <Hero />
+      </main>
 
-      <Separator className="bg-slate-800/60" />
+      <Separator className="bg-slate-800/30 relative z-10" />
 
       {/* Education */}
       <Section
         id="education"
         title="Education"
-        icon={<GraduationCap className="w-5 h-5 text-fuchsia-300" aria-hidden />}
+        icon={<GraduationCap className="w-5 h-5 text-amber-500" aria-hidden />}
       >
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-2">
                 <Image
@@ -291,7 +382,7 @@ export default function DanielHernandezSite() {
               Linear Algebra, Discrete Mathematics
             </CardContent>
           </Card>
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-2">
                 <Image
@@ -315,9 +406,9 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Skills */}
-      <Section id="skills" title="Skills" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
+      <Section id="skills" title="Skills" icon={<Layers3 className="w-5 h-5 text-amber-500" aria-hidden />}>
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <CardTitle className="text-slate-100">Proficient</CardTitle>
             </CardHeader>
@@ -329,7 +420,7 @@ export default function DanielHernandezSite() {
               ))}
             </CardContent>
           </Card>
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <CardTitle className="text-slate-100">Experience</CardTitle>
             </CardHeader>
@@ -345,9 +436,9 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Experience */}
-<Section id="experience" title="Experience" icon={<Waves className="w-5 h-5 text-fuchsia-300" aria-hidden />}>
+<Section id="experience" title="Experience" icon={<Waves className="w-5 h-5 text-amber-500" aria-hidden />}>
         <div className="grid gap-4 max-w-none">
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-start gap-4">
                 <img 
@@ -389,7 +480,7 @@ export default function DanielHernandezSite() {
 
           
 
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-start gap-4">
                 <img 
@@ -410,22 +501,22 @@ export default function DanielHernandezSite() {
             <CardContent className="text-sm text-slate-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  Will develop automated workflow using Python and geospatial analysis tools (Google Earth Engine, GeoPandas, GDAL) to identify and geolocate AI data centers globally through satellite imagery analysis.
+                  Developed automated workflow using Python and geospatial analysis tools (Google Earth Engine, GeoPandas, GDAL) to identify and geolocate AI data centers globally through satellite imagery analysis.
                 </li>
                 <li>
-                  Will leverage machine learning frameworks (TensorFlow, PyTorch) to build classification models that identify data center characteristics from remote sensing imagery.
+                  Leveraged machine learning frameworks (TensorFlow, PyTorch) to build classification models that identify data center characteristics from remote sensing imagery.
                 </li>
                 <li>
-                  Will produce comprehensive technical report documenting proof-of-concept methodology, validation results, and recommendations for workflow automation.
+                  Produced comprehensive technical report documenting proof-of-concept methodology, validation results, and recommendations for workflow automation.
                 </li>
                 <li>
                   OSINT techniques and computer vision algorithms to analyze satellite data from multiple sources (Sentinel, Landsat, Planet Labs) for data center detection and capacity estimation.
                 </li>
-              </ul>
+            </ul>
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-start gap-4">
                 <img 
@@ -458,13 +549,13 @@ export default function DanielHernandezSite() {
       {/* Publications */}
       <Section
         id="pubs"
-        title="Publications (Forthcoming)"
-        icon={<Sparkles className="w-5 h-5 text-fuchsia-300" aria-hidden />}
+        title="Publications"
+        icon={<Sparkles className="w-5 h-5 text-amber-500" aria-hidden />}
       >
-        <Card className="bg-slate-900/60 border-slate-800">
+        <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
           <CardContent className="p-4 text-sm text-slate-300">
             Hernandez D, Boscu C, Alvarez‑Ventura F, Abbot D.S, Finkel J, Chattopadhay A, Hassanzadeh P.
-            <em> Interpretable Conditional Variational Autoencoder for Stochastic System Modeling. AGU James.</em>.
+            <em> AI Emulation of Stochastic Sudden Stratospheric Warming with Interpretable Latent Structure. AGU James.</em>.
           </CardContent>
         </Card>
       </Section>
@@ -473,21 +564,21 @@ export default function DanielHernandezSite() {
       <Section
       id="coursework"
       title="Coursework"
-      icon={<Brain className="w-5 h-5 text-amber-300" aria-hidden />}
+      icon={<Brain className="w-5 h-5 text-amber-500" aria-hidden />}
       >
-        <CourseWorkMarquee items={coursework} />
+        <CourseWorkGrid courses={courseworkCategories} />
       </Section>
 
       {/* Projects */}
-      <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
+      <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-amber-500" aria-hidden />}>
         <ProjectsCarousel projects={projects} />
       </Section>
 
       {/* Presentations */}
-      <Section id="talks" title="Presentations" icon={<Waves className="w-5 h-5 text-fuchsia-300" aria-hidden />}>
+      <Section id="talks" title="Presentations" icon={<Waves className="w-5 h-5 text-amber-500" aria-hidden />}>
         <div className="grid gap-4">
-          {presentations.map((t) => (
-            <Card key={t.title} className="bg-slate-900/60 border-slate-800">
+          {presentations.map((t, idx) => (
+            <Card key={`${t.title}-${idx}`} className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
               <CardHeader>
                 <CardTitle className="text-base text-slate-100">{t.title}</CardTitle>
               </CardHeader>
@@ -501,9 +592,9 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Leadership & Activities */}
-      <Section id="leadership" title="Leadership & Activities" icon={<Trophy className="w-5 h-5 text-amber-300" aria-hidden />}>
+      <Section id="leadership" title="Leadership & Activities" icon={<Trophy className="w-5 h-5 text-amber-500" aria-hidden />}>
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <CardTitle className="text-white">Varsity Collegiate Track & Field Athlete</CardTitle>
               <div className="text-xs text-slate-400">UChicago (2024–Present)</div>
@@ -512,7 +603,7 @@ export default function DanielHernandezSite() {
               Competed as a jumper for UChicago Athletics; ranked 95th nationally in NCAA Division III triple jump as a first‑year.
             </CardContent>
           </Card>
-          <Card className="bg-slate-900/60 border-slate-800">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <CardTitle className="text-white">Phoenix STEM Scholar & Research Mentor</CardTitle>
               <div className="text-xs text-slate-400">UChicago (2024–Present)</div>
@@ -528,13 +619,13 @@ export default function DanielHernandezSite() {
 <Section
   id="awards"
   title="Awards & Honors"
-  icon={<Award className="w-5 h-5 text-fuchsia-300" aria-hidden />}
+  icon={<Award className="w-5 h-5 text-amber-500" aria-hidden />}
 >
   <div className="grid gap-4">
     {awards.map((grp) => (
       <Card
         key={grp.group}
-        className="bg-slate-900/60 border-slate-800"
+        className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300"
       >
         <CardHeader>
           <CardTitle className="text-base text-white">
@@ -573,7 +664,7 @@ export default function DanielHernandezSite() {
 </Section>
 
       {/* Languages */}
-      <Section id="languages" title="Languages" icon={<Layers3 className="w-5 h-5 text-amber-300" aria-hidden />}>
+      <Section id="languages" title="Languages" icon={<Layers3 className="w-5 h-5 text-amber-500" aria-hidden />}>
         <div className="flex flex-wrap gap-2">
           <Tag>English — Native</Tag>
           <Tag>Spanish — Native</Tag>
@@ -581,7 +672,7 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Footer — no contact section at the bottom */}
-      <footer className="py-10 border-t border-slate-800/60 bg-gradient-to-b from-transparent to-slate-950/60">
+      <footer className="py-10 border-t border-slate-800/60 bg-gradient-to-b from-transparent to-slate-950/60 relative z-10">
         <div className="max-w-5xl mx-auto px-4 text-sm text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <a

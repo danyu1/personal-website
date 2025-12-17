@@ -44,7 +44,11 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.25rem;
+  /* Amber/Orange accent color for tech aesthetic */
+  --accent-amber: 31 80% 62%; /* HSL for amber-500 */
+  --accent-amber-bright: 38 92% 60%; /* Brighter amber */
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -79,37 +83,38 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Dark theme with deep blacks and amber accent */
+  --background: 222 47% 4%;
+  --foreground: 210 20% 98%;
+  --card: 222 47% 8%;
+  --card-foreground: 210 20% 98%;
+  --popover: 222 47% 8%;
+  --popover-foreground: 210 20% 98%;
+  --primary: 31 80% 62%;
+  --primary-foreground: 222 47% 4%;
+  --secondary: 217 33% 12%;
+  --secondary-foreground: 210 20% 98%;
+  --muted: 217 33% 12%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 31 80% 62%;
+  --accent-foreground: 222 47% 4%;
+  --destructive: 0 63% 31%;
+  --border: 215 27.9% 16.9%;
+  --input: 215 27.9% 16.9%;
+  --ring: 31 80% 62%;
+  --chart-1: 31 80% 62%;
+  --chart-2: 38 92% 60%;
+  --chart-3: 25 95% 53%;
+  --chart-4: 33 100% 50%;
+  --chart-5: 27 96% 61%;
+  --sidebar: 222 47% 8%;
+  --sidebar-foreground: 210 20% 98%;
+  --sidebar-primary: 31 80% 62%;
+  --sidebar-primary-foreground: 222 47% 4%;
+  --sidebar-accent: 217 33% 12%;
+  --sidebar-accent-foreground: 210 20% 98%;
+  --sidebar-border: 215 27.9% 16.9%;
+  --sidebar-ring: 31 80% 62%;
 }
 
 @layer base {
@@ -118,19 +123,90 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+    font-variant-ligatures: none;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
-  overflow-x: hidden; /* remove horizontal scrollbar */
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  display: none; /* hides scrollbars in WebKit browsers */
+  display: none;
 }
 
 body {
-  -ms-overflow-style: none;  /* hides scrollbar in IE/Edge */
-  scrollbar-width: none;     /* hides scrollbar in Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scroll-triggered animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-on-scroll-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-on-scroll-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-on-scroll-delay-3 {
+  animation-delay: 0.3s;
+}
+
+/* Tech grid pattern overlay */
+.tech-grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(251, 146, 60, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(251, 146, 60, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Amber glow effect */
+.amber-glow {
+  box-shadow: 0 0 20px rgba(251, 146, 60, 0.15);
+}
+
+.amber-glow-strong {
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.3), 0 0 60px rgba(251, 146, 60, 0.15);
 }
 

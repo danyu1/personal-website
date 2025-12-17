@@ -5,7 +5,10 @@ import React, { useEffect, useState } from "react";
 import type { PlotData, Layout, Config } from "plotly.js";
 
 // client-side only
-const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
+const Plot = dynamic(() => import("react-plotly.js"), {
+  ssr: false,
+  loading: () => <div className="text-slate-400 text-sm">Loading 3D plot…</div>
+});
 
 type Point = { PC1: number; PC2: number; PC3: number; Category: string };
 type Payload = {
