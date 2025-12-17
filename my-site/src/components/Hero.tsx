@@ -34,7 +34,7 @@ export default function Hero() {
             <div className="space-y-2 text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               <p className="text-base">
                 Deep Learning Engineer for stochastic climate systems and computer vision researcher at UChicago.
-                Software Engineering Intern at Liberty Mutual Insurance.
+                Incoming Software Engineering Intern at Liberty Mutual Insurance.
                 Varsity collegiate athlete competing in horizontal jumps.
               </p>
             </div>
