@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="text-center lg:text-left space-y-6">
           <div className="inline-block">
             <div className="text-xs font-mono text-amber-500 mb-2 tracking-wider uppercase">
-              [ Hi there, I'm  ]
+              [ Hi there, I&apos;m  ]
             </div>
             <h1 className="text-5xl lg:text-6xl font-medium text-white mb-2 tracking-tight">
               Danny Hernandez

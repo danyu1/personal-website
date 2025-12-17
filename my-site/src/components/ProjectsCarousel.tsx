@@ -11,15 +11,12 @@ export default function ProjectsCarousel({
   projects: { title: string; img: string; desc: string; stack: string[]; repo: string }[];
 }) {
   const [idx, setIdx] = useState(0);
-  const [dir, setDir] = useState<1 | -1>(1);
   const n = projects.length;
 
   const prev = () => {
-    setDir(-1);
     setIdx((i) => (i - 1 + n) % n);
   };
   const next = () => {
-    setDir(1);
     setIdx((i) => (i + 1) % n);
   };
 
@@ -70,7 +67,7 @@ export default function ProjectsCarousel({
           key={`img-${idx}`}
           className="order-2 lg:order-1 animate-[projectSlideIn_500ms_ease-out]"
         >
-          <TiltFollowCard project={p} dir={dir} />
+          <TiltFollowCard project={p} />
         </div>
 
         {/* Project Details */}
@@ -145,7 +142,6 @@ export default function ProjectsCarousel({
             <button
               key={i}
               onClick={() => {
-                setDir(i > idx ? 1 : -1);
                 setIdx(i);
               }}
               aria-label={`Go to project ${i + 1}`}
@@ -174,10 +170,8 @@ export default function ProjectsCarousel({
 /* --- internal tilt + spotlight card --- */
 function TiltFollowCard({
   project,
-  dir,
 }: {
   project: { title: string; img: string; desc: string; stack: string[]; repo: string };
-  dir: 1 | -1;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [style, setStyle] = useState<React.CSSProperties>({ transform: "translateZ(0)" });

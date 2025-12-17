@@ -12,10 +12,6 @@ import {
   Layers3,
   Waves,
   Trophy,
-  PersonStanding,
-  Zap,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,10 +22,6 @@ import CourseWorkGrid from "@/components/CourseWorkGrid";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
 import TechGridBackground from "@/components/TechGridBackground";
 import Hero from "@/components/Hero";
-
-const FALLBACK_IMG = `data:image/svg+xml;utf8,${encodeURIComponent(
-'<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"><rect width="100%" height="100%" fill="#111"/><text x="50%" y="50%" fill="#aaa" font-family="sans-serif" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not found</text></svg>'
-)}`;
 
 //Simple Tag component for pill-like labels
 function Tag({ children }: { children: React.ReactNode }) {
@@ -66,13 +58,14 @@ const Section = ({
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -313,7 +306,7 @@ export default function DanielHernandezSite() {
             <div>
               <div className="font-mono text-sm font-medium text-white">Daniel A. Hernandez</div>
               <div className="text-xs text-slate-500 font-mono">
-                CS + Data Science @ UChicago '28
+                CS + Data Science @ UChicago &apos;28
               </div>
             </div>
           </div>
