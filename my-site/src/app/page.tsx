@@ -306,11 +306,11 @@ export default function DanielHernandezSite() {
         alt: "Presenting research at AGU 2025",
       },
       {
-        src: "/images/agu-poser.pdf",
+        src: "/images/agu-poster.png",
         alt: "Research poster session",
       },
       {
-        src: "/images/presenting-at-agu.JPG",
+        src: "/images/canel-street.JPG",
         alt: "Networking with researchers",
       },
       {
