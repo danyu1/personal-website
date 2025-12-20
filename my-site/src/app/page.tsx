@@ -292,29 +292,29 @@ export default function DanielHernandezSite() {
     title: "AGU Fall Meeting 2025",
     location: "New Orleans, LA",
     date: "December 9-13, 2025",
-    logo: "https://placehold.co/200x200/1e293b/f59e0b?text=AGU",
+    logo: "C:\dev\personal-website\my-site\public\images\agu-logo.PNG",
     description:
       "Attended the American Geophysical Union (AGU) Fall Meeting 2025, one of the largest international Earth and space science conferences. Presented research on AI emulation of stochastic sudden stratospheric warming, networked with leading researchers in climate science and machine learning, and attended cutting-edge talks on geophysical modeling and computational methods.",
     highlights: [
       "Presented original research on interpretable AI methods for climate system modeling",
-      "Networked with researchers from leading institutions including MIT, Stanford, and NCAR",
+      "Networked with researchers from leading institutions including MIT, NASA GSIS, Nvidia Research, KBR and UC Santa Cruz",
       "Attended technical sessions on machine learning applications in Earth sciences and climate dynamics",
     ],
     images: [
       {
-        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Presenting+Research+at+AGU+2025",
+        src: "C:\dev\personal-website\my-site\public\images\presenting-at-agu.JPG",
         alt: "Presenting research at AGU 2025",
       },
       {
-        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Research+Poster+Session",
+        src: "C:\dev\personal-website\my-site\public\images\agu-poser.pdf",
         alt: "Research poster session",
       },
       {
-        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Networking+with+Researchers",
+        src: "C:\dev\personal-website\my-site\public\images\presenting-at-agu.JPG",
         alt: "Networking with researchers",
       },
       {
-        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Conference+Venue+in+New+Orleans",
+        src: "C:\dev\personal-website\my-site\public\images\agu-talk.JPG",
         alt: "Conference venue in New Orleans",
       },
     ],
