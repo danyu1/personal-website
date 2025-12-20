@@ -292,7 +292,7 @@ export default function DanielHernandezSite() {
     title: "AGU Fall Meeting 2025",
     location: "New Orleans, LA",
     date: "December 9-13, 2025",
-    logo: "C:\dev\personal-website\my-site\public\images\agu-logo.PNG",
+    logo: "/images/agu-logo.PNG",
     description:
       "Attended the American Geophysical Union (AGU) Fall Meeting 2025, one of the largest international Earth and space science conferences. Presented research on AI emulation of stochastic sudden stratospheric warming, networked with leading researchers in climate science and machine learning, and attended cutting-edge talks on geophysical modeling and computational methods.",
     highlights: [
@@ -302,19 +302,19 @@ export default function DanielHernandezSite() {
     ],
     images: [
       {
-        src: "C:\dev\personal-website\my-site\public\images\presenting-at-agu.JPG",
+        src: "/images/presenting-at-agu.JPG",
         alt: "Presenting research at AGU 2025",
       },
       {
-        src: "C:\dev\personal-website\my-site\public\images\agu-poser.pdf",
+        src: "/images/agu-poser.pdf",
         alt: "Research poster session",
       },
       {
-        src: "C:\dev\personal-website\my-site\public\images\presenting-at-agu.JPG",
+        src: "/images/presenting-at-agu.JPG",
         alt: "Networking with researchers",
       },
       {
-        src: "C:\dev\personal-website\my-site\public\images\agu-talk.JPG",
+        src: "/images/agu-talk.JPG",
         alt: "Conference venue in New Orleans",
       },
     ],
