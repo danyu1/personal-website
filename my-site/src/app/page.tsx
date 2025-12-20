@@ -288,37 +288,62 @@ export default function DanielHernandezSite() {
     },
   ];
 
-  const conferenceExperience = {
-    title: "AGU Fall Meeting 2025",
-    location: "New Orleans, LA",
-    date: "December 13-19, 2025",
-    logo: "/images/agu-logo.PNG",
-    description:
-      "Attended the American Geophysical Union (AGU) Fall Meeting 2025, one of the largest international Earth and space science conferences. Presented research on AI emulation of stochastic sudden stratospheric warming, networked with leading researchers in climate science and machine learning, and attended cutting-edge talks on geophysical modeling and computational methods.",
-    highlights: [
-      "Presented original research on interpretable AI methods for climate system modeling",
-      "Networked with researchers from leading institutions including MIT, NASA GSIS, Nvidia Research, KBR and UC Santa Cruz",
-      "Attended technical sessions on machine learning applications in Earth sciences and climate dynamics",
-    ],
-    images: [
-      {
-        src: "/images/presenting-at-agu.JPG",
-        alt: "Presenting research at AGU 2025",
-      },
-      {
-        src: "/images/agu-poster.png",
-        alt: "Poster",
-      },
-      {
-        src: "/images/canel-street.JPG",
-        alt: "Canel Street in New Orleans",
-      },
-      {
-        src: "/images/agu-talk.JPG",
-        alt: "Attending Oral Presentation on Gray Swans",
-      },
-    ],
-  };
+  const conferenceExperiences = [
+    {
+      title: "AGU Fall Meeting 2025",
+      location: "New Orleans, LA",
+      date: "December 13-19, 2025",
+      logo: "/images/agu-logo.PNG",
+      description:
+        "Attended the American Geophysical Union (AGU) Fall Meeting 2025, one of the largest international Earth and space science conferences. Presented research on AI emulation of stochastic sudden stratospheric warming, networked with leading researchers in climate science and machine learning, and attended cutting-edge talks on geophysical modeling and computational methods.",
+      highlights: [
+        "Presented original research on interpretable AI methods for climate system modeling",
+        "Networked with researchers from leading institutions including MIT, NASA GSIS, Nvidia Research, KBR and UC Santa Cruz",
+        "Attended technical sessions on machine learning applications in Earth sciences and climate dynamics",
+      ],
+      images: [
+        {
+          src: "/images/presenting-at-agu.JPG",
+          alt: "Presenting research at AGU 2025",
+        },
+        {
+          src: "/images/agu-poster.png",
+          alt: "Poster",
+        },
+        {
+          src: "/images/canel-street.JPG",
+          alt: "Canel Street in New Orleans",
+        },
+        {
+          src: "/images/agu-talk.JPG",
+          alt: "Attending Oral Presentation on Gray Swans",
+        },
+      ],
+    },
+    {
+      title: "Aspen Ideas: Climate Chicago",
+      location: "Chicago, IL",
+      date: "July 20-22, 2025",
+      logo: "/images/aspen-logo.png",
+      description:
+        "Attended Aspen Ideas: Climate Chicago, a premier solutions-oriented convening featuring leaders, innovators, policymakers, scientists, business and NGO leaders, energy experts, and artists focused on elevating climate and energy solutions. The event was held at Willis Tower's Convene and included main stage keynotes, breakout panels, workshops, and roundtable sessions. UChicago's Institute for Climate and Sustainable Growth served as the official academic thought partner, co-curating sessions on climate finance, carbon removal, and carbon markets.",
+      highlights: [
+        "Engaged with dialogues aimed at combating climate change through education, inspiration, and actionable solutions",
+        "Networked with prominent leaders in climate science, energy innovation, and policy from across sectors",
+        "Attended sessions on climate finance, carbon markets, and cutting-edge resilience strategies at one of Chicago's most iconic venues",
+      ],
+      images: [
+        {
+          src: "/images/aspen-chicago.JPG",
+          alt: "Aspen Ideas Climate Chicago at Willis Tower",
+        },
+        {
+          src: "/images/aspen-panel.jpg",
+          alt: "Conference sessions and networking",
+        },
+      ],
+    },
+  ];
 
   /* ---------- Page ---------- */
   return (
@@ -649,7 +674,11 @@ export default function DanielHernandezSite() {
                 Conference Experience
               </h3>
             </div>
-            <ConferenceShowcase experience={conferenceExperience} />
+            <div className="space-y-12">
+              {conferenceExperiences.map((conference, idx) => (
+                <ConferenceShowcase key={idx} experience={conference} />
+              ))}
+            </div>
           </div>
         </div>
       </Section>
