@@ -326,10 +326,9 @@ export default function DanielHernandezSite() {
       date: "July 20-22, 2025",
       logo: "/images/aspen-logo.png",
       description:
-        "Attended Aspen Ideas: Climate Chicago, a premier solutions-oriented convening featuring leaders, innovators, policymakers, scientists, business and NGO leaders, energy experts, and artists focused on elevating climate and energy solutions. The event was held at Willis Tower's Convene and included main stage keynotes, breakout panels, workshops, and roundtable sessions. UChicago's Institute for Climate and Sustainable Growth served as the official academic thought partner, co-curating sessions on climate finance, carbon removal, and carbon markets.",
+        "Attended Aspen Ideas: Climate Chicago, a premier solutions-oriented convening featuring leaders (Governers of Michigan, Alaska and Chicago), innovators, policymakers, scientists, business and NGO leaders, energy experts, and artists focused on elevating climate and energy solutions. The event was held at Willis Tower's Convene and included main stage keynotes, breakout panels, workshops, and roundtable sessions. UChicago's Institute for Climate and Sustainable Growth served as the official academic thought partner, co-curating sessions on climate finance, carbon removal, and carbon markets.",
       highlights: [
         "Engaged with dialogues aimed at combating climate change through education, inspiration, and actionable solutions",
-        "Networked with prominent leaders in climate science, energy innovation, and policy from across sectors",
         "Attended sessions on climate finance, carbon markets, and cutting-edge resilience strategies at one of Chicago's most iconic venues",
       ],
       images: [
@@ -339,7 +338,7 @@ export default function DanielHernandezSite() {
         },
         {
           src: "/images/aspen-panel.jpg",
-          alt: "Conference sessions and networking",
+          alt: "Conference sessions",
         },
       ],
     },
