@@ -22,8 +22,8 @@ export default function Hero() {
             <div className="text-xs font-mono text-amber-500 mb-2 tracking-wider uppercase">
               [ Hi there, I&apos;m  ]
             </div>
-            <h1 className="text-5xl lg:text-6xl font-medium text-white mb-2 tracking-tight">
-              Danny Hernandez
+            <h1 className="text-5xl lg:text-6xl font-medium text-brown mb-2 tracking-tight">
+              Paco
             </h1>
             <div className="h-px bg-linear-to-r from-amber-500 via-amber-500/50 to-transparent"></div>
           </div>
