@@ -22,6 +22,7 @@ import CourseWorkGrid from "@/components/CourseWorkGrid";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
 import TechGridBackground from "@/components/TechGridBackground";
 import Hero from "@/components/Hero";
+import ConferenceShowcase from "@/components/ConferenceShowcase";
 
 //Simple Tag component for pill-like labels
 function Tag({ children }: { children: React.ReactNode }) {
@@ -112,7 +113,7 @@ const awards: AwardGroup[] = [
       {
         title: "Polsky Undergraduate Research Fellow, University of Chicago (Summer 2025)",
         description:
-          "Full-time, paid summer fellowship supporting faculty-mentored research on innovation, venture creation, and applied problem-solving; contributed quantitative modeling for energy/climate-focused work.",
+          "Full-time, paid summer fellowship ($5,000) supporting faculty-mentored research on innovation, venture creation, and applied problem-solving; contributed quantitative modeling for energy/climate-focused work.",
         imageSrc: "/images/polsky-logo.png", 
       },
       {
@@ -286,6 +287,38 @@ export default function DanielHernandezSite() {
         "D. Hernandez, C. Boscu, F. Alvarez-Ventura, D.S. Abbot, J. Finkel, A. Chattopadhay, P. Hassanzadeh",
     },
   ];
+
+  const conferenceExperience = {
+    title: "AGU Fall Meeting 2025",
+    location: "New Orleans, LA",
+    date: "December 9-13, 2025",
+    logo: "https://placehold.co/200x200/1e293b/f59e0b?text=AGU",
+    description:
+      "Attended the American Geophysical Union (AGU) Fall Meeting 2025, one of the largest international Earth and space science conferences. Presented research on AI emulation of stochastic sudden stratospheric warming, networked with leading researchers in climate science and machine learning, and attended cutting-edge talks on geophysical modeling and computational methods.",
+    highlights: [
+      "Presented original research on interpretable AI methods for climate system modeling",
+      "Networked with researchers from leading institutions including MIT, Stanford, and NCAR",
+      "Attended technical sessions on machine learning applications in Earth sciences and climate dynamics",
+    ],
+    images: [
+      {
+        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Presenting+Research+at+AGU+2025",
+        alt: "Presenting research at AGU 2025",
+      },
+      {
+        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Research+Poster+Session",
+        alt: "Research poster session",
+      },
+      {
+        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Networking+with+Researchers",
+        alt: "Networking with researchers",
+      },
+      {
+        src: "https://placehold.co/1200x675/1e293b/94a3b8?text=Conference+Venue+in+New+Orleans",
+        alt: "Conference venue in New Orleans",
+      },
+    ],
+  };
 
   /* ---------- Page ---------- */
   return (
@@ -605,6 +638,20 @@ export default function DanielHernandezSite() {
               Selected via competitive program supporting first‑gen & underrepresented students in STEM. Mentored incoming students on research paths and course planning.
             </CardContent>
           </Card>
+        </div>
+
+        {/* Conference Experience - Full Width Breakout */}
+        <div className="mt-12 -mx-6 md:-mx-12 lg:-mx-24">
+          <div className="px-6 md:px-12 lg:px-24 py-8 bg-gradient-to-b from-slate-900/20 to-transparent border-y border-slate-800/30">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px w-8 bg-amber-500"></div>
+              <Sparkles className="w-5 h-5 text-amber-500" aria-hidden />
+              <h3 className="text-xl font-medium tracking-tight text-white font-mono">
+                Conference Experience
+              </h3>
+            </div>
+            <ConferenceShowcase experience={conferenceExperience} />
+          </div>
         </div>
       </Section>
 
