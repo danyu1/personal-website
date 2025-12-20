@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Presentation } from "lucide-react";
 
 type ConferenceImage = {
@@ -76,11 +77,15 @@ export default function ConferenceShowcase({
       {/* Conference Header with Logo */}
       <div className="mb-8 animate-[conferenceSlideIn_500ms_ease-out]">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-4">
-          <img
-            src={experience.logo}
-            alt={`${experience.title} logo`}
-            className="w-20 h-20 object-contain bg-white/5 p-2 rounded-lg border border-slate-800/50"
-          />
+          <div className="relative w-20 h-20 bg-white/5 p-2 rounded-lg border border-slate-800/50">
+            <Image
+              src={experience.logo}
+              alt={`${experience.title} logo`}
+              fill
+              className="object-contain"
+              sizes="80px"
+            />
+          </div>
           <div className="flex-1">
             <h3 className="text-3xl font-medium text-white mb-2 tracking-tight">
               {experience.title}
@@ -115,10 +120,13 @@ export default function ConferenceShowcase({
             key={`img-${idx}`}
             className="w-full h-full animate-[imageSlideIn_400ms_ease-out]"
           >
-            <img
+            <Image
               src={currentImage.src}
               alt={currentImage.alt}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              priority={idx === 0}
             />
             {/* Subtle overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40" />
@@ -160,16 +168,18 @@ export default function ConferenceShowcase({
               key={i}
               onClick={() => setIdx(i)}
               aria-label={`View image ${i + 1}: ${img.alt}`}
-              className={`flex-shrink-0 w-20 h-14 overflow-hidden border-2 transition-all duration-300 ${
+              className={`relative flex-shrink-0 w-20 h-14 overflow-hidden border-2 transition-all duration-300 ${
                 i === idx
                   ? "border-amber-500 opacity-100"
                   : "border-slate-800 opacity-50 hover:opacity-75 hover:border-slate-700"
               }`}
             >
-              <img
+              <Image
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="80px"
               />
             </button>
           ))}

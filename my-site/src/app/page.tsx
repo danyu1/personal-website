@@ -291,7 +291,7 @@ export default function DanielHernandezSite() {
   const conferenceExperience = {
     title: "AGU Fall Meeting 2025",
     location: "New Orleans, LA",
-    date: "December 9-13, 2025",
+    date: "December 13-19, 2025",
     logo: "/images/agu-logo.PNG",
     description:
       "Attended the American Geophysical Union (AGU) Fall Meeting 2025, one of the largest international Earth and space science conferences. Presented research on AI emulation of stochastic sudden stratospheric warming, networked with leading researchers in climate science and machine learning, and attended cutting-edge talks on geophysical modeling and computational methods.",
@@ -307,15 +307,15 @@ export default function DanielHernandezSite() {
       },
       {
         src: "/images/agu-poster.png",
-        alt: "Research poster session",
+        alt: "Poster",
       },
       {
         src: "/images/canel-street.JPG",
-        alt: "Networking with researchers",
+        alt: "Canel Street in New Orleans",
       },
       {
         src: "/images/agu-talk.JPG",
-        alt: "Conference venue in New Orleans",
+        alt: "Attending Oral Presentation on Gray Swans",
       },
     ],
   };
@@ -645,7 +645,6 @@ export default function DanielHernandezSite() {
           <div className="px-6 md:px-12 lg:px-24 py-8 bg-gradient-to-b from-slate-900/20 to-transparent border-y border-slate-800/30">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-amber-500"></div>
-              <Sparkles className="w-5 h-5 text-amber-500" aria-hidden />
               <h3 className="text-xl font-medium tracking-tight text-white font-mono">
                 Conference Experience
               </h3>
