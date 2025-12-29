@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react";
+import { ChevronLeft, ChevronRight, Github, ExternalLink, Eye } from "lucide-react";
+import Link from "next/link";
 
 const FALLBACK_IMG = "/fallback.png";
 
@@ -109,19 +110,32 @@ export default function ProjectsCarousel({
             </div>
           </div>
 
-          {/* Action Button */}
-          {p.repo && (
-            <a
-              href={p.repo}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-500 font-mono text-sm hover:bg-amber-500/20 hover:border-amber-500/50 transition-all duration-300 group"
-            >
-              <Github className="w-4 h-4" />
-              <span>View Repository</span>
-              <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
-          )}
+          {/* Action Buttons */}
+          <div className="flex flex-wrap gap-3">
+            {/* Special "Learn More" button for Prior Systems */}
+            {p.title === "Prior Systems" && (
+              <Link
+                href="/projects/prior-systems"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 text-slate-900 font-mono text-sm hover:bg-amber-400 transition-all duration-300 group font-semibold"
+              >
+                <Eye className="w-4 h-4" />
+                <span>View Full Showcase</span>
+                <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            )}
+            {p.repo && (
+              <a
+                href={p.repo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-500 font-mono text-sm hover:bg-amber-500/20 hover:border-amber-500/50 transition-all duration-300 group"
+              >
+                <Github className="w-4 h-4" />
+                <span>View Repository</span>
+                <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            )}
+          </div>
         </div>
       </div>
 
@@ -238,7 +252,11 @@ function TiltFollowCard({
           src={imgSrc}
           onError={() => setImgSrc(FALLBACK_IMG)}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full ${
+            project.title === "Prior Systems"
+              ? "object-contain p-16 bg-slate-900/50"
+              : "object-cover"
+          }`}
           style={{
             transform: "scale(1.05)",
             transition: moving ? "none" : "transform 150ms ease-out",

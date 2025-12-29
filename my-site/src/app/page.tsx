@@ -232,6 +232,14 @@ export default function DanielHernandezSite() {
 
   const projects = [
     {
+      title: "Prior Systems",
+      stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Chart.js", "Python"],
+      img: "prior-systems-logo.svg",
+      desc:
+        "Production-grade algorithmic trading platform with Black-Scholes options pricing, 15+ technical indicators, real-time portfolio tracking. 15K+ lines of code serving 10+ active users from UChicago organizations and casual users.",
+      repo: "https://github.com/danyu1/relay-trader"
+    },
+    {
       title: "Athlete Performance Forecasting Platform",
       stack: ["Python", "Playwright", "BeautifulSoup", "pandas", "NumPy", "PyTorch", "LSTM"],
       img: "/images/flightphase.png",
