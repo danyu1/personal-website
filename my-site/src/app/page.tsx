@@ -236,7 +236,7 @@ export default function DanielHernandezSite() {
       stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Chart.js", "Python"],
       img: "prior-systems-logo.svg",
       desc:
-        "Production-grade algorithmic trading platform with Black-Scholes options pricing, 15+ technical indicators, real-time portfolio tracking. 15K+ lines of code serving 10+ active users from UChicago organizations and casual users.",
+        "Accesible algorithmic trading platform with Black-Scholes options pricing, 15+ technical indicators, real-time portfolio tracking. 15K+ lines of code serving 10+ active users from UChicago organizations and casual users.",
       repo: "https://github.com/danyu1/relay-trader"
     },
     {
