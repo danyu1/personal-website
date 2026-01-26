@@ -498,10 +498,10 @@ export default function DanielHernandezSite() {
         <div className="grid gap-4 max-w-none">
           <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
-              <div className="flex items-start gap-4">
-                <img 
-                  src="/images/geosci.jpg" 
-                  alt="UChicago Geophysical Sciences" 
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/geosci.jpg"
+                  alt="UChicago Geophysical Sciences"
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
@@ -540,18 +540,18 @@ export default function DanielHernandezSite() {
 
           <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
-              <div className="flex items-start gap-4">
-                <img 
-                  src="/images/xlab.png" 
-                  alt="XLab" 
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/xlab.png"
+                  alt="XLab"
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
                     <span className="flex-1 min-w-[300px]">
-                      AI Computer Vision Researcher — XLab Nuclear Risk and Security Working Group 
+                      AI Computer Vision Researcher — XLab Nuclear Risk and Security Working Group
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Present – December 2025</span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">October – December 2025</span>
                   </CardTitle>
                 </div>
               </div>
@@ -576,7 +576,7 @@ export default function DanielHernandezSite() {
 
           <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-4">
                 <img
                   src="/images/LMI.png"
                   alt="LMI Limu Emu"
@@ -603,7 +603,7 @@ export default function DanielHernandezSite() {
 
           <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-4">
                 <img
                   src="/images/oracle-trading.png"
                   alt="Oracle Trading"
@@ -614,7 +614,7 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Trader & Analyst — Oracle Trading
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Jan 2025 – Present</span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Jan 2026 – Present</span>
                   </CardTitle>
                 </div>
               </div>
@@ -632,17 +632,17 @@ export default function DanielHernandezSite() {
                 </li>
               </ul>
               <div className="mt-4 flex items-center gap-4">
-                <div className="flex items-center gap-2 text-xs text-slate-400">
+                <div className="flex items-center gap-3 text-xs text-slate-400">
                   <span>Sponsored by:</span>
                   <img
                     src="/images/polymarket-logo.png"
                     alt="Polymarket"
-                    className="h-6 object-contain"
+                    className="h-8 object-contain"
                   />
                   <img
                     src="/images/drw-logo.png"
                     alt="DRW"
-                    className="h-6 object-contain"
+                    className="h-8 object-contain"
                   />
                 </div>
               </div>
