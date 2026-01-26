@@ -551,7 +551,7 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Computer Vision Researcher — XLab Nuclear Risk and Security Working Group
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">October – December 2025</span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">October 2025 – December 2025</span>
                   </CardTitle>
                 </div>
               </div>
@@ -587,7 +587,7 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Software Engineering Intern — Liberty Mutual Insurance
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">June – August 2026</span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">June 2026 – August 2026</span>
                   </CardTitle>
                 </div>
               </div>
