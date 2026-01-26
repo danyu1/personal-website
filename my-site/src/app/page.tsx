@@ -507,7 +507,7 @@ export default function DanielHernandezSite() {
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
                     <span className="flex-1 min-w-[300px]">
-                      AI Research Assistant — University of Chicago, Geophysical Sciences (Prof. Dorian Abbot)
+                      Deep Learning Assistant Researcher — University of Chicago, Geophysical Sciences (Prof. Dorian Abbot)
                     </span>
                     <span className="text-xs text-slate-400 whitespace-nowrap">Sep 2024 – Present</span>
                   </CardTitle>
@@ -549,7 +549,7 @@ export default function DanielHernandezSite() {
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
                     <span className="flex-1 min-w-[300px]">
-                      AI Computer Vision Researcher — XLab Nuclear Risk and Security Working Group
+                      Computer Vision Researcher — XLab Nuclear Risk and Security Working Group
                     </span>
                     <span className="text-xs text-slate-400 whitespace-nowrap">October – December 2025</span>
                   </CardTitle>
