@@ -236,7 +236,7 @@ export default function DanielHernandezSite() {
       stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Chart.js", "Python"],
       img: "prior-systems-logo.svg",
       desc:
-        "Accesible algorithmic trading platform with Black-Scholes options pricing, 15+ technical indicators, real-time portfolio tracking. 15K+ lines of code serving 10+ active users from UChicago organizations and casual users.",
+        "Accessible algorithmic trading platform with Black-Scholes options pricing, 15+ technical indicators, real-time portfolio tracking. 15K+ lines of code serving 10+ active users from UChicago organizations and casual users.",
       repo: "https://github.com/danyu1/relay-trader"
     },
     {
@@ -577,9 +577,9 @@ export default function DanielHernandezSite() {
           <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-start gap-4">
-                <img 
-                  src="/images/LMI.png" 
-                  alt="LMI Limu Emu" 
+                <img
+                  src="/images/LMI.png"
+                  alt="LMI Limu Emu"
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
@@ -598,6 +598,54 @@ export default function DanielHernandezSite() {
                   Incoming Software Engineering Intern at Liberty Mutual Insurance (Fortune 100) for Summer 2026, joining the Application Development and Rate Optimization team.
                 </li>
               </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <img
+                  src="/images/oracle-trading.png"
+                  alt="Oracle Trading"
+                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                />
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                    <span className="flex-1 min-w-[300px]">
+                      Trader & Analyst — Oracle Trading
+                    </span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Jan 2025 – Present</span>
+                  </CardTitle>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-300 space-y-1">
+              <ul className="list-disc pl-5 space-y-1">
+                <li>
+                  Member of UChicago&apos;s premier prediction markets research and trading club, actively trading a ~$100K fund on Polymarket.
+                </li>
+                <li>
+                  Apply quantitative strategies to prediction markets, leveraging statistical analysis and probabilistic reasoning for trade execution.
+                </li>
+                <li>
+                  Part of a select team sponsored by Polymarket and DRW—the only entity on campus enabling members to actively trade their club&apos;s bankroll.
+                </li>
+              </ul>
+              <div className="mt-4 flex items-center gap-4">
+                <div className="flex items-center gap-2 text-xs text-slate-400">
+                  <span>Sponsored by:</span>
+                  <img
+                    src="/images/polymarket-logo.png"
+                    alt="Polymarket"
+                    className="h-6 object-contain"
+                  />
+                  <img
+                    src="/images/drw-logo.png"
+                    alt="DRW"
+                    className="h-6 object-contain"
+                  />
+                </div>
+              </div>
             </CardContent>
           </Card>
 
