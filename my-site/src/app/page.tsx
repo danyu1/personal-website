@@ -12,6 +12,8 @@ import {
   Layers3,
   Waves,
   Trophy,
+  FileText,
+  Download,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -532,6 +534,25 @@ export default function DanielHernandezSite() {
               </ul>
               <div className="mt-3">
                 <Latent3DPlot />
+              </div>
+              <div className="mt-4 flex items-center gap-3">
+                <a
+                  href="/papers/ssw-cvae-emulator.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-amber-500/50 hover:text-amber-400"
+                >
+                  <FileText className="w-4 h-4" />
+                  Preview Paper
+                </a>
+                <a
+                  href="/papers/ssw-cvae-emulator.pdf"
+                  download="AI_Emulation_SSW_CVAE.pdf"
+                  className="inline-flex items-center gap-2 rounded-lg bg-amber-500/10 border border-amber-500/30 px-4 py-2 text-sm font-medium text-amber-500 transition hover:bg-amber-500/20"
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF
+                </a>
               </div>
             </CardContent>
           </Card>
