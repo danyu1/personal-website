@@ -166,6 +166,10 @@ export default function DanielHernandezSite() {
           name: "Introduction to Computer Security",
           url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+23200",
         },
+        {
+          name: "Distributed Systems",
+          url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+23310",
+        },
       ],
     },
     {
@@ -211,6 +215,10 @@ export default function DanielHernandezSite() {
         {
           name: "Theory of Algorithms",
           url: "http://collegecatalog.uchicago.edu/search/?P=CMSC+27200",
+        },
+        {
+          name: "Options and Volatility Products",
+          url: "http://collegecatalog.uchicago.edu/search/?P=FINM+37500",
         },
       ],
     },
@@ -437,9 +445,9 @@ export default function DanielHernandezSite() {
               </div>
             </CardHeader>
             <CardContent className="text-sm text-slate-300">
-              Coursework focus: Systems Programming I & II, Mathematical Foundations of Machine Learning, 
-              Introduction to Data Engineering, Linear Models and Experimental Design, Multivariate Calculus, 
-              Linear Algebra, Discrete Mathematics
+              Coursework focus: Systems Programming I & II, Distributed Systems, Mathematical Foundations of Machine Learning,
+              Introduction to Data Engineering, Linear Models and Experimental Design, Multivariate Calculus,
+              Linear Algebra, Discrete Mathematics, Options and Volatility Products
             </CardContent>
           </Card>
           <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
@@ -498,6 +506,33 @@ export default function DanielHernandezSite() {
       {/* Experience */}
 <Section id="experience" title="Experience" icon={<Waves className="w-5 h-5 text-amber-500" aria-hidden />}>
         <div className="grid gap-4 max-w-none">
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/ms_logo.png"
+                  alt="Morgan Stanley"
+                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                />
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                    <span className="flex-1 min-w-[300px]">
+                      Equity Derivatives Trading &amp; Structuring Summer Analyst — Morgan Stanley
+                    </span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Summer 2027</span>
+                  </CardTitle>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-300 space-y-1">
+              <ul className="list-disc pl-5 space-y-1">
+                <li>
+                  Incoming Summer Analyst on the Equity Derivatives Trading &amp; Structuring desk, working on structured products and derivatives solutions for institutional clients.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
           <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">

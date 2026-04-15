@@ -34,6 +34,7 @@ export default function Hero() {
             <div className="space-y-2 text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               <p className="text-base">
                 Deep Learning Researcher for stochastic climate systems and computer vision researcher at UChicago.
+                Incoming Equity Derivatives Trading &amp; Structuring Summer Analyst at Morgan Stanley.
                 Incoming Software Engineering Intern at Liberty Mutual Insurance.
                 Varsity collegiate athlete competing in horizontal jumps.
               </p>
@@ -44,6 +45,7 @@ export default function Hero() {
             {[
               { label: "Deep Learning Research", icon: "◆" },
               { label: "Computer Vision", icon: "◆" },
+              { label: "Equity Derivatives", icon: "◆" },
               { label: "Software Engineering", icon: "◆" },
               { label: "Collegiate Athlete", icon: "◆" },
             ].map((item, i) => (
