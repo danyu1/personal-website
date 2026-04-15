@@ -510,33 +510,6 @@ export default function DanielHernandezSite() {
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
-                  src="/images/ms_logo.png"
-                  alt="Morgan Stanley"
-                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
-                />
-                <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
-                    <span className="flex-1 min-w-[300px]">
-                      Equity Derivatives Trading &amp; Structuring Summer Analyst — Morgan Stanley
-                    </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Summer 2027</span>
-                  </CardTitle>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="text-sm text-slate-300 space-y-1">
-              <ul className="list-disc pl-5 space-y-1">
-                <li>
-                  Incoming Summer Analyst on the Equity Derivatives Trading &amp; Structuring desk, working on structured products and derivatives solutions for institutional clients.
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
-            <CardHeader>
-              <div className="flex items-center gap-4">
-                <img
                   src="/images/geosci.jpg"
                   alt="UChicago Geophysical Sciences"
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
@@ -702,6 +675,33 @@ export default function DanielHernandezSite() {
                   />
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/ms_logo.png"
+                  alt="Morgan Stanley"
+                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                />
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                    <span className="flex-1 min-w-[300px]">
+                      Equity Derivatives Trading &amp; Structuring Summer Analyst — Morgan Stanley
+                    </span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Summer 2027</span>
+                  </CardTitle>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-300 space-y-1">
+              <ul className="list-disc pl-5 space-y-1">
+                <li>
+                  Incoming Summer Analyst on the Equity Derivatives Trading &amp; Structuring desk, working on structured products and derivatives solutions for institutional clients.
+                </li>
+              </ul>
             </CardContent>
           </Card>
 
