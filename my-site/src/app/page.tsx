@@ -641,7 +641,7 @@ export default function DanielHernandezSite() {
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
                     <span className="flex-1 min-w-[300px]">
-                      Trader & Analyst — Oracle Trading
+                      Software Engineer & Analyst — Oracle Trading
                     </span>
                     <span className="text-xs text-slate-400 whitespace-nowrap">Jan 2026 – Present</span>
                   </CardTitle>
