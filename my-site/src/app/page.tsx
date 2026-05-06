@@ -607,16 +607,16 @@ export default function DanielHernandezSite() {
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
-                  src="/images/LMI.png"
-                  alt="LMI Limu Emu"
+                  src="/images/popid.png"
+                  alt="PopID"
                   className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
                     <span className="flex-1 min-w-[300px]">
-                      Software Engineering Intern — Liberty Mutual Insurance
+                      Software Engineer Intern — Recognition Algorithms &amp; SDK, PopID
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">June 2026 – August 2026</span>
+                    <span className="text-xs text-slate-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
                   </CardTitle>
                 </div>
               </div>
@@ -624,7 +624,10 @@ export default function DanielHernandezSite() {
             <CardContent className="text-sm text-slate-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  Incoming Software Engineering Intern at Liberty Mutual Insurance (Fortune 100) for Summer 2026, joining the Application Development and Rate Optimization team.
+                  Will develop and benchmark facial and palm recognition algorithms, evaluating model performance across RGB and NIR imaging conditions for production biometric pipelines.
+                </li>
+                <li>
+                  Will contribute to Java SDK development controlling sensor hardware in proprietary biometric cameras, including code review, refactoring, and integration testing.
                 </li>
               </ul>
             </CardContent>

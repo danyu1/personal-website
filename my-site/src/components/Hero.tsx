@@ -35,7 +35,7 @@ export default function Hero() {
               <p className="text-base">
                 Deep Learning Researcher for stochastic climate systems and computer vision researcher at UChicago.
                 Incoming Equity Derivatives Trading &amp; Structuring Summer Analyst at Morgan Stanley.
-                Incoming Software Engineering Intern at Liberty Mutual Insurance.
+                Incoming Software Engineer Intern on Recognition Algorithms &amp; SDK at PopID.
                 Varsity collegiate athlete competing in horizontal jumps.
               </p>
             </div>
