@@ -612,36 +612,6 @@ export default function DanielHernandezSite() {
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
-                  src="/images/popid.png"
-                  alt="PopID"
-                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
-                />
-                <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
-                    <span className="flex-1 min-w-[300px]">
-                      Software Engineer Intern — Recognition Algorithms &amp; SDK, PopID
-                    </span>
-                    <span className="text-base text-zinc-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
-                  </CardTitle>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="text-lg text-zinc-300 space-y-1">
-              <ul className="list-disc pl-5 space-y-1">
-                <li>
-                  Will develop and benchmark facial and palm recognition algorithms, evaluating model performance across RGB and NIR imaging conditions for production biometric pipelines.
-                </li>
-                <li>
-                  Will contribute to Java SDK development controlling sensor hardware in proprietary biometric cameras, including code review, refactoring, and integration testing.
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
-            <CardHeader>
-              <div className="flex items-center gap-4">
-                <img
                   src="/images/oracle-trading.png"
                   alt="Oracle Trading"
                   className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
@@ -683,6 +653,36 @@ export default function DanielHernandezSite() {
                   />
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/popid.png"
+                  alt="PopID"
+                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
+                />
+                <div className="flex-1">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
+                    <span className="flex-1 min-w-[300px]">
+                      Software Engineer Intern — Recognition Algorithms &amp; SDK, PopID
+                    </span>
+                    <span className="text-base text-zinc-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
+                  </CardTitle>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="text-lg text-zinc-300 space-y-1">
+              <ul className="list-disc pl-5 space-y-1">
+                <li>
+                  Will develop and benchmark facial and palm recognition algorithms, evaluating model performance across RGB and NIR imaging conditions for production biometric pipelines.
+                </li>
+                <li>
+                  Will contribute to Java SDK development controlling sensor hardware in proprietary biometric cameras, including code review, refactoring, and integration testing.
+                </li>
+              </ul>
             </CardContent>
           </Card>
 
