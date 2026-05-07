@@ -66,11 +66,11 @@ const Section = ({
     <section
       ref={sectionRef}
       id={id}
-      className={cn("relative py-6 z-10", className, isVisible && "animate-on-scroll")}
+      className={cn("relative py-4 z-10", className, isVisible && "animate-on-scroll")}
       aria-labelledby={`${id}-title`}
     >
-      <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
+      <div className="max-w-[1700px] mx-auto px-2 lg:px-4">
+        <div className="flex items-center gap-3 mb-3">
           <div className="h-px w-8 bg-white/30"></div>
           {icon}
           <h2
@@ -362,7 +362,7 @@ export default function DanielHernandezSite() {
       </a>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-sm bg-[#0a0a0a]/85">
-        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 py-3.5 flex items-center justify-between">
+        <div className="max-w-[1700px] mx-auto px-2 lg:px-4 py-3.5 flex items-center justify-between">
           <div className="font-mono text-lg font-medium text-white">
             Daniel A. Hernandez
             <span className="text-zinc-500 ml-2 hidden sm:inline">· CS + Data Science @ UChicago &apos;28</span>
@@ -571,8 +571,7 @@ export default function DanielHernandezSite() {
             </CardContent>
           </Card>
 
-          {/* Other roles in 2-col grid */}
-          <div className="grid md:grid-cols-2 gap-3">
+          {/* Other roles — each on its own row */}
           <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">
@@ -713,7 +712,6 @@ export default function DanielHernandezSite() {
               </ul>
             </CardContent>
           </Card>
-          </div>{/* /Other roles 2-col grid */}
 
         </div>
       </Section>
@@ -862,7 +860,7 @@ export default function DanielHernandezSite() {
 
       {/* Footer — no contact section at the bottom */}
       <footer className="py-8 border-t border-white/10 relative z-10">
-        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1700px] mx-auto px-2 lg:px-4 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <a
             className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30"
