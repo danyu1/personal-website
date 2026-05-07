@@ -45,17 +45,17 @@ function ProjectCard({ project }: { project: Project }) {
         />
       </div>
       <div className="flex flex-col flex-1 p-3.5 gap-2">
-        <h3 className="text-[15px] font-medium tracking-tight text-white leading-snug">
+        <h3 className="text-base font-medium tracking-tight text-white leading-snug">
           {project.title}
         </h3>
-        <p className="text-[12.5px] text-zinc-400 leading-snug line-clamp-3">
+        <p className="text-sm text-zinc-400 leading-snug line-clamp-3">
           {project.desc}
         </p>
         <div className="flex flex-wrap gap-1 mt-auto pt-2">
           {project.stack.map((s) => (
             <span
               key={s}
-              className="px-1.5 py-0.5 bg-white/[0.03] border border-white/10 text-[10px] font-mono text-zinc-300"
+              className="px-1.5 py-0.5 bg-white/[0.03] border border-white/10 text-[11px] font-mono text-zinc-300"
             >
               {s}
             </span>
@@ -65,7 +65,7 @@ function ProjectCard({ project }: { project: Project }) {
           {isPriorSystems && (
             <Link
               href="/projects/prior-systems"
-              className="inline-flex items-center gap-1 px-2.5 py-1 bg-white text-black font-mono text-[10px] hover:bg-zinc-200 transition-colors"
+              className="inline-flex items-center gap-1 px-2.5 py-1 bg-white text-black font-mono text-[11px] hover:bg-zinc-200 transition-colors"
             >
               <Eye className="w-3 h-3" />
               <span>Showcase</span>
@@ -77,7 +77,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.repo}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1 px-2.5 py-1 border border-white/15 text-zinc-300 font-mono text-[10px] hover:border-white/40 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 px-2.5 py-1 border border-white/15 text-zinc-300 font-mono text-[11px] hover:border-white/40 hover:text-white transition-colors"
             >
               <Github className="w-3 h-3" />
               <span>Repo</span>

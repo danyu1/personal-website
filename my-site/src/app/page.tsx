@@ -69,13 +69,13 @@ const Section = ({
       className={cn("relative py-6 z-10", className, isVisible && "animate-on-scroll")}
       aria-labelledby={`${id}-title`}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-white/30"></div>
           {icon}
           <h2
             id={`${id}-title`}
-            className="text-lg font-medium tracking-tight text-white font-mono"
+            className="text-xl font-medium tracking-tight text-white font-mono"
           >
             {title}
           </h2>
@@ -362,7 +362,7 @@ export default function DanielHernandezSite() {
       </a>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-sm bg-[#0a0a0a]/85">
-        <div className="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
+        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 py-3.5 flex items-center justify-between">
           <div className="font-mono text-sm font-medium text-white">
             Daniel A. Hernandez
             <span className="text-zinc-500 ml-2 hidden sm:inline">· CS + Data Science @ UChicago &apos;28</span>
@@ -434,7 +434,7 @@ export default function DanielHernandezSite() {
                   Chicago, IL — B.S. Computer Science (&apos;28), Minor in Data Science
                 </div>
               </CardHeader>
-              <CardContent className="text-xs text-zinc-300 leading-relaxed">
+              <CardContent className="text-sm text-zinc-300 leading-relaxed">
                 Coursework focus: Systems Programming I & II, Distributed Systems, Mathematical
                 Foundations of Machine Learning, Introduction to Data Engineering, Linear Models
                 and Experimental Design, Multivariate Calculus, Linear Algebra, Discrete
@@ -455,7 +455,7 @@ export default function DanielHernandezSite() {
                 </div>
                 <div className="text-xs text-zinc-400">Studio City, CA — GPA: 3.83/4.0</div>
               </CardHeader>
-              <CardContent className="text-xs text-zinc-300 leading-relaxed">
+              <CardContent className="text-sm text-zinc-300 leading-relaxed">
                 Coursework focus: AP Calculus BC (5), AP Statistics (5), AP Computer Science A
                 (5), AP Spanish Language and Culture (5), Honors Design and Data Structures,
                 Honors Topics in Computer Science
@@ -470,38 +470,38 @@ export default function DanielHernandezSite() {
             </CardHeader>
             <CardContent className="space-y-3">
               <div>
-                <div className="text-[10px] font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
+                <div className="text-xs font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
                   Proficient
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {skillsPro.map((s) => (
-                    <Badge key={s} className="bg-white/[0.03] border-white/15 text-[11px] px-2 py-0">
+                    <Badge key={s} className="bg-white/[0.03] border-white/15 text-xs px-2 py-0">
                       {s}
                     </Badge>
                   ))}
                 </div>
               </div>
               <div>
-                <div className="text-[10px] font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
+                <div className="text-xs font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
                   Experience
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {skillsExp.map((s) => (
-                    <Badge key={s} className="bg-white/[0.03] border-white/15 text-[11px] px-2 py-0">
+                    <Badge key={s} className="bg-white/[0.03] border-white/15 text-xs px-2 py-0">
                       {s}
                     </Badge>
                   ))}
                 </div>
               </div>
               <div className="pt-2 border-t border-white/10">
-                <div className="text-[10px] font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
+                <div className="text-xs font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
                   Languages
                 </div>
                 <div className="flex flex-wrap gap-1">
-                  <Badge className="bg-white/[0.03] border-white/15 text-[11px] px-2 py-0">
+                  <Badge className="bg-white/[0.03] border-white/15 text-xs px-2 py-0">
                     English — Native
                   </Badge>
-                  <Badge className="bg-white/[0.03] border-white/15 text-[11px] px-2 py-0">
+                  <Badge className="bg-white/[0.03] border-white/15 text-xs px-2 py-0">
                     Spanish — Native
                   </Badge>
                 </div>
@@ -733,29 +733,29 @@ export default function DanielHernandezSite() {
               <CardTitle className="text-zinc-100 text-base">
                 AI Emulation of Stochastic Sudden Stratospheric Warming with Interpretable Latent Structure
               </CardTitle>
-              <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
+              <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
                 Publication · AGU JAMES
               </span>
             </div>
           </CardHeader>
-          <CardContent className="text-xs text-zinc-300 leading-relaxed">
+          <CardContent className="text-sm text-zinc-300 leading-relaxed">
             Hernandez D, Boscu C, Alvarez‑Ventura F, Abbot D.S, Finkel J, Chattopadhay A, Hassanzadeh P.
           </CardContent>
         </Card>
 
         {/* Presentations as 3-col grid */}
-        <div className="text-[10px] font-mono text-zinc-500 mb-2 uppercase tracking-wider">
+        <div className="text-xs font-mono text-zinc-500 mb-2 uppercase tracking-wider">
           Presentations
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {presentations.map((t, idx) => (
             <Card key={`${t.title}-${idx}`} className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
               <CardHeader className="pb-2">
-                <CardTitle className="text-[13px] leading-snug text-zinc-100">{t.title}</CardTitle>
+                <CardTitle className="text-base leading-snug text-zinc-100">{t.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-xs text-zinc-300 leading-snug space-y-1">
+              <CardContent className="text-sm text-zinc-300 leading-snug space-y-1">
                 <div className="text-zinc-400">{t.venue}</div>
-                <div className="text-[11px]">{t.authors}</div>
+                <div className="text-xs">{t.authors}</div>
               </CardContent>
             </Card>
           ))}
@@ -776,7 +776,7 @@ export default function DanielHernandezSite() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           {/* Coursework — col-span-7 */}
           <div className="lg:col-span-7">
-            <div className="text-[10px] font-mono text-zinc-500 mb-2 uppercase tracking-wider">
+            <div className="text-xs font-mono text-zinc-500 mb-2 uppercase tracking-wider">
               Coursework
             </div>
             <CourseWorkGrid courses={courseworkCategories} />
@@ -790,7 +790,7 @@ export default function DanielHernandezSite() {
                 className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300"
               >
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm text-white">{grp.group}</CardTitle>
+                  <CardTitle className="text-base text-white">{grp.group}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   {grp.items.map((it) => (
@@ -802,10 +802,10 @@ export default function DanielHernandezSite() {
                           className="w-10 h-10 rounded-sm object-contain mt-0.5 flex-shrink-0"
                         />
                       )}
-                      <div className="text-xs text-white min-w-0">
+                      <div className="text-sm text-white min-w-0">
                         <div className="font-medium leading-snug">{it.title}</div>
                         {it.description && (
-                          <p className="text-[11px] text-zinc-400 mt-0.5 leading-snug">
+                          <p className="text-xs text-zinc-400 mt-0.5 leading-snug">
                             {it.description}
                           </p>
                         )}
@@ -829,24 +829,24 @@ export default function DanielHernandezSite() {
         <div className="grid md:grid-cols-2 gap-3 mb-4">
           <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm text-white">
+              <CardTitle className="text-base text-white">
                 Varsity Collegiate Track & Field Athlete
               </CardTitle>
-              <div className="text-[11px] text-zinc-400">UChicago · 2024–Present</div>
+              <div className="text-xs text-zinc-400">UChicago · 2024–Present</div>
             </CardHeader>
-            <CardContent className="text-xs text-zinc-300 leading-snug">
+            <CardContent className="text-sm text-zinc-300 leading-snug">
               Competed as a jumper for UChicago Athletics; ranked 95th nationally in NCAA
               Division III triple jump as a first‑year.
             </CardContent>
           </Card>
           <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm text-white">
+              <CardTitle className="text-base text-white">
                 Phoenix STEM Scholar & Research Mentor
               </CardTitle>
-              <div className="text-[11px] text-zinc-400">UChicago · 2024–Present</div>
+              <div className="text-xs text-zinc-400">UChicago · 2024–Present</div>
             </CardHeader>
-            <CardContent className="text-xs text-zinc-300 leading-snug">
+            <CardContent className="text-sm text-zinc-300 leading-snug">
               Selected via competitive program supporting first‑gen & underrepresented students
               in STEM. Mentored incoming students on research paths and course planning.
             </CardContent>
@@ -854,7 +854,7 @@ export default function DanielHernandezSite() {
         </div>
 
         {/* Conferences — 2-col */}
-        <div className="text-[10px] font-mono text-zinc-500 mb-2 uppercase tracking-wider">
+        <div className="text-xs font-mono text-zinc-500 mb-2 uppercase tracking-wider">
           Conference Experience
         </div>
         <div className="grid md:grid-cols-2 gap-4">
@@ -866,7 +866,7 @@ export default function DanielHernandezSite() {
 
       {/* Footer — no contact section at the bottom */}
       <footer className="py-8 border-t border-white/10 relative z-10">
-        <div className="max-w-6xl mx-auto px-6 text-sm text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 text-sm text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <a
             className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30"

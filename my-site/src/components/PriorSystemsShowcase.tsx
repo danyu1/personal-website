@@ -22,7 +22,7 @@ export default function PriorSystemsShowcase() {
   const [activeTab, setActiveTab] = useState('overview')
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-10">
+    <section className="mx-auto max-w-[1600px] px-4 lg:px-8 py-10">
       {/* Hero */}
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-3">

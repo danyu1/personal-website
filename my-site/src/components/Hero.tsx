@@ -6,7 +6,7 @@ const FALLBACK_IMG = "/fallback.png";
 
 export default function Hero() {
   return (
-    <section className="relative max-w-6xl mx-auto px-6 pt-6 pb-8 lg:pt-8 lg:pb-10">
+    <section className="relative max-w-[1600px] mx-auto px-4 lg:px-8 pt-6 pb-8 lg:pt-8 lg:pb-10">
       <div className="grid lg:grid-cols-[300px_1fr] gap-8 lg:gap-12 items-center">
         {/* Profile Image — static, no tilt */}
         <div className="flex justify-center lg:justify-start">
@@ -22,7 +22,7 @@ export default function Hero() {
             <div className="h-px bg-white/15 max-w-xs mx-auto lg:mx-0 mt-3" />
           </div>
 
-          <p className="text-zinc-300 text-[15px] leading-relaxed max-w-3xl mx-auto lg:mx-0">
+          <p className="text-zinc-300 text-base leading-relaxed max-w-3xl mx-auto lg:mx-0">
             Deep-learning researcher for stochastic climate systems and
             computer-vision researcher at UChicago. Incoming Equity Derivatives
             Trading & Structuring Summer Analyst at Morgan Stanley. Incoming
