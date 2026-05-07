@@ -184,7 +184,7 @@ export default function ConferenceShowcase({
 
       {/* Highlights — column count adapts to number of highlights so each box gets max width */}
       <div
-        className={`grid gap-4 mt-auto pt-2 animate-[conferenceSlideIn_700ms_ease-out] ${
+        className={`grid gap-4 animate-[conferenceSlideIn_700ms_ease-out] ${
           experience.highlights.length <= 2
             ? "md:grid-cols-2"
             : "md:grid-cols-3"
