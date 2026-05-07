@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Latent3DPlot from "@/components/Latent3DPlot";
 import CourseWorkGrid from "@/components/CourseWorkGrid";
@@ -66,16 +65,20 @@ const Section = ({
     <section
       ref={sectionRef}
       id={id}
-      className={cn("relative py-4 z-10", className, isVisible && "animate-on-scroll")}
+      className={cn(
+        "relative py-10 z-10 border-t border-white/10",
+        className,
+        isVisible && "animate-on-scroll"
+      )}
       aria-labelledby={`${id}-title`}
     >
       <div className="max-w-[1700px] mx-auto px-16 lg:px-28">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="h-px w-8 bg-white/30"></div>
+        <div className="flex items-center gap-4 mb-7">
+          <div className="h-0.5 w-14 bg-white/60"></div>
           {icon}
           <h2
             id={`${id}-title`}
-            className="text-3xl font-medium tracking-tight text-white font-mono"
+            className="text-4xl font-medium tracking-tight text-white font-mono"
           >
             {title}
           </h2>
@@ -406,8 +409,6 @@ export default function DanielHernandezSite() {
       <main id="main" className="pt-20 relative z-10">
         <Hero />
       </main>
-
-      <Separator className="bg-white/10 relative z-10" />
 
       {/* Education */}
       <Section
