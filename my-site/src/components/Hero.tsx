@@ -6,7 +6,7 @@ const FALLBACK_IMG = "/fallback.png";
 
 export default function Hero() {
   return (
-    <section className="relative max-w-[1700px] mx-auto px-16 lg:px-28 pt-6 pb-8 lg:pt-8 lg:pb-10">
+    <section className="relative max-w-[1700px] mx-auto px-20 lg:px-32 pt-6 pb-8 lg:pt-8 lg:pb-10">
       <div className="grid lg:grid-cols-[300px_1fr] gap-8 lg:gap-12 items-center">
         {/* Profile Image — static, no tilt */}
         <div className="flex justify-center lg:justify-start">

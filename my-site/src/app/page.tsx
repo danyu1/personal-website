@@ -66,19 +66,20 @@ const Section = ({
       ref={sectionRef}
       id={id}
       className={cn(
-        "relative py-10 z-10 border-t border-white/10",
+        "relative py-16 z-10 border-t-2 border-white/20",
+        "[&:nth-of-type(even)]:bg-white/[0.015]",
         className,
         isVisible && "animate-on-scroll"
       )}
       aria-labelledby={`${id}-title`}
     >
-      <div className="max-w-[1700px] mx-auto px-16 lg:px-28">
-        <div className="flex items-center gap-4 mb-7">
-          <div className="h-0.5 w-14 bg-white/60"></div>
+      <div className="max-w-[1700px] mx-auto px-20 lg:px-32">
+        <div className="flex items-center gap-4 mb-8">
+          <div className="h-1 w-20 bg-white/70"></div>
           {icon}
           <h2
             id={`${id}-title`}
-            className="text-4xl font-medium tracking-tight text-white font-mono"
+            className="text-5xl font-medium tracking-tight text-white font-mono"
           >
             {title}
           </h2>
@@ -365,7 +366,7 @@ export default function DanielHernandezSite() {
       </a>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-sm bg-[#0a0a0a]/85">
-        <div className="max-w-[1700px] mx-auto px-16 lg:px-28 py-3.5 flex items-center justify-between">
+        <div className="max-w-[1700px] mx-auto px-20 lg:px-32 py-3.5 flex items-center justify-between">
           <div className="font-mono text-lg font-medium text-white">
             Daniel A. Hernandez
             <span className="text-zinc-500 ml-2 hidden sm:inline">· CS + Data Science @ UChicago &apos;28</span>
@@ -861,7 +862,7 @@ export default function DanielHernandezSite() {
 
       {/* Footer — no contact section at the bottom */}
       <footer className="py-8 border-t border-white/10 relative z-10">
-        <div className="max-w-[1700px] mx-auto px-16 lg:px-28 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1700px] mx-auto px-20 lg:px-32 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <a
             className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30"
