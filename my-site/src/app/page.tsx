@@ -417,16 +417,16 @@ export default function DanielHernandezSite() {
       >
         <div className="grid md:grid-cols-2 gap-4">
           <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
-            <CardHeader className="pb-3">
-              <div className="flex items-center gap-2">
+            <CardHeader className="pb-4">
+              <div className="flex items-center gap-4">
                 <Image
                   src="/images/uchicagologo.png"
                   alt="University of Chicago Logo"
-                  width={36}
-                  height={36}
+                  width={88}
+                  height={88}
                   className="rounded-sm"
                 />
-                <CardTitle className="text-zinc-100 text-xl">University of Chicago</CardTitle>
+                <CardTitle className="text-zinc-100 text-3xl tracking-tight">University of Chicago</CardTitle>
               </div>
               <div className="text-lg text-zinc-400">
                 Chicago, IL — B.S. Computer Science (&apos;28), Minor in Data Science
@@ -440,16 +440,16 @@ export default function DanielHernandezSite() {
             </CardContent>
           </Card>
           <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
-            <CardHeader className="pb-3">
-              <div className="flex items-center gap-2">
+            <CardHeader className="pb-4">
+              <div className="flex items-center gap-4">
                 <Image
                   src="/images/hwlogo.png"
                   alt="Harvard-Westlake Logo"
-                  width={56}
-                  height={56}
+                  width={88}
+                  height={88}
                   className="rounded-sm"
                 />
-                <CardTitle className="text-zinc-100 text-xl">Harvard-Westlake</CardTitle>
+                <CardTitle className="text-zinc-100 text-3xl tracking-tight">Harvard-Westlake</CardTitle>
               </div>
               <div className="text-lg text-zinc-400">Studio City, CA — GPA: 3.83/4.0</div>
             </CardHeader>
@@ -518,10 +518,10 @@ export default function DanielHernandezSite() {
                 <img
                   src="/images/geosci.jpg"
                   alt="UChicago Geophysical Sciences"
-                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
                       Deep Learning Assistant Researcher — University of Chicago, Geophysical Sciences (Prof. Dorian Abbot)
                     </span>
@@ -579,10 +579,10 @@ export default function DanielHernandezSite() {
                 <img
                   src="/images/xlab.png"
                   alt="XLab"
-                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
                       Computer Vision Researcher — XLab Nuclear Risk and Security Working Group
                     </span>
@@ -615,10 +615,10 @@ export default function DanielHernandezSite() {
                 <img
                   src="/images/popid.png"
                   alt="PopID"
-                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
                       Software Engineer Intern — Recognition Algorithms &amp; SDK, PopID
                     </span>
@@ -645,10 +645,10 @@ export default function DanielHernandezSite() {
                 <img
                   src="/images/oracle-trading.png"
                   alt="Oracle Trading"
-                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
                       Software Engineer & Analyst — Oracle Trading
                     </span>
@@ -693,10 +693,10 @@ export default function DanielHernandezSite() {
                 <img
                   src="/images/ms_logo.png"
                   alt="Morgan Stanley"
-                  className="w-16 h-16 object-contain rounded-lg bg-white/5 p-2"
+                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
                 />
                 <div className="flex-1">
-                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2">
+                  <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
                       Equity Derivatives Trading &amp; Structuring Summer Analyst — Morgan Stanley
                     </span>
@@ -786,23 +786,23 @@ export default function DanielHernandezSite() {
               key={grp.group}
               className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300"
             >
-              <CardHeader className="pb-2">
-                <CardTitle className="text-xl text-white">{grp.group}</CardTitle>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-3xl text-white tracking-tight">{grp.group}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-4">
                 {grp.items.map((it) => (
-                  <div key={it.title} className="flex items-start gap-3">
+                  <div key={it.title} className="flex items-start gap-4">
                     {it.imageSrc && (
                       <img
                         src={it.imageSrc}
                         alt={it.title}
-                        className="w-12 h-12 rounded-sm object-contain mt-0.5 flex-shrink-0"
+                        className="w-20 h-20 rounded-sm object-contain mt-0.5 flex-shrink-0"
                       />
                     )}
-                    <div className="text-lg text-white min-w-0">
-                      <div className="font-medium leading-snug">{it.title}</div>
+                    <div className="text-white min-w-0">
+                      <div className="text-xl font-medium leading-snug">{it.title}</div>
                       {it.description && (
-                        <p className="text-lg text-zinc-400 mt-1 leading-snug">
+                        <p className="text-base text-zinc-400 mt-1 leading-snug">
                           {it.description}
                         </p>
                       )}
