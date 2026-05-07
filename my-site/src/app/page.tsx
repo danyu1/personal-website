@@ -22,14 +22,13 @@ import { cn } from "@/lib/utils";
 import Latent3DPlot from "@/components/Latent3DPlot";
 import CourseWorkGrid from "@/components/CourseWorkGrid";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
-import TechGridBackground from "@/components/TechGridBackground";
 import Hero from "@/components/Hero";
 import ConferenceShowcase from "@/components/ConferenceShowcase";
 
 //Simple Tag component for pill-like labels
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-block px-3 py-1 rounded-full bg-slate-900/70 border border-slate-700 text-sm">
+    <span className="inline-block px-3 py-1 rounded-full bg-white/[0.03] border border-white/15 text-sm">
       {children}
     </span>
   );
@@ -77,16 +76,16 @@ const Section = ({
     <section
       ref={sectionRef}
       id={id}
-      className={cn("relative py-16 z-10", className, isVisible && "animate-on-scroll")}
+      className={cn("relative py-10 z-10", className, isVisible && "animate-on-scroll")}
       aria-labelledby={`${id}-title`}
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="h-px w-8 bg-amber-500"></div>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="h-px w-8 bg-white/30"></div>
           {icon}
           <h2
             id={`${id}-title`}
-            className="text-2xl font-medium tracking-tight text-white font-mono"
+            className="text-xl font-medium tracking-tight text-white font-mono"
           >
             {title}
           </h2>
@@ -246,7 +245,7 @@ export default function DanielHernandezSite() {
       stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Chart.js", "Python"],
       img: "prior-systems-logo.svg",
       desc:
-        "Accessible algorithmic trading platform with Black-Scholes options pricing, 15+ technical indicators, real-time portfolio tracking. 15K+ lines of code serving 10+ active users from UChicago organizations and casual users.",
+        "Accessible algorithmic trading platform with Black-Scholes options pricing, 15+ technical indicators, and real-time portfolio tracking. Used by students from UChicago organizations and individual traders.",
       repo: "https://github.com/danyu1/relay-trader"
     },
     {
@@ -364,44 +363,37 @@ export default function DanielHernandezSite() {
 
   /* ---------- Page ---------- */
   return (
-    <div className="min-h-screen text-slate-200 relative">
+    <div className="min-h-screen text-zinc-200 relative">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-slate-900 focus:text-white focus:px-3 focus:py-2 focus:rounded"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-zinc-900 focus:text-white focus:px-3 focus:py-2 focus:rounded"
       >
         Skip to content
       </a>
-      <TechGridBackground />
-
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-800/50 backdrop-blur-sm bg-[rgb(3,7,18)]/80">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-            <div>
-              <div className="font-mono text-sm font-medium text-white">Daniel A. Hernandez</div>
-              <div className="text-xs text-slate-500 font-mono">
-                CS + Data Science @ UChicago &apos;28
-              </div>
-            </div>
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-sm bg-[#0a0a0a]/85">
+        <div className="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
+          <div className="font-mono text-sm font-medium text-white">
+            Daniel A. Hernandez
+            <span className="text-zinc-500 ml-2 hidden sm:inline">· CS + Data Science @ UChicago &apos;28</span>
           </div>
           <nav className="hidden md:flex items-center gap-1 text-sm font-mono" aria-label="Primary">
-            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#projects">
+            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#projects">
               Projects
             </a>
-            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#experience">
+            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#experience">
               Experience
             </a>
-            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#education">
+            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#education">
               Education
             </a>
-            <a className="px-3 py-1.5 text-slate-400 hover:text-amber-500 hover:bg-slate-900/50 transition-colors duration-200" href="#awards">
+            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#awards">
               Awards
             </a>
           </nav>
           <div className="flex items-center gap-2 text-sm">
             <a
-              className="inline-flex items-center gap-2 px-4 py-1.5 border border-slate-800 text-slate-400 hover:border-amber-500/50 hover:text-amber-500 transition-all duration-300 font-mono text-xs group"
+              className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/15 text-zinc-300 hover:border-white/40 hover:text-white transition-all duration-300 font-mono text-xs"
               href="https://github.com/danyu1"
               target="_blank"
               rel="noreferrer"
@@ -419,16 +411,16 @@ export default function DanielHernandezSite() {
         <Hero />
       </main>
 
-      <Separator className="bg-slate-800/30 relative z-10" />
+      <Separator className="bg-white/10 relative z-10" />
 
       {/* Education */}
       <Section
         id="education"
         title="Education"
-        icon={<GraduationCap className="w-5 h-5 text-amber-500" aria-hidden />}
+        icon={<GraduationCap className="w-5 h-5 text-white/80" aria-hidden />}
       >
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-2">
                 <Image
@@ -438,19 +430,19 @@ export default function DanielHernandezSite() {
                   height={36}
                   className="rounded-sm"
                 />
-                <CardTitle className="text-slate-100">University of Chicago</CardTitle>
+                <CardTitle className="text-zinc-100">University of Chicago</CardTitle>
               </div>
-              <div className="text-sm text-slate-400">
+              <div className="text-sm text-zinc-400">
                 Chicago, IL — B.S. Computer Science (’28), Minor in Data Science
               </div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300">
+            <CardContent className="text-sm text-zinc-300">
               Coursework focus: Systems Programming I & II, Distributed Systems, Mathematical Foundations of Machine Learning,
               Introduction to Data Engineering, Linear Models and Experimental Design, Multivariate Calculus,
               Linear Algebra, Discrete Mathematics, Options and Volatility Products
             </CardContent>
           </Card>
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-2">
                 <Image
@@ -460,13 +452,13 @@ export default function DanielHernandezSite() {
                   height={65}
                   className="rounded-sm"
                 />
-                <CardTitle className="text-slate-100">Harvard-Westlake</CardTitle>
+                <CardTitle className="text-zinc-100">Harvard-Westlake</CardTitle>
               </div>
-              <div className="text-sm text-slate-400">
+              <div className="text-sm text-zinc-400">
                 Studio City, CA — GPA: 3.83/4.0
               </div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300">
+            <CardContent className="text-sm text-zinc-300">
               Coursework focus: AP Calculus BC (5), AP Statistics (5), AP Computer Science A (5), AP Spanish Language and Culture (5), Honors Design and Data Structures, Honors Topics in Computer Science
             </CardContent>
           </Card> 
@@ -474,27 +466,27 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Skills */}
-      <Section id="skills" title="Skills" icon={<Layers3 className="w-5 h-5 text-amber-500" aria-hidden />}>
+      <Section id="skills" title="Skills" icon={<Layers3 className="w-5 h-5 text-white/80" aria-hidden />}>
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
-              <CardTitle className="text-slate-100">Proficient</CardTitle>
+              <CardTitle className="text-zinc-100">Proficient</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-2">
               {skillsPro.map((s) => (
-                <Badge key={s} className="bg-slate-900/70 border-slate-700">
+                <Badge key={s} className="bg-white/[0.03] border-white/15">
                   {s}
                 </Badge>
               ))}
             </CardContent>
           </Card>
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
-              <CardTitle className="text-slate-100">Experience</CardTitle>
+              <CardTitle className="text-zinc-100">Experience</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-2">
               {skillsExp.map((s) => (
-                <Badge key={s} className="bg-slate-900/70 border-slate-700">
+                <Badge key={s} className="bg-white/[0.03] border-white/15">
                   {s}
                 </Badge>
               ))}
@@ -504,9 +496,9 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Experience */}
-<Section id="experience" title="Experience" icon={<Waves className="w-5 h-5 text-amber-500" aria-hidden />}>
+<Section id="experience" title="Experience" icon={<Waves className="w-5 h-5 text-white/80" aria-hidden />}>
         <div className="grid gap-4 max-w-none">
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
@@ -519,12 +511,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Deep Learning Assistant Researcher — University of Chicago, Geophysical Sciences (Prof. Dorian Abbot)
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Sep 2024 – Present</span>
+                    <span className="text-xs text-zinc-400 whitespace-nowrap">Sep 2024 – Present</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300 space-y-2">
+            <CardContent className="text-sm text-zinc-300 space-y-2">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Designed a novel CVAE to model & autoregress regime transitions in the Holton–Mass system.
@@ -548,7 +540,7 @@ export default function DanielHernandezSite() {
                   href="/papers/ssw-cvae-emulator.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-amber-500/50 hover:text-amber-400"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-4 py-2 text-sm font-medium text-zinc-200 transition hover:border-white/40 hover:text-white"
                 >
                   <FileText className="w-4 h-4" />
                   Preview Paper
@@ -556,7 +548,7 @@ export default function DanielHernandezSite() {
                 <a
                   href="/papers/ssw-cvae-emulator.pdf"
                   download="AI_Emulation_SSW_CVAE.pdf"
-                  className="inline-flex items-center gap-2 rounded-lg bg-amber-500/10 border border-amber-500/30 px-4 py-2 text-sm font-medium text-amber-500 transition hover:bg-amber-500/20"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white/10 border border-white/25 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/15 hover:border-white/40"
                 >
                   <Download className="w-4 h-4" />
                   Download PDF
@@ -567,7 +559,7 @@ export default function DanielHernandezSite() {
 
           
 
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
@@ -580,12 +572,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Computer Vision Researcher — XLab Nuclear Risk and Security Working Group
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">October 2025 – December 2025</span>
+                    <span className="text-xs text-zinc-400 whitespace-nowrap">October 2025 – December 2025</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300 space-y-1">
+            <CardContent className="text-sm text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Developed automated workflow using Python and geospatial analysis tools (Google Earth Engine, GeoPandas, GDAL) to identify and geolocate AI data centers globally through satellite imagery analysis.
@@ -603,7 +595,7 @@ export default function DanielHernandezSite() {
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
@@ -616,12 +608,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Software Engineer Intern — Recognition Algorithms &amp; SDK, PopID
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
+                    <span className="text-xs text-zinc-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300 space-y-1">
+            <CardContent className="text-sm text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Will develop and benchmark facial and palm recognition algorithms, evaluating model performance across RGB and NIR imaging conditions for production biometric pipelines.
@@ -633,7 +625,7 @@ export default function DanielHernandezSite() {
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
@@ -646,12 +638,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Software Engineer & Analyst — Oracle Trading
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Jan 2026 – Present</span>
+                    <span className="text-xs text-zinc-400 whitespace-nowrap">Jan 2026 – Present</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300 space-y-1">
+            <CardContent className="text-sm text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Member of UChicago&apos;s premier prediction markets research and trading club, actively trading a ~$100K fund on Polymarket.
@@ -664,7 +656,7 @@ export default function DanielHernandezSite() {
                 </li>
               </ul>
               <div className="mt-4 flex items-center gap-4">
-                <div className="flex items-center gap-3 text-xs text-slate-400">
+                <div className="flex items-center gap-3 text-xs text-zinc-400">
                   <span>Sponsored by:</span>
                   <img
                     src="/images/polymarket-logo.png"
@@ -681,7 +673,7 @@ export default function DanielHernandezSite() {
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <img
@@ -694,12 +686,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Equity Derivatives Trading &amp; Structuring Summer Analyst — Morgan Stanley
                     </span>
-                    <span className="text-xs text-slate-400 whitespace-nowrap">Summer 2027</span>
+                    <span className="text-xs text-zinc-400 whitespace-nowrap">Summer 2027</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300 space-y-1">
+            <CardContent className="text-sm text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Incoming Summer Analyst on the Equity Derivatives Trading &amp; Structuring desk, working on structured products and derivatives solutions for institutional clients.
@@ -715,10 +707,10 @@ export default function DanielHernandezSite() {
       <Section
         id="pubs"
         title="Publications"
-        icon={<Sparkles className="w-5 h-5 text-amber-500" aria-hidden />}
+        icon={<Sparkles className="w-5 h-5 text-white/80" aria-hidden />}
       >
-        <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
-          <CardContent className="p-4 text-sm text-slate-300">
+        <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
+          <CardContent className="p-4 text-sm text-zinc-300">
             Hernandez D, Boscu C, Alvarez‑Ventura F, Abbot D.S, Finkel J, Chattopadhay A, Hassanzadeh P.
             <em> AI Emulation of Stochastic Sudden Stratospheric Warming with Interpretable Latent Structure. AGU James.</em>.
           </CardContent>
@@ -729,26 +721,26 @@ export default function DanielHernandezSite() {
       <Section
       id="coursework"
       title="Coursework"
-      icon={<Brain className="w-5 h-5 text-amber-500" aria-hidden />}
+      icon={<Brain className="w-5 h-5 text-white/80" aria-hidden />}
       >
         <CourseWorkGrid courses={courseworkCategories} />
       </Section>
 
       {/* Projects */}
-      <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-amber-500" aria-hidden />}>
+      <Section id="projects" title="Projects" icon={<Layers3 className="w-5 h-5 text-white/80" aria-hidden />}>
         <ProjectsCarousel projects={projects} />
       </Section>
 
       {/* Presentations */}
-      <Section id="talks" title="Presentations" icon={<Waves className="w-5 h-5 text-amber-500" aria-hidden />}>
+      <Section id="talks" title="Presentations" icon={<Waves className="w-5 h-5 text-white/80" aria-hidden />}>
         <div className="grid gap-4">
           {presentations.map((t, idx) => (
-            <Card key={`${t.title}-${idx}`} className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+            <Card key={`${t.title}-${idx}`} className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
               <CardHeader>
-                <CardTitle className="text-base text-slate-100">{t.title}</CardTitle>
+                <CardTitle className="text-base text-zinc-100">{t.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-slate-300">
-                <div className="text-slate-400">{t.venue}</div>
+              <CardContent className="text-sm text-zinc-300">
+                <div className="text-zinc-400">{t.venue}</div>
                 <div className="mt-1">{t.authors}</div>
               </CardContent>
             </Card>
@@ -757,23 +749,23 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Leadership & Activities */}
-      <Section id="leadership" title="Leadership & Activities" icon={<Trophy className="w-5 h-5 text-amber-500" aria-hidden />}>
+      <Section id="leadership" title="Leadership & Activities" icon={<Trophy className="w-5 h-5 text-white/80" aria-hidden />}>
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <CardTitle className="text-white">Varsity Collegiate Track & Field Athlete</CardTitle>
-              <div className="text-xs text-slate-400">UChicago (2024–Present)</div>
+              <div className="text-xs text-zinc-400">UChicago (2024–Present)</div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300">
+            <CardContent className="text-sm text-zinc-300">
               Competed as a jumper for UChicago Athletics; ranked 95th nationally in NCAA Division III triple jump as a first‑year.
             </CardContent>
           </Card>
-          <Card className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <CardTitle className="text-white">Phoenix STEM Scholar & Research Mentor</CardTitle>
-              <div className="text-xs text-slate-400">UChicago (2024–Present)</div>
+              <div className="text-xs text-zinc-400">UChicago (2024–Present)</div>
             </CardHeader>
-            <CardContent className="text-sm text-slate-300">
+            <CardContent className="text-sm text-zinc-300">
               Selected via competitive program supporting first‑gen & underrepresented students in STEM. Mentored incoming students on research paths and course planning.
             </CardContent>
           </Card>
@@ -781,9 +773,9 @@ export default function DanielHernandezSite() {
 
         {/* Conference Experience - Full Width Breakout */}
         <div className="mt-12 -mx-6 md:-mx-12 lg:-mx-24">
-          <div className="px-6 md:px-12 lg:px-24 py-8 bg-gradient-to-b from-slate-900/20 to-transparent border-y border-slate-800/30">
+          <div className="px-6 md:px-12 lg:px-24 py-8 bg-gradient-to-b from-white/[0.02] to-transparent border-y border-white/10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-amber-500"></div>
+              <div className="h-px w-8 bg-white/40"></div>
               <h3 className="text-xl font-medium tracking-tight text-white font-mono">
                 Conference Experience
               </h3>
@@ -801,13 +793,13 @@ export default function DanielHernandezSite() {
 <Section
   id="awards"
   title="Awards & Honors"
-  icon={<Award className="w-5 h-5 text-amber-500" aria-hidden />}
+  icon={<Award className="w-5 h-5 text-white/80" aria-hidden />}
 >
   <div className="grid gap-4">
     {awards.map((grp) => (
       <Card
         key={grp.group}
-        className="bg-slate-900/30 border-slate-800/50 hover:border-slate-700 transition-colors duration-300"
+        className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300"
       >
         <CardHeader>
           <CardTitle className="text-base text-white">
@@ -832,7 +824,7 @@ export default function DanielHernandezSite() {
                   {it.title}
                 </div>
                 {it.description && (
-                  <p className="text-xs text-slate-300 mt-1 leading-snug">
+                  <p className="text-xs text-zinc-300 mt-1 leading-snug">
                     {it.description}
                   </p>
                 )}
@@ -846,7 +838,7 @@ export default function DanielHernandezSite() {
 </Section>
 
       {/* Languages */}
-      <Section id="languages" title="Languages" icon={<Layers3 className="w-5 h-5 text-amber-500" aria-hidden />}>
+      <Section id="languages" title="Languages" icon={<Layers3 className="w-5 h-5 text-white/80" aria-hidden />}>
         <div className="flex flex-wrap gap-2">
           <Tag>English — Native</Tag>
           <Tag>Spanish — Native</Tag>
@@ -854,11 +846,11 @@ export default function DanielHernandezSite() {
       </Section>
 
       {/* Footer — no contact section at the bottom */}
-      <footer className="py-10 border-t border-slate-800/60 bg-gradient-to-b from-transparent to-slate-950/60 relative z-10">
-        <div className="max-w-5xl mx-auto px-4 text-sm text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <footer className="py-8 border-t border-white/10 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 text-sm text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <a
-            className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-slate-900/60 border border-slate-700 hover:bg-slate-900"
+            className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30"
             href="#hero"
             aria-label="Back to top"
           >

@@ -7,7 +7,7 @@ import type { PlotData, Layout, Config } from "plotly.js";
 // client-side only
 const Plot = dynamic(() => import("react-plotly.js"), {
   ssr: false,
-  loading: () => <div className="text-slate-400 text-sm">Loading 3D plot…</div>
+  loading: () => <div className="text-zinc-400 text-sm">Loading 3D plot…</div>
 });
 
 type Point = { PC1: number; PC2: number; PC3: number; Category: string };
@@ -36,7 +36,7 @@ export default function Latent3DPlot() {
     return <div className="text-red-400 text-sm">Failed to load 3D plot data: {err}</div>;
   }
   if (!data) {
-    return <div className="text-slate-400 text-sm">Loading 3D plot…</div>;
+    return <div className="text-zinc-400 text-sm">Loading 3D plot…</div>;
   }
 
   // Group by Category for separate traces

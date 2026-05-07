@@ -22,35 +22,30 @@ export default function PriorSystemsShowcase() {
   const [activeTab, setActiveTab] = useState('overview')
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16">
-      {/* Hero Section */}
-      <div className="mb-12 text-center">
-        <div className="mb-4 inline-block rounded-full bg-amber-500/10 border border-amber-500/30 px-4 py-1 text-sm font-semibold text-amber-500">
-          Featured Project
+    <section className="mx-auto max-w-6xl px-6 py-10">
+      {/* Hero */}
+      <div className="mb-10">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="h-px w-8 bg-white/30" />
+          <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider">
+            Project Showcase
+          </span>
         </div>
-        <h1 className="mb-4 text-5xl font-bold text-white">
+        <h1 className="mb-3 text-4xl lg:text-5xl font-medium tracking-tight text-white">
           Prior Systems
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-xl text-slate-300">
-          Full-stack quantitative trading platform with real-time portfolio tracking,
-          Black-Scholes options pricing, and 15+ technical indicators
+        <p className="max-w-2xl text-lg text-zinc-300 leading-relaxed">
+          Full-stack quantitative trading platform with real-time portfolio
+          tracking, Black–Scholes options pricing, and 15+ technical indicators.
         </p>
 
-        {/* Key Metrics */}
-        <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-          <MetricCard number="15K+" label="Lines of Code" />
-          <MetricCard number="<100ms" label="Render Time" />
-          <MetricCard number="10+" label="Active Users" />
-          <MetricCard number="50K+" label="Data Points" />
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
+        {/* CTA */}
+        <div className="mt-6 flex flex-wrap gap-2.5">
           <a
             href="https://priorsystems.net"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg bg-amber-500 px-6 py-3 font-semibold text-slate-900 transition hover:bg-amber-400"
+            className="px-4 py-2 bg-white text-black font-mono text-xs hover:bg-zinc-200 transition-colors"
           >
             Visit Live Site
           </a>
@@ -58,15 +53,15 @@ export default function PriorSystemsShowcase() {
             href="https://github.com/danyu1/relay-trader"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border-2 border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-amber-500"
+            className="px-4 py-2 border border-white/15 text-zinc-300 font-mono text-xs hover:border-white/40 hover:text-white transition-colors"
           >
             View Code
           </a>
         </div>
       </div>
 
-      {/* Main Showcase Image/GIF */}
-      <div className="mb-12 overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+      {/* Main Showcase Image */}
+      <div className="mb-10 overflow-hidden border border-white/10">
         <Image
           src="/images/prior-systems/dashboard.png"
           alt="Prior Systems Demo"
@@ -78,17 +73,17 @@ export default function PriorSystemsShowcase() {
       </div>
 
       {/* Tabbed Content */}
-      <div className="mb-12">
+      <div className="mb-10">
         {/* Tab Navigation */}
-        <div className="mb-8 flex flex-wrap gap-2">
+        <div className="mb-6 flex flex-wrap gap-1.5 border-b border-white/10">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`rounded-lg px-4 py-2 font-semibold transition flex items-center gap-2 ${
+              className={`px-4 py-2.5 -mb-px font-mono text-xs tracking-wider uppercase transition flex items-center gap-2 border-b ${
                 activeTab === tab.id
-                  ? 'bg-amber-500 text-slate-900'
-                  : 'bg-slate-900/70 border border-slate-700 text-slate-300 hover:bg-slate-800'
+                  ? "text-white border-white"
+                  : "text-zinc-400 border-transparent hover:text-white"
               }`}
             >
               {tab.icon}
@@ -98,7 +93,7 @@ export default function PriorSystemsShowcase() {
         </div>
 
         {/* Tab Content */}
-        <div className="rounded-xl border border-slate-800 bg-slate-900/30 p-8">
+        <div className="border border-white/10 bg-white/[0.02] p-6 lg:p-8">
           {activeTab === 'overview' && <OverviewTab />}
           {activeTab === 'features' && <FeaturesTab />}
           {activeTab === 'tech' && <TechStackTab />}
@@ -115,21 +110,12 @@ export default function PriorSystemsShowcase() {
   )
 }
 
-function MetricCard({ number, label }: { number: string; label: string }) {
-  return (
-    <div className="rounded-lg border border-slate-800 bg-slate-900/50 p-4">
-      <div className="text-3xl font-bold text-amber-500">{number}</div>
-      <div className="text-sm text-slate-400">{label}</div>
-    </div>
-  )
-}
-
 function OverviewTab() {
   return (
     <div className="space-y-6">
       <div>
         <h3 className="mb-3 text-2xl font-bold text-white">What is Prior Systems?</h3>
-        <p className="text-slate-300 leading-relaxed">
+        <p className="text-zinc-300 leading-relaxed">
           Prior Systems is a production-grade algorithmic trading backtesting platform that enables
           traders and quantitative analysts to test trading strategies against historical market data.
           The platform features dual-mode analysis, real-time portfolio tracking, and advanced
@@ -160,14 +146,13 @@ function OverviewTab() {
         />
       </div>
 
-      <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-6">
-        <h4 className="mb-2 font-semibold text-amber-500">Technical Highlights</h4>
-        <ul className="space-y-2 text-sm text-slate-300">
-          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-amber-500 flex-shrink-0" /> 15,000+ lines of production TypeScript and Python</li>
-          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-amber-500 flex-shrink-0" /> Microservices architecture on Vercel + Railway</li>
-          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-amber-500 flex-shrink-0" /> Processes 10K+ bars of data with sub-100ms rendering</li>
-          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-amber-500 flex-shrink-0" /> PostgreSQL with SQLAlchemy handling 50K+ data points</li>
-          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-amber-500 flex-shrink-0" /> 12 RESTful API endpoints with &lt;200ms latency</li>
+      <div className="rounded-lg bg-white/[0.03] border border-white/15 p-6">
+        <h4 className="mb-2 font-semibold text-zinc-400">Technical Highlights</h4>
+        <ul className="space-y-2 text-sm text-zinc-300">
+          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" /> Microservices architecture on Vercel + Railway</li>
+          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" /> Processes 10K+ bars of data with sub-100ms rendering</li>
+          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" /> PostgreSQL with SQLAlchemy handling 50K+ data points</li>
+          <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" /> 12 RESTful API endpoints with &lt;200ms latency</li>
         </ul>
       </div>
     </div>
@@ -260,10 +245,10 @@ function TechStackTab() {
             {category.technologies.map((tech) => (
               <div
                 key={tech.name}
-                className="rounded-lg border border-slate-700 bg-slate-900/50 p-4 hover:border-amber-500/50 transition"
+                className="rounded-lg border border-white/10 bg-white/[0.03] p-4 hover:border-white/30 transition"
               >
                 <div className="mb-1 font-semibold text-white">{tech.name}</div>
-                <div className="text-sm text-slate-400">{tech.description}</div>
+                <div className="text-sm text-zinc-400">{tech.description}</div>
               </div>
             ))}
           </div>
@@ -280,10 +265,10 @@ function CodeSamplesTab() {
         <h3 className="mb-3 text-xl font-bold text-white">
           Black-Scholes Options Pricing Implementation
         </h3>
-        <p className="mb-4 text-sm text-slate-400">
+        <p className="mb-4 text-sm text-zinc-400">
           Full implementation of the Black-Scholes model for option pricing with Greeks calculation
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-slate-950 border border-slate-800 p-4 text-sm text-slate-100">
+        <pre className="overflow-x-auto rounded-lg bg-black/50 border border-white/10 p-4 text-sm text-zinc-100">
           <code>{`def black_scholes_price(
     option_type: Literal["call", "put"],
     spot_price: float,
@@ -316,10 +301,10 @@ function CodeSamplesTab() {
         <h3 className="mb-3 text-xl font-bold text-white">
           TypeScript Type Safety Example
         </h3>
-        <p className="mb-4 text-sm text-slate-400">
+        <p className="mb-4 text-sm text-zinc-400">
           Handling union types for form inputs while maintaining arithmetic type safety
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-slate-950 border border-slate-800 p-4 text-sm text-slate-100">
+        <pre className="overflow-x-auto rounded-lg bg-black/50 border border-white/10 p-4 text-sm text-zinc-100">
           <code>{`// Allow empty string for better UX (user can clear field)
 const [quantity, setQuantity] = useState<number | ''>(100);
 
@@ -555,10 +540,10 @@ function ArchitectureSection() {
     class FileSystem,MemoryCache,LocalStorage storage`
 
   return (
-    <div className="mb-12 rounded-xl border border-slate-800 bg-gradient-to-br from-slate-900/50 to-slate-900/30 p-8">
+    <div className="mb-12 rounded-xl border border-white/10 bg-white/[0.02] p-8">
       <h2 className="mb-6 text-3xl font-bold text-white">System Architecture (You may have to zoom in to see details)</h2>
 
-      <div className="mb-6 overflow-hidden rounded-lg border border-slate-800 bg-slate-900/30 p-8">
+      <div className="mb-6 overflow-hidden rounded-lg border border-white/10 bg-white/[0.02] p-8">
         <MermaidDiagram chart={mermaidChart} />
       </div>
 
@@ -582,23 +567,23 @@ function ArchitectureSection() {
 
 function ImpactSection() {
   return (
-    <div className="rounded-xl border border-slate-800 bg-amber-500/5 p-8">
+    <div className="rounded-xl border border-white/10 bg-white/[0.02] p-8">
       <h2 className="mb-6 text-3xl font-bold text-white">Real-World Impact</h2>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <h3 className="mb-3 text-xl font-semibold text-white">Active Users</h3>
-          <p className="mb-4 text-slate-300">
+          <p className="mb-4 text-zinc-300">
             Platform is actively used by members from quantitative finance organizations at
             University of Chicago, including:
           </p>
-          <ul className="space-y-2 text-slate-300">
+          <ul className="space-y-2 text-zinc-300">
             <li className="flex items-center">
-              <CircleDot className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
+              <CircleDot className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
               <strong>Maroon Capital</strong> - Student-run investment fund
             </li>
             <li className="flex items-center">
-              <CircleDot className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
+              <CircleDot className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
               <strong>Trott Business Leaders</strong> - Business strategy group
             </li>
           </ul>
@@ -606,35 +591,35 @@ function ImpactSection() {
 
         <div>
           <h3 className="mb-3 text-xl font-semibold text-white">Use Cases</h3>
-          <ul className="space-y-2 text-slate-300">
+          <ul className="space-y-2 text-zinc-300">
             <li className="flex items-center">
-              <BarChart3 className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
+              <BarChart3 className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
               Algorithmic strategy development and validation
             </li>
             <li className="flex items-center">
-              <TrendingUp className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
+              <TrendingUp className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
               Historical market analysis and pattern recognition
             </li>
             <li className="flex items-center">
-              <Lightbulb className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
+              <Lightbulb className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
               Options trading education and simulation
             </li>
             <li className="flex items-center">
-              <Target className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
+              <Target className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
               Portfolio risk management testing
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="mt-6 rounded-lg bg-slate-900/50 border border-slate-800 p-4">
-        <p className="text-center text-sm text-slate-300">
+      <div className="mt-6 rounded-lg bg-white/[0.03] border border-white/10 p-4">
+        <p className="text-center text-sm text-zinc-300">
           <strong className="text-white">Production URL:</strong>{' '}
           <a
             href="https://priorsystems.net"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-amber-500 hover:text-amber-400 font-mono"
+            className="text-white hover:text-zinc-300 font-mono"
           >
             priorsystems.net
           </a>
@@ -647,10 +632,10 @@ function ImpactSection() {
 // Helper Components
 function FeatureCard({ title, description, icon }: { title: string; description: string; icon: React.ReactNode }) {
   return (
-    <div className="rounded-lg border border-slate-800 bg-slate-900/50 p-4">
-      <div className="mb-2 text-amber-500">{icon}</div>
+    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
+      <div className="mb-2 text-zinc-400">{icon}</div>
       <h4 className="mb-2 font-semibold text-white">{title}</h4>
-      <p className="text-sm text-slate-400">{description}</p>
+      <p className="text-sm text-zinc-400">{description}</p>
     </div>
   )
 }
@@ -672,18 +657,18 @@ function FeatureShowcase({
     <div className={`grid gap-6 md:grid-cols-2 ${reverse ? 'md:flex-row-reverse' : ''}`}>
       <div className={reverse ? 'md:order-2' : ''}>
         <h3 className="mb-2 text-2xl font-bold text-white">{title}</h3>
-        <p className="mb-4 text-slate-400">{description}</p>
+        <p className="mb-4 text-zinc-400">{description}</p>
         <ul className="space-y-2">
           {features.map((feature, idx) => (
-            <li key={idx} className="flex items-start text-sm text-slate-300">
-              <CheckCircle2 className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0 mt-0.5" />
+            <li key={idx} className="flex items-start text-sm text-zinc-300">
+              <CheckCircle2 className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0 mt-0.5" />
               {feature}
             </li>
           ))}
         </ul>
       </div>
       <div className={reverse ? 'md:order-1' : ''}>
-        <div className="overflow-hidden rounded-lg border border-slate-800 shadow-lg">
+        <div className="overflow-hidden rounded-lg border border-white/10">
           <Image
             src={imagePath}
             alt={title}
@@ -699,12 +684,12 @@ function FeatureShowcase({
 
 function ArchitectureCard({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-lg border border-slate-800 bg-slate-900/50 p-4">
+    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
       <h4 className="mb-3 font-semibold text-white">{title}</h4>
       <ul className="space-y-2">
         {items.map((item, idx) => (
-          <li key={idx} className="text-sm text-slate-300 flex items-center">
-            <ArrowRight className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
+          <li key={idx} className="text-sm text-zinc-300 flex items-center">
+            <ArrowRight className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
             {item}
           </li>
         ))}

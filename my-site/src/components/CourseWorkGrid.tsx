@@ -16,64 +16,37 @@ interface CourseWorkGridProps {
 export default function CourseWorkGrid({ courses }: CourseWorkGridProps) {
   return (
     <div className="w-full">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {courses.map((category, idx) => (
-          <div
-            key={category.category}
-            className="group relative"
-            style={{
-              animationDelay: `${idx * 0.1}s`,
-            }}
-          >
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+        {courses.map((category) => (
+          <div key={category.category} className="group relative">
             {/* Category Header */}
-            <div className="mb-4 pb-3 border-b border-slate-800/50">
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
-                <h3 className="text-sm font-mono text-amber-500 uppercase tracking-wider">
+            <div className="mb-3 pb-2 border-b border-white/10">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xs font-mono text-zinc-300 uppercase tracking-wider">
                   {category.category}
                 </h3>
-              </div>
-              <div className="mt-1 text-xs font-mono text-slate-600">
-                {category.items.length} {category.items.length === 1 ? 'course' : 'courses'}
+                <span className="text-[10px] font-mono text-zinc-600 tabular-nums">
+                  {String(category.items.length).padStart(2, "0")}
+                </span>
               </div>
             </div>
 
             {/* Course List */}
-            <ul className="space-y-2.5">
-              {category.items.map((course, courseIdx) => (
-                <li
-                  key={course.name}
-                  className="group/item relative"
-                  style={{
-                    animationDelay: `${(idx * 0.1) + (courseIdx * 0.05)}s`,
-                  }}
-                >
+            <ul className="space-y-1.5">
+              {category.items.map((course) => (
+                <li key={course.name} className="group/item relative">
                   <a
                     href={course.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-start gap-2 pl-4 text-sm text-slate-400 hover:text-amber-500 transition-colors duration-300 group/link"
+                    className="flex items-start gap-2 text-sm text-zinc-400 hover:text-white transition-colors duration-200 group/link"
                   >
-                    {/* Bullet point */}
-                    <div className="absolute left-0 top-2 w-1 h-1 bg-slate-700 group-hover/link:bg-amber-500 transition-colors duration-300"></div>
-
-                    {/* Hover line effect */}
-                    <div className="absolute left-0 top-1.5 w-0 h-px bg-amber-500/50 group-hover/link:w-2 transition-all duration-300"></div>
-
-                    <span className="leading-relaxed flex-1">{course.name}</span>
-
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 flex-shrink-0 mt-0.5" />
+                    <span className="leading-snug flex-1">{course.name}</span>
+                    <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-60 transition-opacity duration-200 flex-shrink-0 mt-1" />
                   </a>
                 </li>
               ))}
             </ul>
-
-            {/* Subtle background grid on hover */}
-            <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute inset-0 bg-slate-900/20 border border-slate-800/30"></div>
-              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-amber-500/30"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-amber-500/30"></div>
-            </div>
           </div>
         ))}
       </div>

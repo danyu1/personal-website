@@ -77,7 +77,7 @@ export default function ConferenceShowcase({
       {/* Conference Header with Logo */}
       <div className="mb-8 animate-[conferenceSlideIn_500ms_ease-out]">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-4">
-          <div className="relative w-20 h-20 bg-white/5 p-2 rounded-lg border border-slate-800/50">
+          <div className="relative w-20 h-20 bg-white/5 p-2 rounded-lg border border-white/10">
             <Image
               src={experience.logo}
               alt={`${experience.title} logo`}
@@ -90,19 +90,19 @@ export default function ConferenceShowcase({
             <h3 className="text-3xl font-medium text-white mb-2 tracking-tight">
               {experience.title}
             </h3>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+            <div className="flex flex-wrap gap-4 text-sm text-zinc-400">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-amber-500" aria-hidden />
+                <MapPin className="w-4 h-4 text-zinc-500" aria-hidden />
                 <span>{experience.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-amber-500" aria-hidden />
+                <Calendar className="w-4 h-4 text-zinc-500" aria-hidden />
                 <span>{experience.date}</span>
               </div>
             </div>
           </div>
         </div>
-        <p className="text-slate-300 leading-relaxed">
+        <p className="text-zinc-300 leading-relaxed">
           {experience.description}
         </p>
       </div>
@@ -112,9 +112,7 @@ export default function ConferenceShowcase({
         ref={wrapRef}
         className="relative w-full mb-6 animate-[conferenceSlideIn_600ms_ease-out]"
       >
-        <div className="relative w-full aspect-video overflow-hidden border border-slate-800/50 bg-slate-900/30 group">
-          {/* Ambient glow */}
-          <div className="absolute inset-0 bg-amber-500/5 blur-3xl -z-10 scale-95"></div>
+        <div className="relative w-full aspect-video overflow-hidden border border-white/10 bg-white/[0.02] group">
 
           <div
             key={`img-${idx}`}
@@ -133,21 +131,19 @@ export default function ConferenceShowcase({
           </div>
 
           {/* Corner accents */}
-          <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-amber-500/30"></div>
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-amber-500/30"></div>
 
           {/* Navigation arrows on image hover */}
           <button
             onClick={prev}
             aria-label="Previous image"
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-slate-900/80 border border-slate-700 text-slate-300 hover:border-amber-500/50 hover:text-amber-500 transition-all duration-300 opacity-0 group-hover:opacity-100"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/70 border border-white/15 text-zinc-200 hover:border-white/40 hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={next}
             aria-label="Next image"
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-slate-900/80 border border-slate-700 text-slate-300 hover:border-amber-500/50 hover:text-amber-500 transition-all duration-300 opacity-0 group-hover:opacity-100"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/70 border border-white/15 text-zinc-200 hover:border-white/40 hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -155,10 +151,10 @@ export default function ConferenceShowcase({
 
         {/* Image counter and caption */}
         <div className="mt-3 flex items-center justify-between">
-          <span className="text-xs font-mono text-slate-500">
+          <span className="text-xs font-mono text-zinc-500">
             Image {idx + 1} / {n}
           </span>
-          <span className="text-sm text-slate-400">{currentImage.alt}</span>
+          <span className="text-sm text-zinc-400">{currentImage.alt}</span>
         </div>
 
         {/* Thumbnail navigation */}
@@ -170,8 +166,8 @@ export default function ConferenceShowcase({
               aria-label={`View image ${i + 1}: ${img.alt}`}
               className={`relative flex-shrink-0 w-20 h-14 overflow-hidden border-2 transition-all duration-300 ${
                 i === idx
-                  ? "border-amber-500 opacity-100"
-                  : "border-slate-800 opacity-50 hover:opacity-75 hover:border-slate-700"
+                  ? "border-white opacity-100"
+                  : "border-white/15 opacity-50 hover:opacity-75 hover:border-white/30"
               }`}
             >
               <Image
@@ -194,10 +190,10 @@ export default function ConferenceShowcase({
           return (
             <div
               key={i}
-              className="flex items-start gap-3 p-4 bg-slate-900/30 border border-slate-800/50 hover:border-slate-700 transition-colors duration-300"
+              className="flex items-start gap-3 p-4 bg-white/[0.02] border border-white/10 hover:border-white/20 transition-colors duration-300"
             >
-              <Icon className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" aria-hidden />
-              <p className="text-sm text-slate-300 leading-relaxed">{highlight}</p>
+              <Icon className="w-5 h-5 text-zinc-500 mt-0.5 flex-shrink-0" aria-hidden />
+              <p className="text-sm text-zinc-300 leading-relaxed">{highlight}</p>
             </div>
           );
         })}
