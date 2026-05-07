@@ -33,17 +33,17 @@ export default function PriorSystemsPage() {
               className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-200"
             >
               <ChevronLeft className="w-4 h-4" />
-              <span className="text-base font-mono">Back to Portfolio</span>
+              <span className="text-lg font-mono">Back to Portfolio</span>
             </Link>
             <div className="h-4 w-px bg-white/15" />
-            <div className="font-mono text-base font-medium text-white">
+            <div className="font-mono text-lg font-medium text-white">
               Daniel A. Hernandez
               <span className="text-zinc-500 ml-2 hidden sm:inline">
                 · CS + Data Science @ UChicago &apos;28
               </span>
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-4 text-base font-mono">
+          <nav className="hidden md:flex items-center gap-4 text-lg font-mono">
             <a
               className="text-zinc-400 hover:text-white transition-colors duration-200"
               href="https://priorsystems.net"
@@ -63,11 +63,11 @@ export default function PriorSystemsPage() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-white/10 relative z-10">
-        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 text-base text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <Link
             href="/"
-            className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30 transition-colors duration-200 font-mono text-sm"
+            className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30 transition-colors duration-200 font-mono text-base"
           >
             <ChevronLeft className="w-3.5 h-3.5" /> Back to Portfolio
           </Link>

@@ -27,7 +27,7 @@ export default function PriorSystemsShowcase() {
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-3">
           <div className="h-px w-8 bg-white/30" />
-          <span className="text-sm font-mono text-zinc-400 uppercase tracking-wider">
+          <span className="text-base font-mono text-zinc-400 uppercase tracking-wider">
             Project Showcase
           </span>
         </div>
@@ -45,7 +45,7 @@ export default function PriorSystemsShowcase() {
             href="https://priorsystems.net"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-white text-black font-mono text-sm hover:bg-zinc-200 transition-colors"
+            className="px-4 py-2 bg-white text-black font-mono text-base hover:bg-zinc-200 transition-colors"
           >
             Visit Live Site
           </a>
@@ -53,7 +53,7 @@ export default function PriorSystemsShowcase() {
             href="https://github.com/danyu1/relay-trader"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-white/15 text-zinc-300 font-mono text-sm hover:border-white/40 hover:text-white transition-colors"
+            className="px-4 py-2 border border-white/15 text-zinc-300 font-mono text-base hover:border-white/40 hover:text-white transition-colors"
           >
             View Code
           </a>
@@ -80,7 +80,7 @@ export default function PriorSystemsShowcase() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2.5 -mb-px font-mono text-sm tracking-wider uppercase transition flex items-center gap-2 border-b ${
+              className={`px-4 py-2.5 -mb-px font-mono text-base tracking-wider uppercase transition flex items-center gap-2 border-b ${
                 activeTab === tab.id
                   ? "text-white border-white"
                   : "text-zinc-400 border-transparent hover:text-white"
@@ -148,7 +148,7 @@ function OverviewTab() {
 
       <div className="rounded-lg bg-white/[0.03] border border-white/15 p-6">
         <h4 className="mb-2 font-semibold text-zinc-400">Technical Highlights</h4>
-        <ul className="space-y-2 text-base text-zinc-300">
+        <ul className="space-y-2 text-lg text-zinc-300">
           <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" /> Microservices architecture on Vercel + Railway</li>
           <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" /> Processes 10K+ bars of data with sub-100ms rendering</li>
           <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-zinc-400 flex-shrink-0" /> PostgreSQL with SQLAlchemy handling 50K+ data points</li>
@@ -248,7 +248,7 @@ function TechStackTab() {
                 className="rounded-lg border border-white/10 bg-white/[0.03] p-4 hover:border-white/30 transition"
               >
                 <div className="mb-1 font-semibold text-white">{tech.name}</div>
-                <div className="text-base text-zinc-400">{tech.description}</div>
+                <div className="text-lg text-zinc-400">{tech.description}</div>
               </div>
             ))}
           </div>
@@ -265,10 +265,10 @@ function CodeSamplesTab() {
         <h3 className="mb-3 text-xl font-bold text-white">
           Black-Scholes Options Pricing Implementation
         </h3>
-        <p className="mb-4 text-base text-zinc-400">
+        <p className="mb-4 text-lg text-zinc-400">
           Full implementation of the Black-Scholes model for option pricing with Greeks calculation
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-black/50 border border-white/10 p-4 text-base text-zinc-100">
+        <pre className="overflow-x-auto rounded-lg bg-black/50 border border-white/10 p-4 text-lg text-zinc-100">
           <code>{`def black_scholes_price(
     option_type: Literal["call", "put"],
     spot_price: float,
@@ -301,10 +301,10 @@ function CodeSamplesTab() {
         <h3 className="mb-3 text-xl font-bold text-white">
           TypeScript Type Safety Example
         </h3>
-        <p className="mb-4 text-base text-zinc-400">
+        <p className="mb-4 text-lg text-zinc-400">
           Handling union types for form inputs while maintaining arithmetic type safety
         </p>
-        <pre className="overflow-x-auto rounded-lg bg-black/50 border border-white/10 p-4 text-base text-zinc-100">
+        <pre className="overflow-x-auto rounded-lg bg-black/50 border border-white/10 p-4 text-lg text-zinc-100">
           <code>{`// Allow empty string for better UX (user can clear field)
 const [quantity, setQuantity] = useState<number | ''>(100);
 
@@ -613,7 +613,7 @@ function ImpactSection() {
       </div>
 
       <div className="mt-6 rounded-lg bg-white/[0.03] border border-white/10 p-4">
-        <p className="text-center text-base text-zinc-300">
+        <p className="text-center text-lg text-zinc-300">
           <strong className="text-white">Production URL:</strong>{' '}
           <a
             href="https://priorsystems.net"
@@ -635,7 +635,7 @@ function FeatureCard({ title, description, icon }: { title: string; description:
     <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
       <div className="mb-2 text-zinc-400">{icon}</div>
       <h4 className="mb-2 font-semibold text-white">{title}</h4>
-      <p className="text-base text-zinc-400">{description}</p>
+      <p className="text-lg text-zinc-400">{description}</p>
     </div>
   )
 }
@@ -660,7 +660,7 @@ function FeatureShowcase({
         <p className="mb-4 text-zinc-400">{description}</p>
         <ul className="space-y-2">
           {features.map((feature, idx) => (
-            <li key={idx} className="flex items-start text-base text-zinc-300">
+            <li key={idx} className="flex items-start text-lg text-zinc-300">
               <CheckCircle2 className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0 mt-0.5" />
               {feature}
             </li>
@@ -688,7 +688,7 @@ function ArchitectureCard({ title, items }: { title: string; items: string[] }) 
       <h4 className="mb-3 font-semibold text-white">{title}</h4>
       <ul className="space-y-2">
         {items.map((item, idx) => (
-          <li key={idx} className="text-base text-zinc-300 flex items-center">
+          <li key={idx} className="text-lg text-zinc-300 flex items-center">
             <ArrowRight className="w-4 h-4 text-zinc-400 mr-2 flex-shrink-0" />
             {item}
           </li>

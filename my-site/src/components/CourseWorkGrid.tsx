@@ -22,7 +22,7 @@ export default function CourseWorkGrid({ courses }: CourseWorkGridProps) {
             {/* Category Header */}
             <div className="mb-3 pb-2 border-b border-white/10">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-mono text-zinc-300 uppercase tracking-wider">
+                <h3 className="text-base font-mono text-zinc-300 uppercase tracking-wider">
                   {category.category}
                 </h3>
                 <span className="text-[10px] font-mono text-zinc-600 tabular-nums">
@@ -39,7 +39,7 @@ export default function CourseWorkGrid({ courses }: CourseWorkGridProps) {
                     href={course.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-start gap-2 text-base text-zinc-400 hover:text-white transition-colors duration-200 group/link"
+                    className="flex items-start gap-2 text-lg text-zinc-400 hover:text-white transition-colors duration-200 group/link"
                   >
                     <span className="leading-snug flex-1">{course.name}</span>
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-60 transition-opacity duration-200 flex-shrink-0 mt-1" />

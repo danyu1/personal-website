@@ -75,7 +75,7 @@ const Section = ({
           {icon}
           <h2
             id={`${id}-title`}
-            className="text-2xl font-medium tracking-tight text-white font-mono"
+            className="text-3xl font-medium tracking-tight text-white font-mono"
           >
             {title}
           </h2>
@@ -363,13 +363,13 @@ export default function DanielHernandezSite() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-sm bg-[#0a0a0a]/85">
         <div className="max-w-[1600px] mx-auto px-4 lg:px-8 py-3.5 flex items-center justify-between">
-          <div className="font-mono text-base font-medium text-white">
+          <div className="font-mono text-lg font-medium text-white">
             Daniel A. Hernandez
             <span className="text-zinc-500 ml-2 hidden sm:inline">· CS + Data Science @ UChicago &apos;28</span>
           </div>
-          <nav className="hidden md:flex items-center gap-1 text-base font-mono" aria-label="Primary">
-            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#about">
-              About
+          <nav className="hidden md:flex items-center gap-1 text-lg font-mono" aria-label="Primary">
+            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#education">
+              Education
             </a>
             <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#experience">
               Experience
@@ -380,16 +380,16 @@ export default function DanielHernandezSite() {
             <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#projects">
               Projects
             </a>
-            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#coursework-awards">
+            <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#awards">
               Awards
             </a>
             <a className="px-3 py-1.5 text-zinc-400 hover:text-white transition-colors duration-200" href="#leadership">
               Activities
             </a>
           </nav>
-          <div className="flex items-center gap-2 text-base">
+          <div className="flex items-center gap-2 text-lg">
             <a
-              className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/15 text-zinc-300 hover:border-white/40 hover:text-white transition-all duration-300 font-mono text-sm"
+              className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/15 text-zinc-300 hover:border-white/40 hover:text-white transition-all duration-300 font-mono text-base"
               href="https://github.com/danyu1"
               target="_blank"
               rel="noreferrer"
@@ -409,103 +409,101 @@ export default function DanielHernandezSite() {
 
       <Separator className="bg-white/10 relative z-10" />
 
-      {/* About — Education + Skills + Languages combined */}
+      {/* Education */}
       <Section
-        id="about"
-        title="About"
+        id="education"
+        title="Education"
         icon={<GraduationCap className="w-5 h-5 text-white/80" aria-hidden />}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
-          {/* Education — 2 schools side-by-side, takes col-span-8 */}
-          <div className="lg:col-span-8 grid md:grid-cols-2 gap-3">
-            <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/images/uchicagologo.png"
-                    alt="University of Chicago Logo"
-                    width={32}
-                    height={32}
-                    className="rounded-sm"
-                  />
-                  <CardTitle className="text-zinc-100 text-lg">University of Chicago</CardTitle>
-                </div>
-                <div className="text-sm text-zinc-400">
-                  Chicago, IL — B.S. Computer Science (&apos;28), Minor in Data Science
-                </div>
-              </CardHeader>
-              <CardContent className="text-base text-zinc-300 leading-relaxed">
-                Coursework focus: Systems Programming I & II, Distributed Systems, Mathematical
-                Foundations of Machine Learning, Introduction to Data Engineering, Linear Models
-                and Experimental Design, Multivariate Calculus, Linear Algebra, Discrete
-                Mathematics, Options and Volatility Products
-              </CardContent>
-            </Card>
-            <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/images/hwlogo.png"
-                    alt="Harvard-Westlake Logo"
-                    width={48}
-                    height={48}
-                    className="rounded-sm"
-                  />
-                  <CardTitle className="text-zinc-100 text-lg">Harvard-Westlake</CardTitle>
-                </div>
-                <div className="text-sm text-zinc-400">Studio City, CA — GPA: 3.83/4.0</div>
-              </CardHeader>
-              <CardContent className="text-base text-zinc-300 leading-relaxed">
-                Coursework focus: AP Calculus BC (5), AP Statistics (5), AP Computer Science A
-                (5), AP Spanish Language and Culture (5), Honors Design and Data Structures,
-                Honors Topics in Computer Science
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Skills + Languages — single combined card, col-span-4 */}
-          <Card className="lg:col-span-4 bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
+        <div className="grid md:grid-cols-2 gap-4">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader className="pb-3">
-              <CardTitle className="text-zinc-100 text-lg">Skills & Languages</CardTitle>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/images/uchicagologo.png"
+                  alt="University of Chicago Logo"
+                  width={36}
+                  height={36}
+                  className="rounded-sm"
+                />
+                <CardTitle className="text-zinc-100 text-xl">University of Chicago</CardTitle>
+              </div>
+              <div className="text-lg text-zinc-400">
+                Chicago, IL — B.S. Computer Science (&apos;28), Minor in Data Science
+              </div>
             </CardHeader>
-            <CardContent className="space-y-3">
-              <div>
-                <div className="text-sm font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
-                  Proficient
-                </div>
-                <div className="flex flex-wrap gap-1">
-                  {skillsPro.map((s) => (
-                    <Badge key={s} className="bg-white/[0.03] border-white/15 text-sm px-2 py-0">
-                      {s}
-                    </Badge>
-                  ))}
-                </div>
+            <CardContent className="text-lg text-zinc-300 leading-relaxed">
+              Coursework focus: Systems Programming I & II, Distributed Systems, Mathematical
+              Foundations of Machine Learning, Introduction to Data Engineering, Linear Models
+              and Experimental Design, Multivariate Calculus, Linear Algebra, Discrete
+              Mathematics, Options and Volatility Products
+            </CardContent>
+          </Card>
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/images/hwlogo.png"
+                  alt="Harvard-Westlake Logo"
+                  width={56}
+                  height={56}
+                  className="rounded-sm"
+                />
+                <CardTitle className="text-zinc-100 text-xl">Harvard-Westlake</CardTitle>
               </div>
-              <div>
-                <div className="text-sm font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
-                  Experience
-                </div>
-                <div className="flex flex-wrap gap-1">
-                  {skillsExp.map((s) => (
-                    <Badge key={s} className="bg-white/[0.03] border-white/15 text-sm px-2 py-0">
-                      {s}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-              <div className="pt-2 border-t border-white/10">
-                <div className="text-sm font-mono text-zinc-500 mb-1.5 uppercase tracking-wider">
-                  Languages
-                </div>
-                <div className="flex flex-wrap gap-1">
-                  <Badge className="bg-white/[0.03] border-white/15 text-sm px-2 py-0">
-                    English — Native
-                  </Badge>
-                  <Badge className="bg-white/[0.03] border-white/15 text-sm px-2 py-0">
-                    Spanish — Native
-                  </Badge>
-                </div>
-              </div>
+              <div className="text-lg text-zinc-400">Studio City, CA — GPA: 3.83/4.0</div>
+            </CardHeader>
+            <CardContent className="text-lg text-zinc-300 leading-relaxed">
+              Coursework focus: AP Calculus BC (5), AP Statistics (5), AP Computer Science A
+              (5), AP Spanish Language and Culture (5), Honors Design and Data Structures,
+              Honors Topics in Computer Science
+            </CardContent>
+          </Card>
+        </div>
+      </Section>
+
+      {/* Skills & Languages */}
+      <Section
+        id="skills"
+        title="Skills & Languages"
+        icon={<Layers3 className="w-5 h-5 text-white/80" aria-hidden />}
+      >
+        <div className="grid md:grid-cols-3 gap-4">
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-zinc-100 text-lg">Proficient</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-1.5">
+              {skillsPro.map((s) => (
+                <Badge key={s} className="bg-white/[0.03] border-white/15 text-lg px-2.5 py-0.5">
+                  {s}
+                </Badge>
+              ))}
+            </CardContent>
+          </Card>
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-zinc-100 text-lg">Experience</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-1.5">
+              {skillsExp.map((s) => (
+                <Badge key={s} className="bg-white/[0.03] border-white/15 text-lg px-2.5 py-0.5">
+                  {s}
+                </Badge>
+              ))}
+            </CardContent>
+          </Card>
+          <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-zinc-100 text-lg">Languages</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-1.5">
+              <Badge className="bg-white/[0.03] border-white/15 text-lg px-2.5 py-0.5">
+                English — Native
+              </Badge>
+              <Badge className="bg-white/[0.03] border-white/15 text-lg px-2.5 py-0.5">
+                Spanish — Native
+              </Badge>
             </CardContent>
           </Card>
         </div>
@@ -527,12 +525,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Deep Learning Assistant Researcher — University of Chicago, Geophysical Sciences (Prof. Dorian Abbot)
                     </span>
-                    <span className="text-sm text-zinc-400 whitespace-nowrap">Sep 2024 – Present</span>
+                    <span className="text-base text-zinc-400 whitespace-nowrap">Sep 2024 – Present</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-base text-zinc-300 space-y-2">
+            <CardContent className="text-lg text-zinc-300 space-y-2">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Designed a novel CVAE to model & autoregress regime transitions in the Holton–Mass system.
@@ -556,7 +554,7 @@ export default function DanielHernandezSite() {
                   href="/papers/ssw-cvae-emulator.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-4 py-2 text-base font-medium text-zinc-200 transition hover:border-white/40 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-4 py-2 text-lg font-medium text-zinc-200 transition hover:border-white/40 hover:text-white"
                 >
                   <FileText className="w-4 h-4" />
                   Preview Paper
@@ -564,7 +562,7 @@ export default function DanielHernandezSite() {
                 <a
                   href="/papers/ssw-cvae-emulator.pdf"
                   download="AI_Emulation_SSW_CVAE.pdf"
-                  className="inline-flex items-center gap-2 rounded-lg bg-white/10 border border-white/25 px-4 py-2 text-base font-medium text-white transition hover:bg-white/15 hover:border-white/40"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white/10 border border-white/25 px-4 py-2 text-lg font-medium text-white transition hover:bg-white/15 hover:border-white/40"
                 >
                   <Download className="w-4 h-4" />
                   Download PDF
@@ -588,12 +586,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Computer Vision Researcher — XLab Nuclear Risk and Security Working Group
                     </span>
-                    <span className="text-sm text-zinc-400 whitespace-nowrap">October 2025 – December 2025</span>
+                    <span className="text-base text-zinc-400 whitespace-nowrap">October 2025 – December 2025</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-base text-zinc-300 space-y-1">
+            <CardContent className="text-lg text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Developed automated workflow using Python and geospatial analysis tools (Google Earth Engine, GeoPandas, GDAL) to identify and geolocate AI data centers globally through satellite imagery analysis.
@@ -624,12 +622,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Software Engineer Intern — Recognition Algorithms &amp; SDK, PopID
                     </span>
-                    <span className="text-sm text-zinc-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
+                    <span className="text-base text-zinc-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-base text-zinc-300 space-y-1">
+            <CardContent className="text-lg text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Will develop and benchmark facial and palm recognition algorithms, evaluating model performance across RGB and NIR imaging conditions for production biometric pipelines.
@@ -654,12 +652,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Software Engineer & Analyst — Oracle Trading
                     </span>
-                    <span className="text-sm text-zinc-400 whitespace-nowrap">Jan 2026 – Present</span>
+                    <span className="text-base text-zinc-400 whitespace-nowrap">Jan 2026 – Present</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-base text-zinc-300 space-y-1">
+            <CardContent className="text-lg text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Member of UChicago&apos;s premier prediction markets research and trading club, actively trading a ~$100K fund on Polymarket.
@@ -672,7 +670,7 @@ export default function DanielHernandezSite() {
                 </li>
               </ul>
               <div className="mt-4 flex items-center gap-4">
-                <div className="flex items-center gap-3 text-sm text-zinc-400">
+                <div className="flex items-center gap-3 text-base text-zinc-400">
                   <span>Sponsored by:</span>
                   <img
                     src="/images/polymarket-logo.png"
@@ -702,12 +700,12 @@ export default function DanielHernandezSite() {
                     <span className="flex-1 min-w-[300px]">
                       Equity Derivatives Trading &amp; Structuring Summer Analyst — Morgan Stanley
                     </span>
-                    <span className="text-sm text-zinc-400 whitespace-nowrap">Summer 2027</span>
+                    <span className="text-base text-zinc-400 whitespace-nowrap">Summer 2027</span>
                   </CardTitle>
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="text-base text-zinc-300 space-y-1">
+            <CardContent className="text-lg text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
                   Incoming Summer Analyst on the Equity Derivatives Trading &amp; Structuring desk, working on structured products and derivatives solutions for institutional clients.
@@ -733,29 +731,29 @@ export default function DanielHernandezSite() {
               <CardTitle className="text-zinc-100 text-lg">
                 AI Emulation of Stochastic Sudden Stratospheric Warming with Interpretable Latent Structure
               </CardTitle>
-              <span className="text-sm font-mono text-zinc-500 uppercase tracking-wider">
+              <span className="text-base font-mono text-zinc-500 uppercase tracking-wider">
                 Publication · AGU JAMES
               </span>
             </div>
           </CardHeader>
-          <CardContent className="text-base text-zinc-300 leading-relaxed">
+          <CardContent className="text-lg text-zinc-300 leading-relaxed">
             Hernandez D, Boscu C, Alvarez‑Ventura F, Abbot D.S, Finkel J, Chattopadhay A, Hassanzadeh P.
           </CardContent>
         </Card>
 
         {/* Presentations as 3-col grid */}
-        <div className="text-sm font-mono text-zinc-500 mb-2 uppercase tracking-wider">
+        <div className="text-base font-mono text-zinc-500 mb-2 uppercase tracking-wider">
           Presentations
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {presentations.map((t, idx) => (
             <Card key={`${t.title}-${idx}`} className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
               <CardHeader className="pb-2">
-                <CardTitle className="text-base leading-snug text-zinc-100">{t.title}</CardTitle>
+                <CardTitle className="text-lg leading-snug text-zinc-100">{t.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-base text-zinc-300 leading-snug space-y-1">
+              <CardContent className="text-lg text-zinc-300 leading-snug space-y-1">
                 <div className="text-zinc-400">{t.venue}</div>
-                <div className="text-sm">{t.authors}</div>
+                <div className="text-base">{t.authors}</div>
               </CardContent>
             </Card>
           ))}
@@ -767,55 +765,53 @@ export default function DanielHernandezSite() {
         <ProjectsCarousel projects={projects} />
       </Section>
 
-      {/* Coursework & Awards combined */}
+      {/* Coursework */}
       <Section
-        id="coursework-awards"
-        title="Coursework & Awards"
+        id="coursework"
+        title="Coursework"
+        icon={<GraduationCap className="w-5 h-5 text-white/80" aria-hidden />}
+      >
+        <CourseWorkGrid courses={courseworkCategories} />
+      </Section>
+
+      {/* Awards & Honors */}
+      <Section
+        id="awards"
+        title="Awards & Honors"
         icon={<Award className="w-5 h-5 text-white/80" aria-hidden />}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-          {/* Coursework — col-span-7 */}
-          <div className="lg:col-span-7">
-            <div className="text-sm font-mono text-zinc-500 mb-2 uppercase tracking-wider">
-              Coursework
-            </div>
-            <CourseWorkGrid courses={courseworkCategories} />
-          </div>
-
-          {/* Awards — col-span-5 */}
-          <div className="lg:col-span-5 grid gap-3">
-            {awards.map((grp) => (
-              <Card
-                key={grp.group}
-                className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300"
-              >
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg text-white">{grp.group}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {grp.items.map((it) => (
-                    <div key={it.title} className="flex items-start gap-2.5">
-                      {it.imageSrc && (
-                        <img
-                          src={it.imageSrc}
-                          alt={it.title}
-                          className="w-10 h-10 rounded-sm object-contain mt-0.5 flex-shrink-0"
-                        />
+        <div className="grid md:grid-cols-2 gap-4">
+          {awards.map((grp) => (
+            <Card
+              key={grp.group}
+              className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300"
+            >
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl text-white">{grp.group}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {grp.items.map((it) => (
+                  <div key={it.title} className="flex items-start gap-3">
+                    {it.imageSrc && (
+                      <img
+                        src={it.imageSrc}
+                        alt={it.title}
+                        className="w-12 h-12 rounded-sm object-contain mt-0.5 flex-shrink-0"
+                      />
+                    )}
+                    <div className="text-lg text-white min-w-0">
+                      <div className="font-medium leading-snug">{it.title}</div>
+                      {it.description && (
+                        <p className="text-lg text-zinc-400 mt-1 leading-snug">
+                          {it.description}
+                        </p>
                       )}
-                      <div className="text-lg text-white min-w-0">
-                        <div className="font-medium leading-snug">{it.title}</div>
-                        {it.description && (
-                          <p className="text-sm text-zinc-400 mt-0.5 leading-snug">
-                            {it.description}
-                          </p>
-                        )}
-                      </div>
                     </div>
-                  ))}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </Section>
 
@@ -832,9 +828,9 @@ export default function DanielHernandezSite() {
               <CardTitle className="text-lg text-white">
                 Varsity Collegiate Track & Field Athlete
               </CardTitle>
-              <div className="text-sm text-zinc-400">UChicago · 2024–Present</div>
+              <div className="text-base text-zinc-400">UChicago · 2024–Present</div>
             </CardHeader>
-            <CardContent className="text-base text-zinc-300 leading-snug">
+            <CardContent className="text-lg text-zinc-300 leading-snug">
               Competed as a jumper for UChicago Athletics; ranked 95th nationally in NCAA
               Division III triple jump as a first‑year.
             </CardContent>
@@ -844,9 +840,9 @@ export default function DanielHernandezSite() {
               <CardTitle className="text-lg text-white">
                 Phoenix STEM Scholar & Research Mentor
               </CardTitle>
-              <div className="text-sm text-zinc-400">UChicago · 2024–Present</div>
+              <div className="text-base text-zinc-400">UChicago · 2024–Present</div>
             </CardHeader>
-            <CardContent className="text-base text-zinc-300 leading-snug">
+            <CardContent className="text-lg text-zinc-300 leading-snug">
               Selected via competitive program supporting first‑gen & underrepresented students
               in STEM. Mentored incoming students on research paths and course planning.
             </CardContent>
@@ -854,7 +850,7 @@ export default function DanielHernandezSite() {
         </div>
 
         {/* Conferences — 2-col */}
-        <div className="text-sm font-mono text-zinc-500 mb-2 uppercase tracking-wider">
+        <div className="text-base font-mono text-zinc-500 mb-2 uppercase tracking-wider">
           Conference Experience
         </div>
         <div className="grid md:grid-cols-2 gap-4">
@@ -866,7 +862,7 @@ export default function DanielHernandezSite() {
 
       {/* Footer — no contact section at the bottom */}
       <footer className="py-8 border-t border-white/10 relative z-10">
-        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 text-base text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1600px] mx-auto px-4 lg:px-8 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <a
             className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30"
