@@ -90,7 +90,7 @@ export default function ConferenceShowcase({
             <h3 className="text-3xl font-medium text-white mb-2 tracking-tight">
               {experience.title}
             </h3>
-            <div className="flex flex-wrap gap-4 text-sm text-zinc-400">
+            <div className="flex flex-wrap gap-4 text-base text-zinc-400">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-zinc-500" aria-hidden />
                 <span>{experience.location}</span>
@@ -151,10 +151,10 @@ export default function ConferenceShowcase({
 
         {/* Image counter and caption */}
         <div className="mt-3 flex items-center justify-between">
-          <span className="text-xs font-mono text-zinc-500">
+          <span className="text-sm font-mono text-zinc-500">
             Image {idx + 1} / {n}
           </span>
-          <span className="text-sm text-zinc-400">{currentImage.alt}</span>
+          <span className="text-base text-zinc-400">{currentImage.alt}</span>
         </div>
 
         {/* Thumbnail navigation */}
@@ -193,7 +193,7 @@ export default function ConferenceShowcase({
               className="flex items-start gap-3 p-4 bg-white/[0.02] border border-white/10 hover:border-white/20 transition-colors duration-300"
             >
               <Icon className="w-5 h-5 text-zinc-500 mt-0.5 flex-shrink-0" aria-hidden />
-              <p className="text-sm text-zinc-300 leading-relaxed">{highlight}</p>
+              <p className="text-base text-zinc-300 leading-relaxed">{highlight}</p>
             </div>
           );
         })}

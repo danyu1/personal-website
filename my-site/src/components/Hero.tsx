@@ -16,13 +16,13 @@ export default function Hero() {
         {/* Text */}
         <div className="text-center lg:text-left space-y-4">
           <div>
-            <h1 className="text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.05]">
+            <h1 className="text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.05]">
               Danny Hernandez
             </h1>
             <div className="h-px bg-white/15 max-w-xs mx-auto lg:mx-0 mt-3" />
           </div>
 
-          <p className="text-zinc-300 text-base leading-relaxed max-w-3xl mx-auto lg:mx-0">
+          <p className="text-zinc-300 text-lg leading-relaxed max-w-3xl mx-auto lg:mx-0">
             Deep-learning researcher for stochastic climate systems and
             computer-vision researcher at UChicago. Incoming Equity Derivatives
             Trading & Structuring Summer Analyst at Morgan Stanley. Incoming
@@ -40,7 +40,7 @@ export default function Hero() {
             ].map((label) => (
               <span
                 key={label}
-                className="px-2.5 py-1 bg-white/[0.03] border border-white/10 text-xs font-mono text-zinc-400"
+                className="px-2.5 py-1 bg-white/[0.03] border border-white/10 text-sm font-mono text-zinc-400"
               >
                 {label}
               </span>
