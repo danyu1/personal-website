@@ -26,7 +26,7 @@ export default function PriorSystemsPage() {
     <div className="min-h-screen text-zinc-200 relative">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-sm bg-[#0a0a0a]/85">
-        <div className="max-w-[1700px] mx-auto px-2 lg:px-4 py-3.5 flex items-center justify-between">
+        <div className="max-w-[1700px] mx-auto px-4 lg:px-7 py-3.5 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link
               href="/"
@@ -63,7 +63,7 @@ export default function PriorSystemsPage() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-white/10 relative z-10">
-        <div className="max-w-[1700px] mx-auto px-2 lg:px-4 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1700px] mx-auto px-4 lg:px-7 text-lg text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>© {new Date().getFullYear()} Daniel A. Hernandez</div>
           <Link
             href="/"

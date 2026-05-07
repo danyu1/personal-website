@@ -62,7 +62,7 @@ export default function ConferenceShowcase({
   const currentImage = experience.images[idx];
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-full flex flex-col">
       <style>{`
         @keyframes conferenceSlideIn {
           0% { opacity: 0; transform: translateY(20px); }
@@ -183,7 +183,7 @@ export default function ConferenceShowcase({
       </div>
 
       {/* Highlights */}
-      <div className="grid md:grid-cols-3 gap-4 animate-[conferenceSlideIn_700ms_ease-out]">
+      <div className="grid md:grid-cols-3 gap-4 mt-auto pt-2 animate-[conferenceSlideIn_700ms_ease-out]">
         {experience.highlights.map((highlight, i) => {
           const icons = [Presentation, Users, Users];
           const Icon = icons[i] || Presentation;
