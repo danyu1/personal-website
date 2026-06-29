@@ -631,7 +631,7 @@ export default function DanielHernandezSite() {
             <CardContent className="text-lg text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  Member of UChicago&apos;s premier prediction markets research and trading club, actively trading a ~$100K fund on Polymarket.
+                  Member of UChicago&apos;s premier prediction markets research and trading club, actively trading a ~$140K fund on Polymarket.
                 </li>
                 <li>
                   Apply quantitative strategies to prediction markets, leveraging statistical analysis and probabilistic reasoning for trade execution.

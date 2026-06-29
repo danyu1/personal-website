@@ -23,17 +23,16 @@ export default function Hero() {
           </div>
 
           <p className="text-zinc-300 text-xl leading-relaxed max-w-3xl mx-auto lg:mx-0">
-            Deep-learning researcher for stochastic climate systems and
-            computer-vision researcher at UChicago. Incoming Equity Derivatives
-            Trading & Structuring Summer Analyst at Morgan Stanley. Incoming
-            Software Engineer Intern on Recognition Algorithms & SDK at PopID.
+            Deep-learning researcher for stochastic climate systems at
+            UChicago. Incoming Equity Derivatives Trading & Structuring Summer
+            Analyst at Morgan Stanley. ML Intern on Recognition Algorithms &
+            SDK at PopID.
             Varsity collegiate athlete competing in horizontal jumps.
           </p>
 
           <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
             {[
               "Deep Learning Research",
-              "Computer Vision",
               "Equity Derivatives",
               "Software Engineering",
               "Collegiate Athlete",
