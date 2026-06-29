@@ -669,7 +669,7 @@ export default function DanielHernandezSite() {
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
-                      Software Engineer Intern — Recognition Algorithms &amp; SDK, PopID
+                      Machine Learning Intern — Recognition Algorithms &amp; SDK, PopID
                     </span>
                     <span className="text-base text-zinc-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
                   </CardTitle>
@@ -679,10 +679,10 @@ export default function DanielHernandezSite() {
             <CardContent className="text-lg text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  Will develop and benchmark facial and palm recognition algorithms, evaluating model performance across RGB and NIR imaging conditions for production biometric pipelines.
+                  Will work on recognition algorithms, material classification.
                 </li>
                 <li>
-                  Will contribute to Java SDK development controlling sensor hardware in proprietary biometric cameras, including code review, refactoring, and integration testing.
+                  Further details under Non Disclosure Agreement.
                 </li>
               </ul>
             </CardContent>
