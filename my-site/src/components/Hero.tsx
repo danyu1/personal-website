@@ -26,7 +26,7 @@ export default function Hero() {
             Deep-learning researcher for stochastic climate systems at
             UChicago. Incoming Equity Derivatives Trading & Structuring Summer
             Analyst at Morgan Stanley. ML Intern on Recognition Algorithms &
-            SDK at PopID.
+            SDK at PopID / PayPal.
             Varsity collegiate athlete competing in horizontal jumps.
           </p>
 

@@ -661,11 +661,18 @@ export default function DanielHernandezSite() {
           <Card className="bg-white/[0.02] border-white/10 hover:border-white/20 transition-colors duration-300">
             <CardHeader>
               <div className="flex items-center gap-4">
-                <img
-                  src="/images/popid.png"
-                  alt="PopID"
-                  className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
-                />
+                <div className="flex items-center gap-2 shrink-0">
+                  <img
+                    src="/images/popid.png"
+                    alt="PopID"
+                    className="w-24 h-24 object-contain rounded-lg bg-white/5 p-2"
+                  />
+                  <img
+                    src="/images/paypal-logo.png"
+                    alt="PayPal"
+                    className="h-24 w-auto object-contain rounded-lg bg-white/5 p-2"
+                  />
+                </div>
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
@@ -683,6 +690,9 @@ export default function DanielHernandezSite() {
                 </li>
                 <li>
                   Non Disclosure Agreement.
+                </li>
+                <li>
+                  Currently undergoing merger with PayPal.
                 </li>
               </ul>
             </CardContent>
