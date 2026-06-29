@@ -676,7 +676,7 @@ export default function DanielHernandezSite() {
                 <div className="flex-1">
                   <CardTitle className="text-white flex items-center justify-between flex-wrap gap-2 text-2xl">
                     <span className="flex-1 min-w-[300px]">
-                      Machine Learning Intern — Recognition Algorithms &amp; SDK, PopID
+                      Machine Learning Intern — Recognition Algorithms &amp; SDK, PopID / PayPal
                     </span>
                     <span className="text-base text-zinc-400 whitespace-nowrap">Jun – Aug 2026 · Los Angeles, CA</span>
                   </CardTitle>
