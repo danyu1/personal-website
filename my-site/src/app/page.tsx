@@ -679,10 +679,10 @@ export default function DanielHernandezSite() {
             <CardContent className="text-lg text-zinc-300 space-y-1">
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  Will work on recognition algorithms, material classification.
+                  Recognition algorithms, material classification.
                 </li>
                 <li>
-                  Further details under Non Disclosure Agreement.
+                  Non Disclosure Agreement.
                 </li>
               </ul>
             </CardContent>
